@@ -58,7 +58,7 @@
             this.panelBorder.Location = new System.Drawing.Point(2, 2);
             this.panelBorder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelBorder.Name = "panelBorder";
-            this.panelBorder.Size = new System.Drawing.Size(1189, 100);
+            this.panelBorder.Size = new System.Drawing.Size(1340, 100);
             this.panelBorder.TabIndex = 3;
             // 
             // lblTitle
@@ -88,7 +88,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.ForeColor = System.Drawing.Color.White;
-            this.lblUser.Location = new System.Drawing.Point(1030, 71);
+            this.lblUser.Location = new System.Drawing.Point(1277, 64);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(51, 20);
             this.lblUser.TabIndex = 0;
@@ -101,10 +101,10 @@
             this.panelMenu.Controls.Add(this.btnUser);
             this.panelMenu.Controls.Add(this.btnDash);
             this.panelMenu.Controls.Add(this.btnIncident);
-            this.panelMenu.Location = new System.Drawing.Point(2, 102);
+            this.panelMenu.Location = new System.Drawing.Point(2, 104);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(202, 592);
+            this.panelMenu.Size = new System.Drawing.Size(202, 768);
             this.panelMenu.TabIndex = 4;
             // 
             // btnLogOff
