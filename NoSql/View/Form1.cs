@@ -16,5 +16,25 @@ namespace View
         {
             InitializeComponent();
         }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            PanelDash.BringToFront();
+        }
+
+        private void btnIncident_Click(object sender, EventArgs e)
+        {
+            PanelIncident.BringToFront();
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            PanelUser.BringToFront();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            PanelDash.BringToFront();
+        }
     }
 }
