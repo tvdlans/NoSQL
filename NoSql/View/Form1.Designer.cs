@@ -41,12 +41,17 @@
             this.panelDash = new System.Windows.Forms.Panel();
             this.panelUser = new System.Windows.Forms.Panel();
             this.panelIncident = new System.Windows.Forms.Panel();
-            this.lblTitleIndicent = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnCreateIncident = new System.Windows.Forms.Button();
+            this.txtFilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblTitleIndicent = new System.Windows.Forms.Label();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelIncident.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -180,12 +185,55 @@
             // 
             // panelIncident
             // 
+            this.panelIncident.Controls.Add(this.listBox1);
+            this.panelIncident.Controls.Add(this.btnCreateIncident);
+            this.panelIncident.Controls.Add(this.txtFilter);
             this.panelIncident.Controls.Add(this.label1);
             this.panelIncident.Controls.Add(this.lblTitleIndicent);
             this.panelIncident.Location = new System.Drawing.Point(226, 129);
             this.panelIncident.Name = "panelIncident";
             this.panelIncident.Size = new System.Drawing.Size(956, 542);
             this.panelIncident.TabIndex = 6;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(144, 210);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(651, 284);
+            this.listBox1.TabIndex = 4;
+            // 
+            // btnCreateIncident
+            // 
+            this.btnCreateIncident.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
+            this.btnCreateIncident.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateIncident.Font = new System.Drawing.Font("Lato Light", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateIncident.ForeColor = System.Drawing.Color.White;
+            this.btnCreateIncident.Location = new System.Drawing.Point(600, 124);
+            this.btnCreateIncident.Name = "btnCreateIncident";
+            this.btnCreateIncident.Size = new System.Drawing.Size(195, 48);
+            this.btnCreateIncident.TabIndex = 3;
+            this.btnCreateIncident.Text = "Create Incident";
+            this.btnCreateIncident.UseVisualStyleBackColor = false;
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(144, 138);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(177, 26);
+            this.txtFilter.TabIndex = 2;
+            this.txtFilter.Text = "Filter by Email";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(423, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 30);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tickets";
             // 
             // lblTitleIndicent
             // 
@@ -197,15 +245,10 @@
             this.lblTitleIndicent.TabIndex = 0;
             this.lblTitleIndicent.Text = "Incident Mangement";
             // 
-            // label1
+            // fileSystemWatcher1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(423, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 30);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tickets";
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // Form1
             // 
@@ -226,6 +269,7 @@
             this.panelMenu.ResumeLayout(false);
             this.panelIncident.ResumeLayout(false);
             this.panelIncident.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,6 +290,10 @@
         private System.Windows.Forms.Panel panelIncident;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitleIndicent;
+        private System.Windows.Forms.TextBox txtFilter;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.Button btnCreateIncident;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
