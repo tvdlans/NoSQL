@@ -38,18 +38,15 @@
             this.btnUser = new System.Windows.Forms.Button();
             this.btnDash = new System.Windows.Forms.Button();
             this.btnIncident = new System.Windows.Forms.Button();
-            this.PanelUser = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.PanelIncident = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelDash = new System.Windows.Forms.Panel();
+            this.panelUser = new System.Windows.Forms.Panel();
+            this.panelIncident = new System.Windows.Forms.Panel();
+            this.lblTitleIndicent = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.PanelDash = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
-            this.PanelUser.SuspendLayout();
-            this.PanelIncident.SuspendLayout();
-            this.PanelDash.SuspendLayout();
+            this.panelIncident.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -167,65 +164,57 @@
             this.btnIncident.UseVisualStyleBackColor = false;
             this.btnIncident.Click += new System.EventHandler(this.btnIncident_Click);
             // 
-            // PanelUser
+            // panelDash
             // 
-            this.PanelUser.Controls.Add(this.label3);
-            this.PanelUser.Location = new System.Drawing.Point(232, 135);
-            this.PanelUser.Name = "PanelUser";
-            this.PanelUser.Size = new System.Drawing.Size(937, 527);
-            this.PanelUser.TabIndex = 5;
+            this.panelDash.Location = new System.Drawing.Point(226, 132);
+            this.panelDash.Name = "panelDash";
+            this.panelDash.Size = new System.Drawing.Size(956, 542);
+            this.panelDash.TabIndex = 5;
             // 
-            // label3
+            // panelUser
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "User";
+            this.panelUser.Location = new System.Drawing.Point(226, 132);
+            this.panelUser.Name = "panelUser";
+            this.panelUser.Size = new System.Drawing.Size(956, 542);
+            this.panelUser.TabIndex = 6;
             // 
-            // PanelIncident
+            // panelIncident
             // 
-            this.PanelIncident.Controls.Add(this.label1);
-            this.PanelIncident.Location = new System.Drawing.Point(232, 135);
-            this.PanelIncident.Name = "PanelIncident";
-            this.PanelIncident.Size = new System.Drawing.Size(937, 527);
-            this.PanelIncident.TabIndex = 3;
+            this.panelIncident.Controls.Add(this.label1);
+            this.panelIncident.Controls.Add(this.lblTitleIndicent);
+            this.panelIncident.Location = new System.Drawing.Point(226, 129);
+            this.panelIncident.Name = "panelIncident";
+            this.panelIncident.Size = new System.Drawing.Size(956, 542);
+            this.panelIncident.TabIndex = 6;
+            // 
+            // lblTitleIndicent
+            // 
+            this.lblTitleIndicent.AutoSize = true;
+            this.lblTitleIndicent.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleIndicent.Location = new System.Drawing.Point(271, 24);
+            this.lblTitleIndicent.Name = "lblTitleIndicent";
+            this.lblTitleIndicent.Size = new System.Drawing.Size(410, 54);
+            this.lblTitleIndicent.TabIndex = 0;
+            this.lblTitleIndicent.Text = "Incident Mangement";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(423, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Incident";
-            // 
-            // PanelDash
-            // 
-            this.PanelDash.Controls.Add(this.label2);
-            this.PanelDash.Location = new System.Drawing.Point(232, 135);
-            this.PanelDash.Name = "PanelDash";
-            this.PanelDash.Size = new System.Drawing.Size(937, 527);
-            this.PanelDash.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Dash";
+            this.label1.Size = new System.Drawing.Size(86, 30);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tickets";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 696);
-            this.Controls.Add(this.PanelDash);
-            this.Controls.Add(this.PanelUser);
-            this.Controls.Add(this.PanelIncident);
+            this.Controls.Add(this.panelIncident);
+            this.Controls.Add(this.panelUser);
+            this.Controls.Add(this.panelDash);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBorder);
             this.Name = "Form1";
@@ -235,12 +224,8 @@
             this.panelBorder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMenu.ResumeLayout(false);
-            this.PanelUser.ResumeLayout(false);
-            this.PanelUser.PerformLayout();
-            this.PanelIncident.ResumeLayout(false);
-            this.PanelIncident.PerformLayout();
-            this.PanelDash.ResumeLayout(false);
-            this.PanelDash.PerformLayout();
+            this.panelIncident.ResumeLayout(false);
+            this.panelIncident.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -256,12 +241,11 @@
         private System.Windows.Forms.Button btnUser;
         private System.Windows.Forms.Button btnDash;
         private System.Windows.Forms.Button btnIncident;
-        private System.Windows.Forms.FlowLayoutPanel PanelUser;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.FlowLayoutPanel PanelIncident;
+        private System.Windows.Forms.Panel panelDash;
+        private System.Windows.Forms.Panel panelUser;
+        private System.Windows.Forms.Panel panelIncident;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel PanelDash;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTitleIndicent;
     }
 }
 
