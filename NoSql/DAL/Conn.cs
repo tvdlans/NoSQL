@@ -17,8 +17,12 @@ namespace DAL
             var database = dbClient.GetDatabase("TGGDB");
             var collection = database.GetCollection<BsonDocument>("Users");
 
-            var firstDocument = collection.Find(new BsonDocument()).FirstOrDefault();
-            Console.WriteLine(firstDocument.ToString());
+            var document = collection.Find(new BsonDocument()).ToList();
+
+            foreach (BsonDocument doc in document)
+            {
+                Console.WriteLine(doc.ToString());
+            }
             Console.ReadKey();
         }
     }
