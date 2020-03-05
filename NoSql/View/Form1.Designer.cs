@@ -46,12 +46,10 @@
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitleIndicent = new System.Windows.Forms.Label();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelIncident.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -245,11 +243,6 @@
             this.lblTitleIndicent.TabIndex = 0;
             this.lblTitleIndicent.Text = "Incident Mangement";
             // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -269,7 +262,6 @@
             this.panelMenu.ResumeLayout(false);
             this.panelIncident.ResumeLayout(false);
             this.panelIncident.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,7 +283,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitleIndicent;
         private System.Windows.Forms.TextBox txtFilter;
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Button btnCreateIncident;
         private System.Windows.Forms.ListBox listBox1;
     }
