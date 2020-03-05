@@ -19,22 +19,27 @@ namespace View
 
         private void btnDash_Click(object sender, EventArgs e)
         {
-            PanelDash.BringToFront();
+            panelDash.BringToFront();
         }
 
         private void btnIncident_Click(object sender, EventArgs e)
         {
-            PanelIncident.BringToFront();
+            panelIncident.BringToFront();
         }
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            PanelUser.BringToFront();
+            panelUser.BringToFront();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            PanelDash.BringToFront();
+            panelDash.BringToFront();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
