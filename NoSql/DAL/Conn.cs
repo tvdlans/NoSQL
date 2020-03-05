@@ -18,6 +18,9 @@ namespace DAL
             var collection = database.GetCollection<BsonDocument>("Users");
 
             var firstDocument = collection.Find(new BsonDocument()).FirstOrDefault();
+
+            var filter = new BsonDocument("Age", new BsonDocument("$eq", 23));
+
             Console.WriteLine(firstDocument.ToString());
             Console.ReadKey();
         }
