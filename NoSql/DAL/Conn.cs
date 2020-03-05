@@ -8,15 +8,18 @@ using MongoDB.Driver;
 
 namespace DAL
 {
-    class Conn
+    public class Conn
     {
-
-        static void Conn1()
+        public static void Conn1()
         {
-            MongoClient dbClient = new MongoClient("");
+            MongoClient dbClient = new MongoClient("mongodb+srv://RegUser:Welkom1234@cluster0-rpzyt.mongodb.net/test?retryWrites=true&w=majority");
 
-            var database = dbClient.GetDatabase("sample_training");
-            var collection = database.GetCollection<BsonDocument>("grades");
+            var database = dbClient.GetDatabase("TGGDB");
+            var collection = database.GetCollection<BsonDocument>("Users");
+
+            var firstDocument = collection.Find(new BsonDocument()).FirstOrDefault();
+            Console.WriteLine(firstDocument.ToString());
+            Console.ReadKey();
         }
     }
 }
