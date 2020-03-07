@@ -11,8 +11,8 @@ namespace Model
     {
         static void Main(string[] args)
         {
-            Conn conn = new Conn();
-            Conn.Conn1();
+            //Conn conn = new Conn();
+            //Conn.Conn1();
         }
     }
 }

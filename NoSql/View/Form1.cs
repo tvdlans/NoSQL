@@ -36,5 +36,12 @@ namespace View
         {
             panelDash.BringToFront();
         }
+
+        private void btnLogOff_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LogIn login = new LogIn();
+            login.Show();
+        }
     }
 }
