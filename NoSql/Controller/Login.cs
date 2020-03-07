@@ -19,8 +19,12 @@ namespace Controller
             }
             else
             {
-                var recs = db.LoadRecords<User>("Users");
-                return true;
+                var user = db.LoadRecordByEmail<User>("Users", email);
+                if (user.Password == password)
+                {
+                    return true;
+                }
+                else return false;
             }
         }
     }

@@ -23,12 +23,18 @@ namespace View
             Login login = new Login(); 
             string email = txtEmail.Text;
             string password = txtPassword.Text;
-            login.CheckUser(email, password);
+            Boolean passwordIsTrue =  login.CheckUser(email, password);
 
-
-            //this.Hide();
-            //Form1 form1 = new Form1();
-            //form1.Show();
+            if (passwordIsTrue)
+            {
+                this.Hide();
+                Form1 form1 = new Form1();
+                form1.Show();
+            }
+            else
+            {
+                MessageBox.Show("Email and Password combination is not valid");
+            }
         }
     }
 }

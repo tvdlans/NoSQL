@@ -42,6 +42,20 @@ namespace DAL
             return collection.Find(filter).First();
         }
 
+        public T LoadRecordByEmail<T>(string table, string email)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq("Email", email);
+
+            return collection.Find(filter).First();
+        }
+
+        public void InsertRecord<T>(string table, T record)
+        {
+            var collection = db.GetCollection<T>(table);
+            collection.InsertOne(record);
+        }
+
         //public static void Conn1()
         //{
         //    MongoClient dbClient = new MongoClient("mongodb+srv://RegUser:Welkom1234@cluster0-rpzyt.mongodb.net/test?retryWrites=true&w=majority");
