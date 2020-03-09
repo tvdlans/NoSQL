@@ -23,6 +23,7 @@ namespace Controller
                 var user = db.LoadRecordByEmail<BsonDocument>("Users", email);
                 if (user == null)
                 {
+                    Console.WriteLine("huh");
                     return false;
                 }
                 else if (user.GetElement("Password").Value.ToString() == password)

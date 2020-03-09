@@ -39,6 +39,7 @@
             this.lblMail = new System.Windows.Forms.Label();
             this.lblWachtwoord = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.chkremember = new System.Windows.Forms.CheckBox();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -145,20 +146,32 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(391, 324);
+            this.btnLogin.Location = new System.Drawing.Point(359, 337);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(147, 34);
+            this.btnLogin.Size = new System.Drawing.Size(207, 34);
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // chkremember
+            // 
+            this.chkremember.AutoSize = true;
+            this.chkremember.Location = new System.Drawing.Point(359, 302);
+            this.chkremember.Name = "chkremember";
+            this.chkremember.Size = new System.Drawing.Size(94, 17);
+            this.chkremember.TabIndex = 12;
+            this.chkremember.Text = "Remember me";
+            this.chkremember.UseVisualStyleBackColor = true;
+            this.chkremember.CheckedChanged += new System.EventHandler(this.chkremember_CheckedChanged);
             // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 452);
+            this.Controls.Add(this.chkremember);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblWachtwoord);
             this.Controls.Add(this.lblMail);
@@ -170,6 +183,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LogIn";
             this.Text = "LogIn";
+            this.Load += new System.EventHandler(this.LogIn_Load);
             this.panelBorder.ResumeLayout(false);
             this.panelBorder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -190,5 +204,6 @@
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.Label lblWachtwoord;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.CheckBox chkremember;
     }
 }

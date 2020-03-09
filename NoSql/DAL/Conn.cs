@@ -43,12 +43,18 @@ namespace DAL
         }
 
         public T LoadRecordByEmail<T>(string table, string email)
-        {
-            var collection = db.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq("Email", email);
+        { 
+            try
+            {
+                var collection = db.GetCollection<T>(table);
+                var filter = Builders<T>.Filter.Eq("Email", email);
 
-            return default(T);
-            //return collection.Find(filter).First();
+                return collection.Find(filter).First();
+            }
+            catch (Exception)
+            {
+                return default(T);
+            }
         }
 
         public void InsertRecord<T>(string table, T record)

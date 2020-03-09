@@ -27,6 +27,19 @@ namespace View
 
             if (passwordIsTrue)
             {
+                if (chkremember.Checked == true)
+                {
+                    Properties.Settings.Default.Name = txtEmail.Text;
+                    Properties.Settings.Default.Password = txtPassword.Text;
+                    Properties.Settings.Default.Save();
+                }
+                if (chkremember.Checked == false)
+                {
+                    Properties.Settings.Default.Name = "";
+                    Properties.Settings.Default.Password = "";
+                    Properties.Settings.Default.Save();
+                }
+
                 this.Hide();
                 Form1 form1 = new Form1();
                 form1.Show();
@@ -34,6 +47,20 @@ namespace View
             else
             {
                 MessageBox.Show("Email and Password combination is not valid");
+            }
+        }
+
+        private void chkremember_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.Name != string.Empty)
+            {
+                chkremember.Checked = true;
+                txtEmail.Text = Properties.Settings.Default.Name;
+                txtPassword.Text = Properties.Settings.Default.Password;
             }
         }
     }
