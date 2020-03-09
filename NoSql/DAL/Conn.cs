@@ -47,7 +47,8 @@ namespace DAL
             var collection = db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq("Email", email);
 
-            return collection.Find(filter).First();
+            return default(T);
+            //return collection.Find(filter).First();
         }
 
         public void InsertRecord<T>(string table, T record)

@@ -49,7 +49,7 @@
             this.panelBorder.Controls.Add(this.lblTitle);
             this.panelBorder.Controls.Add(this.pictureBox1);
             this.panelBorder.Location = new System.Drawing.Point(2, 1);
-            this.panelBorder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelBorder.Margin = new System.Windows.Forms.Padding(2);
             this.panelBorder.Name = "panelBorder";
             this.panelBorder.Size = new System.Drawing.Size(793, 65);
             this.panelBorder.TabIndex = 4;
@@ -72,7 +72,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(6, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(103, 63);
             this.pictureBox1.TabIndex = 1;
@@ -82,7 +82,7 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
             this.panelMenu.Location = new System.Drawing.Point(1, 66);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(135, 385);
             this.panelMenu.TabIndex = 5;
@@ -102,7 +102,7 @@
             // 
             this.txtEmail.Font = new System.Drawing.Font("Corbel", 8.25F);
             this.txtEmail.Location = new System.Drawing.Point(359, 225);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(207, 21);
             this.txtEmail.TabIndex = 7;
@@ -111,8 +111,9 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Corbel", 8.25F);
             this.txtPassword.Location = new System.Drawing.Point(359, 263);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(207, 21);
             this.txtPassword.TabIndex = 8;
             // 
@@ -145,7 +146,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(391, 324);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(147, 34);
             this.btnLogin.TabIndex = 11;
@@ -166,7 +167,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBorder);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LogIn";
             this.Text = "LogIn";
             this.panelBorder.ResumeLayout(false);

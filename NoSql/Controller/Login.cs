@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using Model;
+using MongoDB.Bson;
 
 namespace Controller
 {
@@ -19,8 +20,12 @@ namespace Controller
             }
             else
             {
-                var user = db.LoadRecordByEmail<User>("Users", email);
-                if (user.Password == password)
+                var user = db.LoadRecordByEmail<BsonDocument>("Users", email);
+                if (user == null)
+                {
+                    return false;
+                }
+                else if (user.GetElement("Password").Value.ToString() == password)
                 {
                     return true;
                 }
