@@ -50,12 +50,10 @@ namespace View
             }
         }
 
-        private void chkremember_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
         private void LogIn_Load(object sender, EventArgs e)
         {
+            Login login = new Login();
+            login.connect();
             if (Properties.Settings.Default.Name != string.Empty)
             {
                 chkremember.Checked = true;
