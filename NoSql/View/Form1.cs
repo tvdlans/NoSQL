@@ -37,8 +37,8 @@ namespace View
         private void Form1_Load(object sender, EventArgs e)
         {
             panelDash.BringToFront();
-            Login login = new Login();
-            string name = login.GetUsername();
+            ConSession session = new ConSession();
+            string name = session.GetUsername();
             lblUser.Text = name;
         }
 
@@ -85,6 +85,7 @@ namespace View
             else
             {
                 Incident.insertIncident(cmbDateTime.Text, txtSubject.Text, cmbType.Text, cmbUser.Text, cmbPriority.Text, cmbDeadline.Text, txtDescription.Text);
+                pnlCreateIncident.Hide();
             }
         }
     }

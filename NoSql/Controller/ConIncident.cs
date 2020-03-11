@@ -32,12 +32,22 @@ namespace Controller
         }
         public void insertIncident(string reported, string subject, string type, string user, string priority, string deadline, string description)
         {
+            ConSession session = new ConSession();
+            //get the email form the one logged in
+            string email = session.GetEmail();
+            //get all the info from the person who is logged in
+            var userService = db.LoadRecordByEmail<BsonDocument>("Users",email);
+            //get the objectid form the userServiceEmployee
+            ObjectId userServiceID = userService.GetElement("_id").Value.AsObjectId;
+
             //get the user who was filled in into the form
             var userFile = db.LoadRecordByName<BsonDocument>("Users", user);
-            //get the objectid form the user
+            //get the objectid form the employee
             ObjectId userID = userFile.GetElement("_id").Value.AsObjectId;
+
             DateTime newDate;
             DateTime startDate = DateTime.Now;
+
             //get only the numbers from the deadline
             int days = int.Parse(Regex.Match(deadline, @"\d+").Value);
             if(days == 6)
@@ -48,21 +58,21 @@ namespace Controller
             {
                 newDate = startDate.AddDays(days);
             }
-       
-            ModIncident incident = new ModIncident
+            var documnt = new BsonDocument
             {
-                Reported = reported,
-                Date = DateTime.Now,
-                Subject = subject,
-                EmployeeID = userID,
-                Description = description,
-                TypeOfIncident = type,
-                Priority = priority,
-                Deadline = newDate,
-                Status = 0,
-                Resolved = false
+                {"Reported",reported},
+                {"Date",DateTime.Now},
+                {"Subject",subject},
+                {"EmployeeID",userID},
+                {"ServiceID",userServiceID},
+                {"Description",description},
+                {"TypeOfIncident",type},
+                {"Priority",priority},
+                {"Deadline",newDate},
+                {"Status",0},
+                {"Resolved",false}
             };
-            db.InsertRecord<ModIncident>("Incidents", incident);
+            db.InsertRecord<BsonDocument>("Incidents", documnt);
            
         }
         public Boolean checkFields(string reported, string subject, string type, string user,string priority, string deadline, string description)
