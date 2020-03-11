@@ -38,7 +38,7 @@ namespace Controller
             ObjectId userID = userFile.GetElement("_id").Value.AsObjectId;
             DateTime newDate;
             DateTime startDate = DateTime.Now;
-            //get only the numbers form the deadline
+            //get only the numbers from the deadline
             int days = int.Parse(Regex.Match(deadline, @"\d+").Value);
             if(days == 6)
             {
