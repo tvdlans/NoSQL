@@ -32,7 +32,6 @@
             this.panelBorder = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelMenu = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -40,6 +39,9 @@
             this.lblWachtwoord = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.chkremember = new System.Windows.Forms.CheckBox();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.lnkforgotpswd = new System.Windows.Forms.LinkLabel();
+            this.pnlforgotpswd = new System.Windows.Forms.Panel();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -79,23 +81,14 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // panelMenu
-            // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
-            this.panelMenu.Location = new System.Drawing.Point(1, 66);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(135, 385);
-            this.panelMenu.TabIndex = 5;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
+            this.label1.Font = new System.Drawing.Font("Lato Light", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(261, 109);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(416, 54);
+            this.label1.Size = new System.Drawing.Size(400, 58);
             this.label1.TabIndex = 6;
             this.label1.Text = "The Garden Group";
             // 
@@ -164,13 +157,42 @@
             this.chkremember.TabIndex = 12;
             this.chkremember.Text = "Remember me";
             this.chkremember.UseVisualStyleBackColor = true;
-            this.chkremember.CheckedChanged += new System.EventHandler(this.chkremember_CheckedChanged);
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
+            this.panelMenu.Location = new System.Drawing.Point(1, 66);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(135, 385);
+            this.panelMenu.TabIndex = 5;
+            // 
+            // lnkforgotpswd
+            // 
+            this.lnkforgotpswd.AutoSize = true;
+            this.lnkforgotpswd.Font = new System.Drawing.Font("Lato Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkforgotpswd.Location = new System.Drawing.Point(359, 386);
+            this.lnkforgotpswd.Name = "lnkforgotpswd";
+            this.lnkforgotpswd.Size = new System.Drawing.Size(113, 14);
+            this.lnkforgotpswd.TabIndex = 13;
+            this.lnkforgotpswd.TabStop = true;
+            this.lnkforgotpswd.Text = "Forgot your password?";
+            this.lnkforgotpswd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkforgotpswd_LinkClicked);
+            // 
+            // pnlforgotpswd
+            // 
+            this.pnlforgotpswd.Location = new System.Drawing.Point(141, 71);
+            this.pnlforgotpswd.Name = "pnlforgotpswd";
+            this.pnlforgotpswd.Size = new System.Drawing.Size(654, 380);
+            this.pnlforgotpswd.TabIndex = 14;
             // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 452);
+            this.Controls.Add(this.pnlforgotpswd);
+            this.Controls.Add(this.lnkforgotpswd);
             this.Controls.Add(this.chkremember);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblWachtwoord);
@@ -197,7 +219,6 @@
         private System.Windows.Forms.Panel panelBorder;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
@@ -205,5 +226,8 @@
         private System.Windows.Forms.Label lblWachtwoord;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.CheckBox chkremember;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.LinkLabel lnkforgotpswd;
+        private System.Windows.Forms.Panel pnlforgotpswd;
     }
 }

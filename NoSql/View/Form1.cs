@@ -18,7 +18,7 @@ namespace View
         {
             InitializeComponent();
         }
-
+        
         private void btnDash_Click(object sender, EventArgs e)
         {
             panelDash.BringToFront();
@@ -27,6 +27,7 @@ namespace View
         private void btnIncident_Click(object sender, EventArgs e)
         {
             panelIncident.BringToFront();
+            pnlCreateIncident.Hide();
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -37,9 +38,9 @@ namespace View
         private void Form1_Load(object sender, EventArgs e)
         {
             panelDash.BringToFront();
-
-            //method to show the donout graphs on Dashboard
-            ShowDashboardCharts();
+            ConSession session = new ConSession();
+            string name = session.GetUsername();
+            lblUser.Text = name;
         }
 
         private void btnLogOff_Click(object sender, EventArgs e)
@@ -49,16 +50,44 @@ namespace View
             login.Show();
         }
 
-        private void ShowDashboardCharts()
+        private void btnCreateIncident_Click(object sender, EventArgs e)
         {
-            ConDashboard dashboard = new ConDashboard();
-            double completedTotal = dashboard.CalculateFinishedIncidents();
-            ChartUnresInc.ChartAreas[0].Area3DStyle.Rotation = -90;
-            ChartUnresInc.ChartAreas[0].Area3DStyle.Enable3D = true;
-            ChartUnresInc.Series["s1"].IsValueShownAsLabel = true;
-            ChartUnresInc.Series["s1"].IsVisibleInLegend = false;
-            ChartUnresInc.Series["s1"].Points.AddXY("1", completedTotal.ToString());
-            ChartUnresInc.Series["s1"].Points.AddXY("2", (100 - completedTotal).ToString());
+            pnlCreateIncident.Show();
+            getIncidentUser();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            pnlCreateIncident.Hide();
+        }
+
+        private void getIncidentUser()
+        {
+            //clear comboBox before filling it
+            cmbUser.Items.Clear();
+            ConIncident Incident = new ConIncident();
+            //get the users
+            List<String> users = Incident.getUsers();
+            foreach (string item in users)
+            {
+                //fill the comboBox
+                cmbUser.Items.Add(item);
+            }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            ConIncident Incident = new ConIncident();
+            bool check = Incident.checkFields(cmbDateTime.Text, txtSubject.Text, cmbType.Text, cmbUser.Text, cmbPriority.Text, cmbDeadline.Text, txtDescription.Text);
+            if (check == false)
+            {
+                lblFalse.Text = "Please fill in al the information";
+            }
+            else
+            {
+                Incident.insertIncident(cmbDateTime.Text, txtSubject.Text, cmbType.Text, cmbUser.Text, cmbPriority.Text, cmbDeadline.Text, txtDescription.Text);
+                pnlCreateIncident.Hide();
+            }
         }
     }
 }

@@ -37,7 +37,7 @@ namespace DAL
         public T LoadRecordByName<T>(string table, string name)
         {
             var collection = db.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq("Name", name);
+            var filter = Builders<T>.Filter.Eq("FirstName", name);
 
             return collection.Find(filter).First();
         }
