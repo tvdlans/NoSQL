@@ -45,20 +45,16 @@
             this.btnDash = new System.Windows.Forms.Button();
             this.btnIncident = new System.Windows.Forms.Button();
             this.panelDash = new System.Windows.Forms.Panel();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartRight = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ChartUnresInc = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDashboardTitle = new System.Windows.Forms.Label();
             this.panelUser = new System.Windows.Forms.Panel();
-            this.panelIncident = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTitleIndicent = new System.Windows.Forms.Label();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelDash.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartUnresInc)).BeginInit();
-            this.panelIncident.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -186,30 +182,30 @@
             // 
             // panelDash
             // 
-            this.panelDash.Controls.Add(this.chart2);
+            this.panelDash.Controls.Add(this.chartRight);
             this.panelDash.Controls.Add(this.ChartUnresInc);
-            this.panelDash.Controls.Add(this.label2);
+            this.panelDash.Controls.Add(this.lblDashboardTitle);
             this.panelDash.Location = new System.Drawing.Point(232, 135);
             this.panelDash.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelDash.Name = "panelDash";
             this.panelDash.Size = new System.Drawing.Size(937, 527);
             this.panelDash.TabIndex = 1;
             // 
-            // chart2
+            // chartRight
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
+            this.chartRight.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(571, 87);
-            this.chart2.Name = "chart2";
+            this.chartRight.Legends.Add(legend1);
+            this.chartRight.Location = new System.Drawing.Point(571, 87);
+            this.chartRight.Name = "chartRight";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(300, 300);
-            this.chart2.TabIndex = 2;
-            this.chart2.Text = "chart2";
+            this.chartRight.Series.Add(series1);
+            this.chartRight.Size = new System.Drawing.Size(300, 300);
+            this.chartRight.TabIndex = 2;
+            this.chartRight.Text = "chartRight";
             // 
             // ChartUnresInc
             // 
@@ -232,15 +228,15 @@
             this.ChartUnresInc.TabIndex = 1;
             this.ChartUnresInc.Text = "chart1";
             // 
-            // label2
+            // lblDashboardTitle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lato Light", 30F);
-            this.label2.Location = new System.Drawing.Point(341, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 61);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Dashboard";
+            this.lblDashboardTitle.AutoSize = true;
+            this.lblDashboardTitle.Font = new System.Drawing.Font("Lato Light", 30F);
+            this.lblDashboardTitle.Location = new System.Drawing.Point(341, 0);
+            this.lblDashboardTitle.Name = "lblDashboardTitle";
+            this.lblDashboardTitle.Size = new System.Drawing.Size(263, 61);
+            this.lblDashboardTitle.TabIndex = 0;
+            this.lblDashboardTitle.Text = "Dashboard";
             // 
             // panelUser
             // 
@@ -250,43 +246,12 @@
             this.panelUser.Size = new System.Drawing.Size(937, 527);
             this.panelUser.TabIndex = 5;
             // 
-            // panelIncident
-            // 
-            this.panelIncident.Controls.Add(this.label1);
-            this.panelIncident.Controls.Add(this.lblTitleIndicent);
-            this.panelIncident.Location = new System.Drawing.Point(232, 135);
-            this.panelIncident.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panelIncident.Name = "panelIncident";
-            this.panelIncident.Size = new System.Drawing.Size(937, 543);
-            this.panelIncident.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(423, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Incident";
-            // 
-            // lblTitleIndicent
-            // 
-            this.lblTitleIndicent.AutoSize = true;
-            this.lblTitleIndicent.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleIndicent.Location = new System.Drawing.Point(271, 23);
-            this.lblTitleIndicent.Name = "lblTitleIndicent";
-            this.lblTitleIndicent.Size = new System.Drawing.Size(355, 42);
-            this.lblTitleIndicent.TabIndex = 0;
-            this.lblTitleIndicent.Text = "Incident Mangement";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1193, 695);
             this.Controls.Add(this.panelDash);
-            this.Controls.Add(this.panelIncident);
             this.Controls.Add(this.panelUser);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBorder);
@@ -300,10 +265,8 @@
             this.panelMenu.ResumeLayout(false);
             this.panelDash.ResumeLayout(false);
             this.panelDash.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartUnresInc)).EndInit();
-            this.panelIncident.ResumeLayout(false);
-            this.panelIncident.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -321,11 +284,8 @@
         private System.Windows.Forms.Button btnIncident;
         private System.Windows.Forms.Panel panelDash;
         private System.Windows.Forms.Panel panelUser;
-        private System.Windows.Forms.Panel panelIncident;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblTitleIndicent;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.Label lblDashboardTitle;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRight;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartUnresInc;
     }
 }
