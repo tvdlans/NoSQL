@@ -62,9 +62,9 @@
             this.lblIncidentTitle = new System.Windows.Forms.Label();
             this.listIncidents = new System.Windows.Forms.ListBox();
             this.btnCreateIncident = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblTitleIndicent = new System.Windows.Forms.Label();
+            this.txtFilter = new System.Windows.Forms.TextBox();
             this.lblUnderText = new System.Windows.Forms.Label();
+            this.lblTitleIndicent = new System.Windows.Forms.Label();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -216,7 +216,7 @@
             this.panelIncident.Controls.Add(this.pnlCreateIncident);
             this.panelIncident.Controls.Add(this.listIncidents);
             this.panelIncident.Controls.Add(this.btnCreateIncident);
-            this.panelIncident.Controls.Add(this.textBox1);
+            this.panelIncident.Controls.Add(this.txtFilter);
             this.panelIncident.Controls.Add(this.lblUnderText);
             this.panelIncident.Controls.Add(this.lblTitleIndicent);
             this.panelIncident.Location = new System.Drawing.Point(254, 162);
@@ -475,22 +475,12 @@
             this.btnCreateIncident.UseVisualStyleBackColor = false;
             this.btnCreateIncident.Click += new System.EventHandler(this.btnCreateIncident_Click);
             // 
-            // textBox1
+            // txtFilter
             // 
-            this.textBox1.Location = new System.Drawing.Point(61, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 26);
-            this.textBox1.TabIndex = 1;
-            // 
-            // lblTitleIndicent
-            // 
-            this.lblTitleIndicent.AutoSize = true;
-            this.lblTitleIndicent.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleIndicent.Location = new System.Drawing.Point(351, 26);
-            this.lblTitleIndicent.Name = "lblTitleIndicent";
-            this.lblTitleIndicent.Size = new System.Drawing.Size(410, 54);
-            this.lblTitleIndicent.TabIndex = 0;
-            this.lblTitleIndicent.Text = "Incident Mangement";
+            this.txtFilter.Location = new System.Drawing.Point(61, 130);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(188, 26);
+            this.txtFilter.TabIndex = 1;
             // 
             // lblUnderText
             // 
@@ -501,6 +491,16 @@
             this.lblUnderText.Size = new System.Drawing.Size(86, 30);
             this.lblUnderText.TabIndex = 0;
             this.lblUnderText.Text = "Tickets";
+            // 
+            // lblTitleIndicent
+            // 
+            this.lblTitleIndicent.AutoSize = true;
+            this.lblTitleIndicent.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleIndicent.Location = new System.Drawing.Point(351, 26);
+            this.lblTitleIndicent.Name = "lblTitleIndicent";
+            this.lblTitleIndicent.Size = new System.Drawing.Size(410, 54);
+            this.lblTitleIndicent.TabIndex = 0;
+            this.lblTitleIndicent.Text = "Incident Mangement";
             // 
             // Form1
             // 
@@ -544,7 +544,7 @@
         private System.Windows.Forms.Panel panelIncident;
         private System.Windows.Forms.Label lblTitleIndicent;
         private System.Windows.Forms.Button btnCreateIncident;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.ListBox listIncidents;
         private System.Windows.Forms.Panel pnlCreateIncident;
         private System.Windows.Forms.Label lblIncidentTitle;
