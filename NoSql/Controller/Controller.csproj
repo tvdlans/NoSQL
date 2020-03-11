@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConIncident.cs" />
+    <Compile Include="ConSendMail.cs" />
     <Compile Include="ConSession.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Program.cs" />

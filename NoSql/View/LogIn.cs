@@ -67,5 +67,19 @@ namespace View
         {
             pnlforgotpswd.Show();
         }
+
+        private void btnSendMail_Click(object sender, EventArgs e)
+        {
+            ConSendMail conSendMail = new ConSendMail();
+            bool sent = conSendMail.SendMail();
+            if (sent)
+            {
+                MessageBox.Show("Sent");
+            }
+            else
+            {
+                MessageBox.Show("There was an error sending a email");
+            }
+        }
     }
 }

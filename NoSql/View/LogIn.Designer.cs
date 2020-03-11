@@ -42,8 +42,10 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.lnkforgotpswd = new System.Windows.Forms.LinkLabel();
             this.pnlforgotpswd = new System.Windows.Forms.Panel();
+            this.btnSendMail = new System.Windows.Forms.Button();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlforgotpswd.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -181,10 +183,21 @@
             // 
             // pnlforgotpswd
             // 
+            this.pnlforgotpswd.Controls.Add(this.btnSendMail);
             this.pnlforgotpswd.Location = new System.Drawing.Point(141, 71);
             this.pnlforgotpswd.Name = "pnlforgotpswd";
             this.pnlforgotpswd.Size = new System.Drawing.Size(654, 380);
             this.pnlforgotpswd.TabIndex = 14;
+            // 
+            // btnSendMail
+            // 
+            this.btnSendMail.Location = new System.Drawing.Point(221, 181);
+            this.btnSendMail.Name = "btnSendMail";
+            this.btnSendMail.Size = new System.Drawing.Size(75, 23);
+            this.btnSendMail.TabIndex = 0;
+            this.btnSendMail.Text = "button1";
+            this.btnSendMail.UseVisualStyleBackColor = true;
+            this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);
             // 
             // LogIn
             // 
@@ -209,6 +222,7 @@
             this.panelBorder.ResumeLayout(false);
             this.panelBorder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlforgotpswd.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +243,6 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.LinkLabel lnkforgotpswd;
         private System.Windows.Forms.Panel pnlforgotpswd;
+        private System.Windows.Forms.Button btnSendMail;
     }
 }
