@@ -8,7 +8,7 @@ namespace Controller
 {
     public enum Role
     {
-        endUser,
+        Employee,
         serviceDeskEmployee
     }
 }

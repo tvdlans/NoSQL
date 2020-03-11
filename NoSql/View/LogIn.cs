@@ -52,6 +52,7 @@ namespace View
 
         private void LogIn_Load(object sender, EventArgs e)
         {
+            pnlforgotpswd.Hide();
             Login login = new Login();
             login.connect();
             if (Properties.Settings.Default.Name != string.Empty)
@@ -60,6 +61,11 @@ namespace View
                 txtEmail.Text = Properties.Settings.Default.Name;
                 txtPassword.Text = Properties.Settings.Default.Password;
             }
+        }
+
+        private void lnkforgotpswd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlforgotpswd.Show();
         }
     }
 }

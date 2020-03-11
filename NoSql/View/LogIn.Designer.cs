@@ -41,6 +41,7 @@
             this.chkremember = new System.Windows.Forms.CheckBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.lnkforgotpswd = new System.Windows.Forms.LinkLabel();
+            this.pnlforgotpswd = new System.Windows.Forms.Panel();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -176,12 +177,21 @@
             this.lnkforgotpswd.TabIndex = 13;
             this.lnkforgotpswd.TabStop = true;
             this.lnkforgotpswd.Text = "Forgot your password?";
+            this.lnkforgotpswd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkforgotpswd_LinkClicked);
+            // 
+            // pnlforgotpswd
+            // 
+            this.pnlforgotpswd.Location = new System.Drawing.Point(141, 71);
+            this.pnlforgotpswd.Name = "pnlforgotpswd";
+            this.pnlforgotpswd.Size = new System.Drawing.Size(654, 380);
+            this.pnlforgotpswd.TabIndex = 14;
             // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 452);
+            this.Controls.Add(this.pnlforgotpswd);
             this.Controls.Add(this.lnkforgotpswd);
             this.Controls.Add(this.chkremember);
             this.Controls.Add(this.btnLogin);
@@ -218,5 +228,6 @@
         private System.Windows.Forms.CheckBox chkremember;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.LinkLabel lnkforgotpswd;
+        private System.Windows.Forms.Panel pnlforgotpswd;
     }
 }
