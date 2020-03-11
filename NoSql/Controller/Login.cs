@@ -33,10 +33,27 @@ namespace Controller
                 }
                 else if (user.GetElement("Password").Value.ToString() == password)
                 {
+                    AddSession(user.GetElement("FirstName").Value.ToString(), user.GetElement("Email").Value.ToString());
                     return true;
                 }
                 else return false;
             }
+        }
+
+        public void AddSession(string name, string email)
+        {
+            LoginInfo.UserName = name;
+            LoginInfo.Email = email;
+        }
+
+        public string GetUsername()
+        {
+            return LoginInfo.UserName;
+        }
+
+        public string GetEmail()
+        {
+            return LoginInfo.Email;
         }
     }
 }

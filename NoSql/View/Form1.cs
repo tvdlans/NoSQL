@@ -17,7 +17,7 @@ namespace View
         {
             InitializeComponent();
         }
-
+        
         private void btnDash_Click(object sender, EventArgs e)
         {
             panelDash.BringToFront();
@@ -37,6 +37,9 @@ namespace View
         private void Form1_Load(object sender, EventArgs e)
         {
             panelDash.BringToFront();
+            Login login = new Login();
+            string name = login.GetUsername();
+            lblUser.Text = name;
         }
 
         private void btnLogOff_Click(object sender, EventArgs e)

@@ -49,7 +49,7 @@ namespace View
                 MessageBox.Show("Email and Password combination is not valid");
             }
         }
-
+           
         private void LogIn_Load(object sender, EventArgs e)
         {
             pnlforgotpswd.Hide();
