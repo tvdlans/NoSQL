@@ -42,6 +42,7 @@
             this.panelUser = new System.Windows.Forms.Panel();
             this.panelIncident = new System.Windows.Forms.Panel();
             this.pnlCreateIncident = new System.Windows.Forms.Panel();
+            this.lblFalse = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -58,13 +59,12 @@
             this.lblTypeIncident = new System.Windows.Forms.Label();
             this.lblSubject = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lblIncidentTitle = new System.Windows.Forms.Label();
+            this.listIncidents = new System.Windows.Forms.ListBox();
             this.btnCreateIncident = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblTitleIndicent = new System.Windows.Forms.Label();
-            this.lblFalse = new System.Windows.Forms.Label();
+            this.lblUnderText = new System.Windows.Forms.Label();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -214,10 +214,10 @@
             // panelIncident
             // 
             this.panelIncident.Controls.Add(this.pnlCreateIncident);
-            this.panelIncident.Controls.Add(this.listBox1);
+            this.panelIncident.Controls.Add(this.listIncidents);
             this.panelIncident.Controls.Add(this.btnCreateIncident);
             this.panelIncident.Controls.Add(this.textBox1);
-            this.panelIncident.Controls.Add(this.label1);
+            this.panelIncident.Controls.Add(this.lblUnderText);
             this.panelIncident.Controls.Add(this.lblTitleIndicent);
             this.panelIncident.Location = new System.Drawing.Point(254, 162);
             this.panelIncident.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -244,11 +244,21 @@
             this.pnlCreateIncident.Controls.Add(this.lblTypeIncident);
             this.pnlCreateIncident.Controls.Add(this.lblSubject);
             this.pnlCreateIncident.Controls.Add(this.lblDateTime);
-            this.pnlCreateIncident.Controls.Add(this.label2);
+            this.pnlCreateIncident.Controls.Add(this.lblIncidentTitle);
             this.pnlCreateIncident.Location = new System.Drawing.Point(0, 0);
             this.pnlCreateIncident.Name = "pnlCreateIncident";
             this.pnlCreateIncident.Size = new System.Drawing.Size(1075, 678);
             this.pnlCreateIncident.TabIndex = 4;
+            // 
+            // lblFalse
+            // 
+            this.lblFalse.AutoSize = true;
+            this.lblFalse.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFalse.ForeColor = System.Drawing.Color.Red;
+            this.lblFalse.Location = new System.Drawing.Point(424, 80);
+            this.lblFalse.Name = "lblFalse";
+            this.lblFalse.Size = new System.Drawing.Size(0, 20);
+            this.lblFalse.TabIndex = 17;
             // 
             // btnCancel
             // 
@@ -432,24 +442,24 @@
             this.lblDateTime.TabIndex = 1;
             this.lblDateTime.Text = "Date/time reported";
             // 
-            // label2
+            // lblIncidentTitle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(433, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(260, 54);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Add Incident";
+            this.lblIncidentTitle.AutoSize = true;
+            this.lblIncidentTitle.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIncidentTitle.Location = new System.Drawing.Point(433, 26);
+            this.lblIncidentTitle.Name = "lblIncidentTitle";
+            this.lblIncidentTitle.Size = new System.Drawing.Size(260, 54);
+            this.lblIncidentTitle.TabIndex = 0;
+            this.lblIncidentTitle.Text = "Add Incident";
             // 
-            // listBox1
+            // listIncidents
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(61, 221);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(961, 404);
-            this.listBox1.TabIndex = 3;
+            this.listIncidents.FormattingEnabled = true;
+            this.listIncidents.ItemHeight = 20;
+            this.listIncidents.Location = new System.Drawing.Point(61, 221);
+            this.listIncidents.Name = "listIncidents";
+            this.listIncidents.Size = new System.Drawing.Size(961, 404);
+            this.listIncidents.TabIndex = 3;
             // 
             // btnCreateIncident
             // 
@@ -472,16 +482,6 @@
             this.textBox1.Size = new System.Drawing.Size(188, 26);
             this.textBox1.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(501, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tickets";
-            // 
             // lblTitleIndicent
             // 
             this.lblTitleIndicent.AutoSize = true;
@@ -492,15 +492,15 @@
             this.lblTitleIndicent.TabIndex = 0;
             this.lblTitleIndicent.Text = "Incident Mangement";
             // 
-            // lblFalse
+            // lblUnderText
             // 
-            this.lblFalse.AutoSize = true;
-            this.lblFalse.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFalse.ForeColor = System.Drawing.Color.Red;
-            this.lblFalse.Location = new System.Drawing.Point(424, 80);
-            this.lblFalse.Name = "lblFalse";
-            this.lblFalse.Size = new System.Drawing.Size(0, 20);
-            this.lblFalse.TabIndex = 17;
+            this.lblUnderText.AutoSize = true;
+            this.lblUnderText.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnderText.Location = new System.Drawing.Point(501, 81);
+            this.lblUnderText.Name = "lblUnderText";
+            this.lblUnderText.Size = new System.Drawing.Size(86, 30);
+            this.lblUnderText.TabIndex = 0;
+            this.lblUnderText.Text = "Tickets";
             // 
             // Form1
             // 
@@ -542,13 +542,12 @@
         private System.Windows.Forms.Panel panelDash;
         private System.Windows.Forms.Panel panelUser;
         private System.Windows.Forms.Panel panelIncident;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitleIndicent;
         private System.Windows.Forms.Button btnCreateIncident;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listIncidents;
         private System.Windows.Forms.Panel pnlCreateIncident;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblIncidentTitle;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.TextBox txtDescription;
@@ -566,6 +565,7 @@
         private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Label lblFalse;
+        private System.Windows.Forms.Label lblUnderText;
     }
 }
 
