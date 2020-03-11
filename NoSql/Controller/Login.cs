@@ -11,6 +11,11 @@ namespace Controller
 {
     public class Login
     {
+        public void connect()
+        {
+            Conn db = Conn.GetInstance("TGGDB");
+        }
+
         public Boolean CheckUser(string email, string password)
         {
             Conn db = Conn.GetInstance("TGGDB");
@@ -28,10 +33,15 @@ namespace Controller
                 }
                 else if (user.GetElement("Password").Value.ToString() == password)
                 {
+                    ConSession session = new ConSession();
+                    session.AddSession(user.GetElement("FirstName").Value.ToString(), user.GetElement("Email").Value.ToString());
                     return true;
                 }
                 else return false;
             }
         }
+
+
+ 
     }
 }

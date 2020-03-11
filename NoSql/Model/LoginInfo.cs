@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller
+namespace Model
 {
-    public enum Role
+    public static class LoginInfo
     {
-        Employee,
-        serviceDeskEmployee
+        public static string UserName;
+        public static string Email;
     }
 }

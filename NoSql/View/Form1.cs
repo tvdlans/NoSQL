@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controller;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace View
@@ -17,7 +18,7 @@ namespace View
         {
             InitializeComponent();
         }
-
+        
         private void btnDash_Click(object sender, EventArgs e)
         {
             panelDash.BringToFront();
@@ -26,6 +27,7 @@ namespace View
         private void btnIncident_Click(object sender, EventArgs e)
         {
             panelIncident.BringToFront();
+            pnlCreateIncident.Hide();
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -36,6 +38,9 @@ namespace View
         private void Form1_Load(object sender, EventArgs e)
         {
             panelDash.BringToFront();
+            ConSession session = new ConSession();
+            string name = session.GetUsername();
+            lblUser.Text = name;
 
             //method to show the donout graphs on Dashboard
             ShowDashboardCharts();
@@ -46,6 +51,46 @@ namespace View
             this.Hide();
             LogIn login = new LogIn();
             login.Show();
+        }
+
+        private void btnCreateIncident_Click(object sender, EventArgs e)
+        {
+            pnlCreateIncident.Show();
+            getIncidentUser();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            pnlCreateIncident.Hide();
+        }
+
+        private void getIncidentUser()
+        {
+            //clear comboBox before filling it
+            cmbUser.Items.Clear();
+            ConIncident Incident = new ConIncident();
+            //get the users
+            List<String> users = Incident.getUsers();
+            foreach (string item in users)
+            {
+                //fill the comboBox
+                cmbUser.Items.Add(item);
+            }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            ConIncident Incident = new ConIncident();
+            bool check = Incident.checkFields(cmbDateTime.Text, txtSubject.Text, cmbType.Text, cmbUser.Text, cmbPriority.Text, cmbDeadline.Text, txtDescription.Text);
+            if (check == false)
+            {
+                lblFalse.Text = "Please fill in al the information";
+            }
+            else
+            {
+                Incident.insertIncident(cmbDateTime.Text, txtSubject.Text, cmbType.Text, cmbUser.Text, cmbPriority.Text, cmbDeadline.Text, txtDescription.Text);
+                pnlCreateIncident.Hide();
+            }
         }
 
         private void ShowDashboardCharts()
