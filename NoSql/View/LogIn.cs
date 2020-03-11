@@ -50,18 +50,22 @@ namespace View
             }
         }
 
-        private void chkremember_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
         private void LogIn_Load(object sender, EventArgs e)
         {
+            pnlforgotpswd.Hide();
+            Login login = new Login();
+            login.connect();
             if (Properties.Settings.Default.Name != string.Empty)
             {
                 chkremember.Checked = true;
                 txtEmail.Text = Properties.Settings.Default.Name;
                 txtPassword.Text = Properties.Settings.Default.Password;
             }
+        }
+
+        private void lnkforgotpswd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlforgotpswd.Show();
         }
     }
 }

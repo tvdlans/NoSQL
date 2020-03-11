@@ -11,6 +11,11 @@ namespace Controller
 {
     public class Login
     {
+        public void connect()
+        {
+            Conn db = Conn.GetInstance("TGGDB");
+        }
+
         public Boolean CheckUser(string email, string password)
         {
             Conn db = Conn.GetInstance("TGGDB");
