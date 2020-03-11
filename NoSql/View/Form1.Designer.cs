@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelBorder = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -45,20 +45,20 @@
             this.btnDash = new System.Windows.Forms.Button();
             this.btnIncident = new System.Windows.Forms.Button();
             this.panelDash = new System.Windows.Forms.Panel();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ChartUnresInc = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label2 = new System.Windows.Forms.Label();
             this.panelUser = new System.Windows.Forms.Panel();
             this.panelIncident = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitleIndicent = new System.Windows.Forms.Label();
-            this.ChartUnresInc = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelDash.SuspendLayout();
-            this.panelIncident.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ChartUnresInc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartUnresInc)).BeginInit();
+            this.panelIncident.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -195,6 +195,43 @@
             this.panelDash.Size = new System.Drawing.Size(937, 527);
             this.panelDash.TabIndex = 1;
             // 
+            // chart2
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(571, 87);
+            this.chart2.Name = "chart2";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(300, 300);
+            this.chart2.TabIndex = 2;
+            this.chart2.Text = "chart2";
+            // 
+            // ChartUnresInc
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.ChartUnresInc.ChartAreas.Add(chartArea2);
+            this.ChartUnresInc.Cursor = System.Windows.Forms.Cursors.Default;
+            legend2.Name = "Legend1";
+            this.ChartUnresInc.Legends.Add(legend2);
+            this.ChartUnresInc.Location = new System.Drawing.Point(92, 87);
+            this.ChartUnresInc.Name = "ChartUnresInc";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Color = System.Drawing.Color.Transparent;
+            series2.CustomProperties = "DoughnutRadius=40";
+            series2.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.Legend = "Legend1";
+            series2.Name = "s1";
+            this.ChartUnresInc.Series.Add(series2);
+            this.ChartUnresInc.Size = new System.Drawing.Size(300, 300);
+            this.ChartUnresInc.TabIndex = 1;
+            this.ChartUnresInc.Text = "chart1";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -243,44 +280,6 @@
             this.lblTitleIndicent.TabIndex = 0;
             this.lblTitleIndicent.Text = "Incident Mangement";
             // 
-            // ChartUnresInc
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.ChartUnresInc.ChartAreas.Add(chartArea2);
-            this.ChartUnresInc.Cursor = System.Windows.Forms.Cursors.Default;
-            legend2.Name = "Legend1";
-            this.ChartUnresInc.Legends.Add(legend2);
-            this.ChartUnresInc.Location = new System.Drawing.Point(92, 87);
-            this.ChartUnresInc.Name = "ChartUnresInc";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Color = System.Drawing.Color.Transparent;
-            series2.CustomProperties = "DoughnutRadius=40";
-            series2.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series2.Legend = "Legend1";
-            series2.Name = "s1";
-            series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
-            this.ChartUnresInc.Series.Add(series2);
-            this.ChartUnresInc.Size = new System.Drawing.Size(300, 300);
-            this.ChartUnresInc.TabIndex = 1;
-            this.ChartUnresInc.Text = "chart1";
-            // 
-            // chart2
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(571, 87);
-            this.chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(300, 300);
-            this.chart2.TabIndex = 2;
-            this.chart2.Text = "chart2";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -301,10 +300,10 @@
             this.panelMenu.ResumeLayout(false);
             this.panelDash.ResumeLayout(false);
             this.panelDash.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartUnresInc)).EndInit();
             this.panelIncident.ResumeLayout(false);
             this.panelIncident.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ChartUnresInc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Controller;
 
 namespace View
 {
@@ -50,13 +51,14 @@ namespace View
 
         private void ShowDashboardCharts()
         {
+            ConDashboard dashboard = new ConDashboard();
+            double completedTotal = dashboard.CalculateFinishedIncidents();
+            ChartUnresInc.ChartAreas[0].Area3DStyle.Rotation = -90;
+            ChartUnresInc.ChartAreas[0].Area3DStyle.Enable3D = true;
             ChartUnresInc.Series["s1"].IsValueShownAsLabel = true;
-
-            //ChartUnresInc.ChartAreas["s1"].Area3DStyle.Rotation = -90;
             ChartUnresInc.Series["s1"].IsVisibleInLegend = false;
-            ChartUnresInc.Series["s1"].Points.AddXY("1", "30");
-            ChartUnresInc.Series["s1"].Points.AddXY("2", "70");
-            //ChartUnresInc.
+            ChartUnresInc.Series["s1"].Points.AddXY("1", completedTotal.ToString());
+            ChartUnresInc.Series["s1"].Points.AddXY("2", (100 - completedTotal).ToString());
         }
     }
 }
