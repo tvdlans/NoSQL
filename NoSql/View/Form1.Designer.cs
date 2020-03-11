@@ -41,29 +41,30 @@
             this.panelDash = new System.Windows.Forms.Panel();
             this.panelUser = new System.Windows.Forms.Panel();
             this.panelIncident = new System.Windows.Forms.Panel();
+            this.pnlCreateIncident = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.cmbDeadline = new System.Windows.Forms.ComboBox();
+            this.cmbPriority = new System.Windows.Forms.ComboBox();
+            this.cmbUser = new System.Windows.Forms.ComboBox();
+            this.cmbType = new System.Windows.Forms.ComboBox();
+            this.txtSubject = new System.Windows.Forms.TextBox();
+            this.cmbDateTime = new System.Windows.Forms.ComboBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblDeadline = new System.Windows.Forms.Label();
+            this.lblPriority = new System.Windows.Forms.Label();
+            this.lblReported = new System.Windows.Forms.Label();
+            this.lblTypeIncident = new System.Windows.Forms.Label();
+            this.lblSubject = new System.Windows.Forms.Label();
+            this.lblDateTime = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnCreateIncident = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitleIndicent = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnCreateIncident = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.pnlCreateIncident = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblDateTime = new System.Windows.Forms.Label();
-            this.lblSubject = new System.Windows.Forms.Label();
-            this.lblTypeIncident = new System.Windows.Forms.Label();
-            this.lblReported = new System.Windows.Forms.Label();
-            this.lblPriority = new System.Windows.Forms.Label();
-            this.lblDeadline = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.cmbDateTime = new System.Windows.Forms.ComboBox();
-            this.txtSubject = new System.Windows.Forms.TextBox();
-            this.cmbType = new System.Windows.Forms.ComboBox();
-            this.cmbUser = new System.Windows.Forms.ComboBox();
-            this.cmbPriority = new System.Windows.Forms.ComboBox();
-            this.cmbDeadline = new System.Windows.Forms.ComboBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.lblFalse = new System.Windows.Forms.Label();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -224,58 +225,9 @@
             this.panelIncident.Size = new System.Drawing.Size(1076, 678);
             this.panelIncident.TabIndex = 6;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(501, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tickets";
-            // 
-            // lblTitleIndicent
-            // 
-            this.lblTitleIndicent.AutoSize = true;
-            this.lblTitleIndicent.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleIndicent.Location = new System.Drawing.Point(351, 26);
-            this.lblTitleIndicent.Name = "lblTitleIndicent";
-            this.lblTitleIndicent.Size = new System.Drawing.Size(410, 54);
-            this.lblTitleIndicent.TabIndex = 0;
-            this.lblTitleIndicent.Text = "Incident Mangement";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(61, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 26);
-            this.textBox1.TabIndex = 1;
-            // 
-            // btnCreateIncident
-            // 
-            this.btnCreateIncident.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
-            this.btnCreateIncident.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateIncident.Font = new System.Drawing.Font("Lato Light", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateIncident.ForeColor = System.Drawing.Color.White;
-            this.btnCreateIncident.Location = new System.Drawing.Point(844, 130);
-            this.btnCreateIncident.Name = "btnCreateIncident";
-            this.btnCreateIncident.Size = new System.Drawing.Size(178, 47);
-            this.btnCreateIncident.TabIndex = 2;
-            this.btnCreateIncident.Text = "Create Incident";
-            this.btnCreateIncident.UseVisualStyleBackColor = false;
-            this.btnCreateIncident.Click += new System.EventHandler(this.btnCreateIncident_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(61, 221);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(961, 404);
-            this.listBox1.TabIndex = 3;
-            // 
             // pnlCreateIncident
             // 
+            this.pnlCreateIncident.Controls.Add(this.lblFalse);
             this.pnlCreateIncident.Controls.Add(this.btnCancel);
             this.pnlCreateIncident.Controls.Add(this.btnConfirm);
             this.pnlCreateIncident.Controls.Add(this.txtDescription);
@@ -298,145 +250,42 @@
             this.pnlCreateIncident.Size = new System.Drawing.Size(1075, 678);
             this.pnlCreateIncident.TabIndex = 4;
             // 
-            // label2
+            // btnCancel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(433, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(260, 54);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Add Incident";
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(428, 591);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(126, 60);
+            this.btnCancel.TabIndex = 16;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // lblDateTime
+            // btnConfirm
             // 
-            this.lblDateTime.AutoSize = true;
-            this.lblDateTime.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateTime.Location = new System.Drawing.Point(268, 107);
-            this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(144, 20);
-            this.lblDateTime.TabIndex = 1;
-            this.lblDateTime.Text = "Date/time reported";
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirm.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.Location = new System.Drawing.Point(567, 591);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(126, 60);
+            this.btnConfirm.TabIndex = 15;
+            this.btnConfirm.Text = "Add Incident";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // lblSubject
+            // txtDescription
             // 
-            this.lblSubject.AutoSize = true;
-            this.lblSubject.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(268, 157);
-            this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(136, 20);
-            this.lblSubject.TabIndex = 2;
-            this.lblSubject.Text = "Subject of incident";
-            // 
-            // lblTypeIncident
-            // 
-            this.lblTypeIncident.AutoSize = true;
-            this.lblTypeIncident.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTypeIncident.Location = new System.Drawing.Point(268, 198);
-            this.lblTypeIncident.Name = "lblTypeIncident";
-            this.lblTypeIncident.Size = new System.Drawing.Size(118, 20);
-            this.lblTypeIncident.TabIndex = 3;
-            this.lblTypeIncident.Text = "Type of incident";
-            // 
-            // lblReported
-            // 
-            this.lblReported.AutoSize = true;
-            this.lblReported.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReported.Location = new System.Drawing.Point(268, 244);
-            this.lblReported.Name = "lblReported";
-            this.lblReported.Size = new System.Drawing.Size(131, 20);
-            this.lblReported.TabIndex = 4;
-            this.lblReported.Text = "Reported By User";
-            // 
-            // lblPriority
-            // 
-            this.lblPriority.AutoSize = true;
-            this.lblPriority.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPriority.Location = new System.Drawing.Point(268, 294);
-            this.lblPriority.Name = "lblPriority";
-            this.lblPriority.Size = new System.Drawing.Size(62, 20);
-            this.lblPriority.TabIndex = 5;
-            this.lblPriority.Text = "Priority";
-            // 
-            // lblDeadline
-            // 
-            this.lblDeadline.AutoSize = true;
-            this.lblDeadline.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeadline.Location = new System.Drawing.Point(268, 342);
-            this.lblDeadline.Name = "lblDeadline";
-            this.lblDeadline.Size = new System.Drawing.Size(71, 20);
-            this.lblDeadline.TabIndex = 6;
-            this.lblDeadline.Text = "Deadline";
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(268, 390);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(90, 20);
-            this.lblDescription.TabIndex = 7;
-            this.lblDescription.Text = "Description";
-            // 
-            // cmbDateTime
-            // 
-            this.cmbDateTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDateTime.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDateTime.FormattingEnabled = true;
-            this.cmbDateTime.Items.AddRange(new object[] {
-            "Morning",
-            "Afternoon",
-            "Evening"});
-            this.cmbDateTime.Location = new System.Drawing.Point(428, 107);
-            this.cmbDateTime.Name = "cmbDateTime";
-            this.cmbDateTime.Size = new System.Drawing.Size(265, 28);
-            this.cmbDateTime.TabIndex = 8;
-            // 
-            // txtSubject
-            // 
-            this.txtSubject.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubject.Location = new System.Drawing.Point(428, 157);
-            this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(265, 27);
-            this.txtSubject.TabIndex = 9;
-            // 
-            // cmbType
-            // 
-            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbType.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbType.FormattingEnabled = true;
-            this.cmbType.Items.AddRange(new object[] {
-            "Hardware",
-            "Software",
-            "Service"});
-            this.cmbType.Location = new System.Drawing.Point(428, 198);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(265, 28);
-            this.cmbType.TabIndex = 10;
-            // 
-            // cmbUser
-            // 
-            this.cmbUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUser.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbUser.FormattingEnabled = true;
-            this.cmbUser.Location = new System.Drawing.Point(428, 244);
-            this.cmbUser.Name = "cmbUser";
-            this.cmbUser.Size = new System.Drawing.Size(265, 28);
-            this.cmbUser.TabIndex = 11;
-            // 
-            // cmbPriority
-            // 
-            this.cmbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPriority.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPriority.FormattingEnabled = true;
-            this.cmbPriority.Items.AddRange(new object[] {
-            "Normal",
-            "Low",
-            "High"});
-            this.cmbPriority.Location = new System.Drawing.Point(428, 294);
-            this.cmbPriority.Name = "cmbPriority";
-            this.cmbPriority.Size = new System.Drawing.Size(265, 28);
-            this.cmbPriority.TabIndex = 12;
+            this.txtDescription.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(428, 390);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(265, 166);
+            this.txtDescription.TabIndex = 14;
             // 
             // cmbDeadline
             // 
@@ -453,41 +302,205 @@
             this.cmbDeadline.Size = new System.Drawing.Size(265, 28);
             this.cmbDeadline.TabIndex = 13;
             // 
-            // txtDescription
+            // cmbPriority
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(428, 390);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(265, 166);
-            this.txtDescription.TabIndex = 14;
+            this.cmbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPriority.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPriority.FormattingEnabled = true;
+            this.cmbPriority.Items.AddRange(new object[] {
+            "Normal",
+            "Low",
+            "High"});
+            this.cmbPriority.Location = new System.Drawing.Point(428, 294);
+            this.cmbPriority.Name = "cmbPriority";
+            this.cmbPriority.Size = new System.Drawing.Size(265, 28);
+            this.cmbPriority.TabIndex = 12;
             // 
-            // btnConfirm
+            // cmbUser
             // 
-            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
-            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(567, 591);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(126, 60);
-            this.btnConfirm.TabIndex = 15;
-            this.btnConfirm.Text = "Add Incident";
-            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.cmbUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUser.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUser.FormattingEnabled = true;
+            this.cmbUser.Location = new System.Drawing.Point(428, 244);
+            this.cmbUser.Name = "cmbUser";
+            this.cmbUser.Size = new System.Drawing.Size(265, 28);
+            this.cmbUser.TabIndex = 11;
             // 
-            // btnCancel
+            // cmbType
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(428, 591);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(126, 60);
-            this.btnCancel.TabIndex = 16;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbType.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Hardware",
+            "Software",
+            "Service"});
+            this.cmbType.Location = new System.Drawing.Point(428, 198);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(265, 28);
+            this.cmbType.TabIndex = 10;
+            // 
+            // txtSubject
+            // 
+            this.txtSubject.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubject.Location = new System.Drawing.Point(428, 157);
+            this.txtSubject.Name = "txtSubject";
+            this.txtSubject.Size = new System.Drawing.Size(265, 27);
+            this.txtSubject.TabIndex = 9;
+            // 
+            // cmbDateTime
+            // 
+            this.cmbDateTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDateTime.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDateTime.FormattingEnabled = true;
+            this.cmbDateTime.Items.AddRange(new object[] {
+            "Morning",
+            "Afternoon",
+            "Evening"});
+            this.cmbDateTime.Location = new System.Drawing.Point(428, 107);
+            this.cmbDateTime.Name = "cmbDateTime";
+            this.cmbDateTime.Size = new System.Drawing.Size(265, 28);
+            this.cmbDateTime.TabIndex = 8;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(268, 390);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(90, 20);
+            this.lblDescription.TabIndex = 7;
+            this.lblDescription.Text = "Description";
+            // 
+            // lblDeadline
+            // 
+            this.lblDeadline.AutoSize = true;
+            this.lblDeadline.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeadline.Location = new System.Drawing.Point(268, 342);
+            this.lblDeadline.Name = "lblDeadline";
+            this.lblDeadline.Size = new System.Drawing.Size(71, 20);
+            this.lblDeadline.TabIndex = 6;
+            this.lblDeadline.Text = "Deadline";
+            // 
+            // lblPriority
+            // 
+            this.lblPriority.AutoSize = true;
+            this.lblPriority.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPriority.Location = new System.Drawing.Point(268, 294);
+            this.lblPriority.Name = "lblPriority";
+            this.lblPriority.Size = new System.Drawing.Size(62, 20);
+            this.lblPriority.TabIndex = 5;
+            this.lblPriority.Text = "Priority";
+            // 
+            // lblReported
+            // 
+            this.lblReported.AutoSize = true;
+            this.lblReported.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReported.Location = new System.Drawing.Point(268, 244);
+            this.lblReported.Name = "lblReported";
+            this.lblReported.Size = new System.Drawing.Size(131, 20);
+            this.lblReported.TabIndex = 4;
+            this.lblReported.Text = "Reported By User";
+            // 
+            // lblTypeIncident
+            // 
+            this.lblTypeIncident.AutoSize = true;
+            this.lblTypeIncident.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTypeIncident.Location = new System.Drawing.Point(268, 198);
+            this.lblTypeIncident.Name = "lblTypeIncident";
+            this.lblTypeIncident.Size = new System.Drawing.Size(118, 20);
+            this.lblTypeIncident.TabIndex = 3;
+            this.lblTypeIncident.Text = "Type of incident";
+            // 
+            // lblSubject
+            // 
+            this.lblSubject.AutoSize = true;
+            this.lblSubject.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubject.Location = new System.Drawing.Point(268, 157);
+            this.lblSubject.Name = "lblSubject";
+            this.lblSubject.Size = new System.Drawing.Size(136, 20);
+            this.lblSubject.TabIndex = 2;
+            this.lblSubject.Text = "Subject of incident";
+            // 
+            // lblDateTime
+            // 
+            this.lblDateTime.AutoSize = true;
+            this.lblDateTime.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateTime.Location = new System.Drawing.Point(268, 107);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(144, 20);
+            this.lblDateTime.TabIndex = 1;
+            this.lblDateTime.Text = "Date/time reported";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(433, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(260, 54);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Add Incident";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(61, 221);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(961, 404);
+            this.listBox1.TabIndex = 3;
+            // 
+            // btnCreateIncident
+            // 
+            this.btnCreateIncident.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
+            this.btnCreateIncident.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateIncident.Font = new System.Drawing.Font("Lato Light", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateIncident.ForeColor = System.Drawing.Color.White;
+            this.btnCreateIncident.Location = new System.Drawing.Point(844, 130);
+            this.btnCreateIncident.Name = "btnCreateIncident";
+            this.btnCreateIncident.Size = new System.Drawing.Size(178, 47);
+            this.btnCreateIncident.TabIndex = 2;
+            this.btnCreateIncident.Text = "Create Incident";
+            this.btnCreateIncident.UseVisualStyleBackColor = false;
+            this.btnCreateIncident.Click += new System.EventHandler(this.btnCreateIncident_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(61, 130);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(188, 26);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(501, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tickets";
+            // 
+            // lblTitleIndicent
+            // 
+            this.lblTitleIndicent.AutoSize = true;
+            this.lblTitleIndicent.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleIndicent.Location = new System.Drawing.Point(351, 26);
+            this.lblTitleIndicent.Name = "lblTitleIndicent";
+            this.lblTitleIndicent.Size = new System.Drawing.Size(410, 54);
+            this.lblTitleIndicent.TabIndex = 0;
+            this.lblTitleIndicent.Text = "Incident Mangement";
+            // 
+            // lblFalse
+            // 
+            this.lblFalse.AutoSize = true;
+            this.lblFalse.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFalse.ForeColor = System.Drawing.Color.Red;
+            this.lblFalse.Location = new System.Drawing.Point(424, 80);
+            this.lblFalse.Name = "lblFalse";
+            this.lblFalse.Size = new System.Drawing.Size(0, 20);
+            this.lblFalse.TabIndex = 17;
             // 
             // Form1
             // 
@@ -552,6 +565,7 @@
         private System.Windows.Forms.Label lblTypeIncident;
         private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.Label lblDateTime;
+        private System.Windows.Forms.Label lblFalse;
     }
 }
 

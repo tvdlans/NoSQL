@@ -70,5 +70,19 @@ namespace View
                 cmbUser.Items.Add(item);
             }
         }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            ConIncident Incident = new ConIncident();
+            bool check = Incident.checkFields(cmbDateTime.Text, txtSubject.Text, cmbType.Text, cmbUser.Text, cmbPriority.Text, cmbDeadline.Text, txtDescription.Text);
+            if (check == false)
+            {
+                lblFalse.Text = "Please fill in al the information";
+            }
+            else
+            {
+                Incident.insertIncident(cmbDateTime.Text, txtSubject.Text, cmbType.Text, cmbUser.Text, cmbPriority.Text, cmbDeadline.Text, txtDescription.Text);
+            }
+        }
     }
 }
