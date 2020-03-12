@@ -91,7 +91,7 @@
             this.lblSubject = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblIncidentTitle = new System.Windows.Forms.Label();
-            this.listIncidents = new System.Windows.Forms.ListBox();
+            this.listIncidents = new System.Windows.Forms.ListView();
             this.btnCreateIncident = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.lblUnderText = new System.Windows.Forms.Label();
