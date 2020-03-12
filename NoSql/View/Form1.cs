@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
+using Model;
 
 namespace View
 {
     public partial class Form1 : Form
     {
+        List<ModIncident> incidentsList = new List<ModIncident>();
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +29,27 @@ namespace View
         {
             panelIncident.BringToFront();
             pnlCreateIncident.Hide();
+            getAllIncidents();
+        }
+
+        private void getAllIncidents()
+        {
+            //First clear the listview
+            listIncidents.Items.Clear();
+            ConIncident incident = new ConIncident();
+            //Get all the incidents
+            List<ModIncident> incidents = incident.getIncidents();
+            int id = 1;
+            foreach (ModIncident item in incidents)
+            {
+                ModIncident mod = new ModIncident { ID = id,Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline= item.Deadline, Status= item.Status, TypeOfIncident= item.TypeOfIncident };
+                ListViewItem list = new ListViewItem(new [] { id.ToString(), item.Subject, item.Name,item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(),item.TypeOfIncident });
+                //Fill the Masterlist
+                incidentsList.Add(mod);
+                //Fill the listview
+                listIncidents.Items.Add(list);
+                id++;
+            }
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -77,6 +100,7 @@ namespace View
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             ConIncident Incident = new ConIncident();
+            //check if all the fields are filled
             bool check = Incident.checkFields(cmbDateTime.Text, txtSubject.Text, cmbType.Text, cmbUser.Text, cmbPriority.Text, cmbDeadline.Text, txtDescription.Text);
             if (check == false)
             {
@@ -84,8 +108,30 @@ namespace View
             }
             else
             {
+                //insert incident into database
                 Incident.insertIncident(cmbDateTime.Text, txtSubject.Text, cmbType.Text, cmbUser.Text, cmbPriority.Text, cmbDeadline.Text, txtDescription.Text);
                 pnlCreateIncident.Hide();
+            }
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            searchData(txtFilter.Text);
+        }
+        
+        private void searchData(string text)
+        {
+            //clear the listview
+            listIncidents.Items.Clear();
+            foreach (ModIncident row in incidentsList)
+            {
+                //check if the list containts the searched text
+                if (row.ID.ToString().ToLower().Contains(text.ToLower()) || row.Name.ToLower().Contains(text.ToLower()) || row.Subject.ToLower().Contains(text.ToLower()) || row.Status.ToString().ToLower().Contains(text.ToLower()) || row.TypeOfIncident.ToLower().Contains(text.ToLower()) || row.Date.ToString().ToLower().Contains(text.ToLower()) || row.Deadline.ToString().ToLower().Contains(text.ToLower()))
+                {
+                    //make new listview
+                    ListViewItem list = new ListViewItem(new[] { row.ID.ToString(), row.Subject, row.Name, row.Date.Date.ToString("d"), row.Deadline.Date.ToString("d"), row.Status.ToString(), row.TypeOfIncident });
+                    listIncidents.Items.Add(list);
+                }
             }
         }
     }

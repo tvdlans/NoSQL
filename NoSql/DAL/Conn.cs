@@ -42,6 +42,14 @@ namespace DAL
             return collection.Find(filter).First();
         }
 
+        public T LoadRecordById<T>(string table, ObjectId id)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq("_id", id);
+
+            return collection.Find(filter).First();
+        }
+
         public T LoadRecordByEmail<T>(string table, string email)
         { 
             try
