@@ -28,7 +28,6 @@ namespace Controller
                 var user = db.LoadRecordByEmail<BsonDocument>("Users", email);
                 if (user == null)
                 {
-                    Console.WriteLine("huh");
                     return false;
                 }
                 else if (user.GetElement("Password").Value.ToString() == password)
@@ -41,7 +40,12 @@ namespace Controller
             }
         }
 
-
+        public BsonDocument CheckUserExists(string inputEmail)
+        {
+            Conn db = Conn.GetInstance("TGGDB");
+            var user = db.LoadRecordByEmail<BsonDocument>("Users", inputEmail);
+            return user;
+        }
  
     }
 }

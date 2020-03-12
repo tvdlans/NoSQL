@@ -9,20 +9,26 @@ namespace Controller
 {
     public class ConSendMail
     {
-        public Boolean SendMail()
+        public Boolean SendMail(string email, string name, int code)
         {
             try
             {
                 MailMessage mail = new MailMessage();
+                mail.IsBodyHtml = true;
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("tompinguin@gmail.com");
-                mail.To.Add("tvdlans01@gmail.com");
-                mail.Subject = "Test Mail";
-                mail.Body = "This is for testing SMTP mail from GMAIL";
+                mail.From = new MailAddress("nosqlgroep1@gmail.com");
+                mail.To.Add(email);
+                mail.Subject = "Password reset";
+                mail.Body = "Dear "+name+", <br />" +
+                            "You have requested to change your password <br />" +
+                            "your code is <b>" + code.ToString() + "<b>. <br />" +
+                            "Fill in this this code in the applictation to reset your password <br />" +
+                            "<br />" +
+                            "With kind regards the Garden Groep";
 
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("tompinguin@gmail.com", "tompinguin2001");
+                SmtpServer.Credentials = new System.Net.NetworkCredential("nosqlgroep1@gmail.com", "Welkom1234");
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);

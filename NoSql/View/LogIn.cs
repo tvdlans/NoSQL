@@ -13,6 +13,7 @@ namespace View
 {
     public partial class LogIn : Form
     {
+        public int code;
         public LogIn()
         {
             InitializeComponent();
@@ -53,6 +54,9 @@ namespace View
         private void LogIn_Load(object sender, EventArgs e)
         {
             pnlforgotpswd.Hide();
+            pnlCode.Hide();
+            pnlNewPswd.Hide();
+
             Login login = new Login();
             login.connect();
             if (Properties.Settings.Default.Name != string.Empty)
@@ -70,15 +74,67 @@ namespace View
 
         private void btnSendMail_Click(object sender, EventArgs e)
         {
-            ConSendMail conSendMail = new ConSendMail();
-            bool sent = conSendMail.SendMail();
-            if (sent)
+            string email = txtEmailForgotPswd.Text;
+
+            Login login = new Login();
+            var user = login.CheckUserExists(email);
+
+            if (user == null)
             {
-                MessageBox.Show("Sent");
+                MessageBox.Show("This is not a known email address");
             }
             else
             {
-                MessageBox.Show("There was an error sending a email");
+                ConSendMail conSendMail = new ConSendMail();
+                Random random = new Random();
+                code = random.Next(1000, 10000);
+
+                string name = user.GetElement("FirstName").Value.ToString();
+                bool sent = conSendMail.SendMail(email, name, code);
+                if (sent)
+                {
+                    MessageBox.Show("an email has been sent");
+                    pnlforgotpswd.Hide();
+                    pnlCode.Show();
+                }
+                else
+                {
+                    MessageBox.Show("There was an error sending a email");
+                }
+            }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            int userCode = int.Parse(txtCode.Text);
+            if (userCode == code)
+            {
+                pnlCode.Hide();
+                pnlNewPswd.Show();
+            }
+            else
+            {
+                MessageBox.Show("This code is wrong");
+                txtCode.Text = "";
+            }
+        }
+
+        private void btnSubmitNewPswd_Click(object sender, EventArgs e)
+        {
+            string password = txtNewPswd.Text;
+            string rptPassword = txtRepeatPswd.Text;
+
+            if (string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(rptPassword))
+            {
+                MessageBox.Show("Fields can't be empty");
+            }
+            else if (password != rptPassword)
+            {
+                MessageBox.Show("Passwords do not match");
+            }
+            else
+            {
+
             }
         }
     }
