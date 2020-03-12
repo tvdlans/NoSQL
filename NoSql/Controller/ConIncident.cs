@@ -30,6 +30,33 @@ namespace Controller
             }
             return users;
         }
+        public List<ModIncident> getIncidents()
+        {
+            //get the incidents from the database
+            var incidentList = db.LoadRecords<BsonDocument>("Incidents");
+            
+            
+            List<ModIncident> incidents = new List<ModIncident>();
+            //List<BsonDocument> resultList = new List<BsonDocument>();
+            foreach (var item in incidentList)
+            {
+                ObjectId id = item.GetElement("EmployeeID").Value.AsObjectId;
+                var user = db.LoadRecordById<BsonDocument>("Users", id);
+                ModIncident incident = new ModIncident()
+                {
+                    Name = user.GetElement("FirstName").Value.ToString(),
+                    Subject = item.GetElement("Subject").Value.ToString(),
+                    Status = item.GetElement("Status").Value.AsInt32,
+                    Resolved = item.GetElement("Resolved").Value.AsBoolean,
+                    Date = item.GetElement("Date").Value.AsDateTime,
+                    Deadline = item.GetElement("Deadline").Value.AsDateTime,
+                    TypeOfIncident = item.GetElement("TypeOfIncident").Value.ToString(),
+                };
+                incidents.Add(incident);
+            }
+            //var resultList = incidentList.ToList();
+            return incidents;
+        }
         public void insertIncident(string reported, string subject, string type, string user, string priority, string deadline, string description)
         {
             ConSession session = new ConSession();
