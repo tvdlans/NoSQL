@@ -13,6 +13,7 @@ namespace View
 {
     public partial class LogIn : Form
     {
+        public string email;
         public int code;
         public LogIn()
         {
@@ -22,7 +23,7 @@ namespace View
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Login login = new Login(); 
-            string email = txtEmail.Text;
+            email = txtEmail.Text;
             string password = txtPassword.Text;
             Boolean passwordIsTrue =  login.CheckUser(email, password);
 
@@ -74,7 +75,7 @@ namespace View
 
         private void btnSendMail_Click(object sender, EventArgs e)
         {
-            string email = txtEmailForgotPswd.Text;
+            email = txtEmailForgotPswd.Text;
 
             Login login = new Login();
             var user = login.CheckUserExists(email);
@@ -134,7 +135,12 @@ namespace View
             }
             else
             {
-
+                Login login = new Login();
+                login.ConUpdatePassword(email, password);
+                pnlforgotpswd.Hide();
+                pnlCode.Hide();
+                pnlNewPswd.Hide();
+                MessageBox.Show("Password updated");
             }
         }
     }

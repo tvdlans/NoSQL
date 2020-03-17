@@ -47,5 +47,10 @@ namespace Controller
             return user;
         }
  
+        public void ConUpdatePassword(string email, string newPassword)
+        {
+            Conn db = Conn.GetInstance("TGGDB");
+            db.UpdatePassword<BsonDocument>("Users", email, newPassword);
+        }
     }
 }
