@@ -187,7 +187,7 @@
             this.DashDgInc.RowTemplate.Height = 24;
             this.DashDgInc.Size = new System.Drawing.Size(1515, 495);
             this.DashDgInc.TabIndex = 9;
-            this.DashDgInc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DashDgInc_CellContentClick);
+            //this.DashDgInc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DashDgInc_CellContentClick);
             // 
             // ID
             // 
