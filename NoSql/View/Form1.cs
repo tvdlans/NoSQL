@@ -28,6 +28,7 @@ namespace View
             panelDash.Hide();
             panelIncident.Hide();
             panelUser.Hide();
+            
             panel.Show();
         }
 
@@ -44,7 +45,6 @@ namespace View
 
         private void btnIncident_Click(object sender, EventArgs e)
         {
-            panelIncident.BringToFront();
             CloseAllPanelsExcept(panelIncident);
             pnlCreateIncident.Hide();
             pnlUpgrade.Hide();
