@@ -30,6 +30,22 @@ namespace Controller
             }
             return users;
         }
+
+        public void UpgradeStatus(int status, string id)
+        {
+            db.UpgradeStatusIncidents(status, id);
+        }
+
+        public void SetComment(string tabel,string comment,string id)
+        {
+            var documnt = new BsonDocument
+            {
+                {"IncidentID",ObjectId.Parse(id)},
+                {"Comment",comment}
+            };
+            db.InsertRecord(tabel, documnt);
+        }
+
         public List<ModIncident> getIncidents()
         {
             //get the incidents from the database
@@ -51,7 +67,8 @@ namespace Controller
                     Date = item.GetElement("Date").Value.AsDateTime,
                     Deadline = item.GetElement("Deadline").Value.AsDateTime,
                     TypeOfIncident = item.GetElement("TypeOfIncident").Value.ToString(),
-                    Description = item.GetElement("Description").Value.ToString()
+                    Description = item.GetElement("Description").Value.ToString(),
+                    Id = item.GetElement("_id").Value.AsObjectId
                 };
                 incidents.Add(incident);
             }
