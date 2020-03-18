@@ -65,6 +65,15 @@ namespace DAL
             }
         }
 
+        public void UpdatePassword<BsonDocument>(string table, string email, string newPassword)
+        {
+            var collection = db.GetCollection<BsonDocument>(table);
+            var filter = Builders<BsonDocument>.Filter.Eq("Email", email);
+            var update = Builders<BsonDocument>.Update.Set("Password", newPassword);
+
+            collection.UpdateOne(filter, update);
+        }
+
         public void InsertRecord<T>(string table, T record)
         {
             var collection = db.GetCollection<T>(table);
