@@ -51,10 +51,10 @@ namespace Controller
                     Date = item.GetElement("Date").Value.AsDateTime,
                     Deadline = item.GetElement("Deadline").Value.AsDateTime,
                     TypeOfIncident = item.GetElement("TypeOfIncident").Value.ToString(),
+                    Description = item.GetElement("Description").Value.ToString()
                 };
                 incidents.Add(incident);
             }
-            //var resultList = incidentList.ToList();
             return incidents;
         }
         public void insertIncident(string reported, string subject, string type, string user, string priority, string deadline, string description)

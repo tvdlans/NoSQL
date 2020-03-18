@@ -41,17 +41,6 @@
             this.panelDash = new System.Windows.Forms.Panel();
             this.panelUser = new System.Windows.Forms.Panel();
             this.panelIncident = new System.Windows.Forms.Panel();
-            this.listIncidents = new System.Windows.Forms.ListView();
-            this.clmID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmSubject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmUser = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmEndDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnCreateIncident = new System.Windows.Forms.Button();
-            this.txtFilter = new System.Windows.Forms.TextBox();
-            this.lblUnderText = new System.Windows.Forms.Label();
-            this.lblTitleIndicent = new System.Windows.Forms.Label();
             this.pnlCreateIncident = new System.Windows.Forms.Panel();
             this.lblFalse = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -71,7 +60,19 @@
             this.lblSubject = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblIncidentTitle = new System.Windows.Forms.Label();
+            this.listIncidents = new System.Windows.Forms.ListView();
+            this.clmID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmSubject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmUser = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmEndDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnCreateIncident = new System.Windows.Forms.Button();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.lblUnderText = new System.Windows.Forms.Label();
+            this.lblTitleIndicent = new System.Windows.Forms.Label();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -231,101 +232,6 @@
             this.panelIncident.Name = "panelIncident";
             this.panelIncident.Size = new System.Drawing.Size(1076, 678);
             this.panelIncident.TabIndex = 6;
-            // 
-            // listIncidents
-            // 
-            this.listIncidents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clmID,
-            this.clmSubject,
-            this.clmUser,
-            this.clmDate,
-            this.clmEndDate,
-            this.clmStatus,
-            this.clmType});
-            this.listIncidents.GridLines = true;
-            this.listIncidents.HideSelection = false;
-            this.listIncidents.Location = new System.Drawing.Point(62, 189);
-            this.listIncidents.Name = "listIncidents";
-            this.listIncidents.Size = new System.Drawing.Size(960, 346);
-            this.listIncidents.TabIndex = 4;
-            this.listIncidents.UseCompatibleStateImageBehavior = false;
-            this.listIncidents.View = System.Windows.Forms.View.Details;
-            // 
-            // clmID
-            // 
-            this.clmID.Text = "ID";
-            // 
-            // clmSubject
-            // 
-            this.clmSubject.Text = "Subject";
-            this.clmSubject.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmSubject.Width = 200;
-            // 
-            // clmUser
-            // 
-            this.clmUser.Text = "User";
-            this.clmUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmUser.Width = 100;
-            // 
-            // clmDate
-            // 
-            this.clmDate.Text = "Date";
-            this.clmDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmDate.Width = 100;
-            // 
-            // clmEndDate
-            // 
-            this.clmEndDate.Text = "EndDate";
-            this.clmEndDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmEndDate.Width = 100;
-            // 
-            // clmStatus
-            // 
-            this.clmStatus.Text = "Status";
-            this.clmStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmStatus.Width = 100;
-            // 
-            // btnCreateIncident
-            // 
-            this.btnCreateIncident.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
-            this.btnCreateIncident.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateIncident.Font = new System.Drawing.Font("Lato Light", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateIncident.ForeColor = System.Drawing.Color.White;
-            this.btnCreateIncident.Location = new System.Drawing.Point(844, 129);
-            this.btnCreateIncident.Name = "btnCreateIncident";
-            this.btnCreateIncident.Size = new System.Drawing.Size(178, 48);
-            this.btnCreateIncident.TabIndex = 2;
-            this.btnCreateIncident.Text = "Create Incident";
-            this.btnCreateIncident.UseVisualStyleBackColor = false;
-            this.btnCreateIncident.Click += new System.EventHandler(this.btnCreateIncident_Click);
-            // 
-            // txtFilter
-            // 
-            this.txtFilter.Location = new System.Drawing.Point(62, 129);
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(188, 26);
-            this.txtFilter.TabIndex = 1;
-            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
-            // 
-            // lblUnderText
-            // 
-            this.lblUnderText.AutoSize = true;
-            this.lblUnderText.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnderText.Location = new System.Drawing.Point(501, 82);
-            this.lblUnderText.Name = "lblUnderText";
-            this.lblUnderText.Size = new System.Drawing.Size(86, 30);
-            this.lblUnderText.TabIndex = 0;
-            this.lblUnderText.Text = "Tickets";
-            // 
-            // lblTitleIndicent
-            // 
-            this.lblTitleIndicent.AutoSize = true;
-            this.lblTitleIndicent.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleIndicent.Location = new System.Drawing.Point(351, 26);
-            this.lblTitleIndicent.Name = "lblTitleIndicent";
-            this.lblTitleIndicent.Size = new System.Drawing.Size(410, 54);
-            this.lblTitleIndicent.TabIndex = 0;
-            this.lblTitleIndicent.Text = "Incident Mangement";
             // 
             // pnlCreateIncident
             // 
@@ -554,11 +460,114 @@
             this.lblIncidentTitle.TabIndex = 0;
             this.lblIncidentTitle.Text = "Add Incident";
             // 
+            // listIncidents
+            // 
+            this.listIncidents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmID,
+            this.clmSubject,
+            this.clmUser,
+            this.clmDate,
+            this.clmEndDate,
+            this.clmStatus,
+            this.clmType,
+            this.clmDescription});
+            this.listIncidents.GridLines = true;
+            this.listIncidents.HideSelection = false;
+            this.listIncidents.Location = new System.Drawing.Point(62, 189);
+            this.listIncidents.Name = "listIncidents";
+            this.listIncidents.Size = new System.Drawing.Size(960, 346);
+            this.listIncidents.TabIndex = 4;
+            this.listIncidents.UseCompatibleStateImageBehavior = false;
+            this.listIncidents.View = System.Windows.Forms.View.Details;
+            this.listIncidents.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listIncidents_ItemSelectionChanged);
+            // 
+            // clmID
+            // 
+            this.clmID.Text = "ID";
+            // 
+            // clmSubject
+            // 
+            this.clmSubject.Text = "Subject";
+            this.clmSubject.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clmSubject.Width = 200;
+            // 
+            // clmUser
+            // 
+            this.clmUser.Text = "User";
+            this.clmUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clmUser.Width = 100;
+            // 
+            // clmDate
+            // 
+            this.clmDate.Text = "Date";
+            this.clmDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clmDate.Width = 100;
+            // 
+            // clmEndDate
+            // 
+            this.clmEndDate.Text = "EndDate";
+            this.clmEndDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clmEndDate.Width = 100;
+            // 
+            // clmStatus
+            // 
+            this.clmStatus.Text = "Status";
+            this.clmStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clmStatus.Width = 100;
+            // 
             // clmType
             // 
             this.clmType.Text = "Type of incident";
             this.clmType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.clmType.Width = 150;
+            // 
+            // clmDescription
+            // 
+            this.clmDescription.Text = "Description";
+            this.clmDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clmDescription.Width = 150;
+            // 
+            // btnCreateIncident
+            // 
+            this.btnCreateIncident.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
+            this.btnCreateIncident.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateIncident.Font = new System.Drawing.Font("Lato Light", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateIncident.ForeColor = System.Drawing.Color.White;
+            this.btnCreateIncident.Location = new System.Drawing.Point(844, 129);
+            this.btnCreateIncident.Name = "btnCreateIncident";
+            this.btnCreateIncident.Size = new System.Drawing.Size(178, 48);
+            this.btnCreateIncident.TabIndex = 2;
+            this.btnCreateIncident.Text = "Create Incident";
+            this.btnCreateIncident.UseVisualStyleBackColor = false;
+            this.btnCreateIncident.Click += new System.EventHandler(this.btnCreateIncident_Click);
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(62, 129);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(188, 26);
+            this.txtFilter.TabIndex = 1;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
+            // 
+            // lblUnderText
+            // 
+            this.lblUnderText.AutoSize = true;
+            this.lblUnderText.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnderText.Location = new System.Drawing.Point(501, 82);
+            this.lblUnderText.Name = "lblUnderText";
+            this.lblUnderText.Size = new System.Drawing.Size(86, 30);
+            this.lblUnderText.TabIndex = 0;
+            this.lblUnderText.Text = "Tickets";
+            // 
+            // lblTitleIndicent
+            // 
+            this.lblTitleIndicent.AutoSize = true;
+            this.lblTitleIndicent.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleIndicent.Location = new System.Drawing.Point(351, 26);
+            this.lblTitleIndicent.Name = "lblTitleIndicent";
+            this.lblTitleIndicent.Size = new System.Drawing.Size(410, 54);
+            this.lblTitleIndicent.TabIndex = 0;
+            this.lblTitleIndicent.Text = "Incident Mangement";
             // 
             // Form1
             // 
@@ -631,6 +640,7 @@
         private System.Windows.Forms.ColumnHeader clmEndDate;
         private System.Windows.Forms.ColumnHeader clmStatus;
         private System.Windows.Forms.ColumnHeader clmType;
+        private System.Windows.Forms.ColumnHeader clmDescription;
     }
 }
 
