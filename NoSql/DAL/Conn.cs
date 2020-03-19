@@ -44,10 +44,17 @@ namespace DAL
 
         public T LoadRecordById<T>(string table, ObjectId id)
         {
-            var collection = db.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq("_id", id);
+            try
+            {
+                var collection = db.GetCollection<T>(table);
+                var filter = Builders<T>.Filter.Eq("_id", id);
 
-            return collection.Find(filter).First();
+                return collection.Find(filter).First();
+            }
+            catch (Exception)
+            {
+                return default(T);
+            }
         }
 
         public T LoadRecordByEmail<T>(string table, string email)
@@ -74,6 +81,14 @@ namespace DAL
             collection.UpdateOne(filter, update);
         }
 
+        public void UpgradeStatusIncidents(int status,string id)
+        {
+            var collection = db.GetCollection<BsonDocument>("Incidents");
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(id));
+            var update = Builders<BsonDocument>.Update.Set("Status", status);
+
+            collection.UpdateOne(filter, update);
+        }
         public void InsertRecord<T>(string table, T record)
         {
             var collection = db.GetCollection<T>(table);

@@ -33,7 +33,7 @@ namespace Controller
                 else if (user.GetElement("Password").Value.ToString() == password)
                 {
                     ConSession session = new ConSession();
-                    session.AddSession(user.GetElement("FirstName").Value.ToString(), user.GetElement("Email").Value.ToString());
+                    session.AddSession(user.GetElement("FirstName").Value.ToString(), user.GetElement("Email").Value.ToString(),ObjectId.Parse(user.GetElement("_id").Value.ToString()));
                     return true;
                 }
                 else return false;

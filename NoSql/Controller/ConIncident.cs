@@ -30,11 +30,26 @@ namespace Controller
             }
             return users;
         }
+
+        public void UpgradeStatus(int status, string id)
+        {
+            db.UpgradeStatusIncidents(status, id);
+        }
+
+        public void SetComment(string tabel,string comment,string id)
+        {
+            var documnt = new BsonDocument
+            {
+                {"IncidentID",ObjectId.Parse(id)},
+                {"Comment",comment}
+            };
+            db.InsertRecord(tabel, documnt);
+        }
+
         public List<ModIncident> getIncidents()
         {
             //get the incidents from the database
             var incidentList = db.LoadRecords<BsonDocument>("Incidents");
-            
             
             List<ModIncident> incidents = new List<ModIncident>();
             //List<BsonDocument> resultList = new List<BsonDocument>();
@@ -51,11 +66,11 @@ namespace Controller
                     Date = item.GetElement("Date").Value.AsDateTime,
                     Deadline = item.GetElement("Deadline").Value.AsDateTime,
                     TypeOfIncident = item.GetElement("TypeOfIncident").Value.ToString(),
+                    Description = item.GetElement("Description").Value.ToString(),
                     Id = item.GetElement("_id").Value.AsObjectId
                 };
                 incidents.Add(incident);
             }
-            //var resultList = incidentList.ToList();
             return incidents;
         }
         public void insertIncident(string reported, string subject, string type, string user, string priority, string deadline, string description)

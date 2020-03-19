@@ -15,7 +15,9 @@ namespace View
 {
     public partial class Form1 : Form
     {
-        List<ModIncident> incidentsList = new List<ModIncident>();
+        private List<ModIncident> incidentsList = new List<ModIncident>();
+        private static bool selected;
+
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace View
             panelDash.Hide();
             panelIncident.Hide();
             panelUser.Hide();
+            
             panel.Show();
         }
 
@@ -42,9 +45,9 @@ namespace View
 
         private void btnIncident_Click(object sender, EventArgs e)
         {
-            panelIncident.BringToFront();
             CloseAllPanelsExcept(panelIncident);
             pnlCreateIncident.Hide();
+            pnlUpgrade.Hide();
             getAllIncidents();
         }
 
@@ -58,8 +61,8 @@ namespace View
             int id = 1;
             foreach (ModIncident item in incidents)
             {
-                ModIncident mod = new ModIncident { ID = id,Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline= item.Deadline, Status= item.Status, TypeOfIncident= item.TypeOfIncident };
-                ListViewItem list = new ListViewItem(new [] { id.ToString(), item.Subject, item.Name,item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(),item.TypeOfIncident });
+                ModIncident mod = new ModIncident { ID = id,Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline= item.Deadline, Status= item.Status, TypeOfIncident= item.TypeOfIncident, Description = item.Description };
+                ListViewItem list = new ListViewItem(new [] { id.ToString(), item.Subject, item.Name,item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(),item.TypeOfIncident,item.Description,item.Id.ToString() });
                 //Fill the Masterlist
                 incidentsList.Add(mod);
                 //Fill the listview
@@ -211,12 +214,34 @@ namespace View
             foreach (ModIncident row in incidentsList)
             {
                 //check if the list containts the searched text
-                if (row.ID.ToString().ToLower().Contains(text.ToLower()) || row.Name.ToLower().Contains(text.ToLower()) || row.Subject.ToLower().Contains(text.ToLower()) || row.Status.ToString().ToLower().Contains(text.ToLower()) || row.TypeOfIncident.ToLower().Contains(text.ToLower()) || row.Date.ToString().ToLower().Contains(text.ToLower()) || row.Deadline.ToString().ToLower().Contains(text.ToLower()))
+                if (row.Description.ToString().ToLower().Contains(text.ToLower()) || row.ID.ToString().ToLower().Contains(text.ToLower()) || row.Name.ToLower().Contains(text.ToLower()) || row.Subject.ToLower().Contains(text.ToLower()) || row.Status.ToString().ToLower().Contains(text.ToLower()) || row.TypeOfIncident.ToLower().Contains(text.ToLower()) || row.Date.ToString().ToLower().Contains(text.ToLower()) || row.Deadline.ToString().ToLower().Contains(text.ToLower()))
                 {
                     //make new listview
-                    ListViewItem list = new ListViewItem(new[] { row.ID.ToString(), row.Subject, row.Name, row.Date.Date.ToString("d"), row.Deadline.Date.ToString("d"), row.Status.ToString(), row.TypeOfIncident });
+                    ListViewItem list = new ListViewItem(new[] { row.ID.ToString(), row.Subject, row.Name, row.Date.Date.ToString("d"), row.Deadline.Date.ToString("d"), row.Status.ToString(), row.TypeOfIncident,row.Description });
                     listIncidents.Items.Add(list);
                 }
+            }
+        }
+
+        private void listIncidents_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+
+            if (e.IsSelected)
+            {
+                pnlUpgrade.Show();
+                lblUpDate.Text = listIncidents.SelectedItems[0].SubItems[3].Text;
+                lblUpDeadline.Text = listIncidents.SelectedItems[0].SubItems[4].Text;
+                lblUpSubject.Text = listIncidents.SelectedItems[0].SubItems[1].Text;
+                lblUpUser.Text = listIncidents.SelectedItems[0].SubItems[2].Text;
+                lblUpType.Text = listIncidents.SelectedItems[0].SubItems[6].Text;
+                lblUpDescription.Text = listIncidents.SelectedItems[0].SubItems[7].Text;
+                UpDownStatus.Value = decimal.Parse(listIncidents.SelectedItems[0].SubItems[5].Text);
+                lblUpID.Text = listIncidents.SelectedItems[0].SubItems[8].Text;
+                selected = true;
+            }
+            else
+            {
+                selected = false;
             }
         }
         private void IncidentsSolvedByYou(ConDashboard conDashboard)
@@ -234,6 +259,30 @@ namespace View
             ChartIncSolvedByYou.Series["s1"].IsVisibleInLegend = false;
             lblIncSolvedByYou.Text = incidentsByYou[1] + "/" + incidentsByYou[0];
 
+        }
+
+        private void btnUpgradeCancel_Click(object sender, EventArgs e)
+        {
+            pnlUpgrade.Hide();
+        }
+
+        private void btnUpgrade_Click(object sender, EventArgs e)
+        {
+            ConIncident Incident = new ConIncident();
+            //check if the comment is filled
+            if(string.IsNullOrWhiteSpace(txtUpComment.Text))
+            {
+                lblNoComment.Text = "Please enter a comment";
+            }
+            else
+            {
+                //upgrade the status
+                Incident.UpgradeStatus(int.Parse(UpDownStatus.Value.ToString()),lblUpID.Text);
+                //add comment into database
+                Incident.SetComment("Comments",txtUpComment.Text, lblUpID.Text);
+                pnlUpgrade.Hide();
+                getAllIncidents();
+              }
         }
     }
 }
