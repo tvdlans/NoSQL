@@ -50,7 +50,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUser = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnComments = new System.Windows.Forms.Button();
             this.btnLogOff = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
             this.btnDash = new System.Windows.Forms.Button();
@@ -123,8 +122,6 @@
             this.lblUnderText = new System.Windows.Forms.Label();
             this.lblTitleIndicent = new System.Windows.Forms.Label();
             this.pnlBackground = new System.Windows.Forms.Panel();
-            this.pnlComments = new System.Windows.Forms.Panel();
-            this.lblCommentTitle = new System.Windows.Forms.Label();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -137,7 +134,6 @@
             this.pnlUpgrade.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownStatus)).BeginInit();
             this.pnlCreateIncident.SuspendLayout();
-            this.pnlComments.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -188,7 +184,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
-            this.panelMenu.Controls.Add(this.btnComments);
             this.panelMenu.Controls.Add(this.btnLogOff);
             this.panelMenu.Controls.Add(this.btnUser);
             this.panelMenu.Controls.Add(this.btnDash);
@@ -199,21 +194,6 @@
             this.panelMenu.Size = new System.Drawing.Size(202, 768);
             this.panelMenu.TabIndex = 4;
             // 
-            // btnComments
-            // 
-            this.btnComments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(175)))), ((int)(((byte)(45)))));
-            this.btnComments.FlatAppearance.BorderSize = 0;
-            this.btnComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComments.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComments.ForeColor = System.Drawing.Color.White;
-            this.btnComments.Location = new System.Drawing.Point(0, 351);
-            this.btnComments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnComments.Name = "btnComments";
-            this.btnComments.Size = new System.Drawing.Size(202, 75);
-            this.btnComments.TabIndex = 5;
-            this.btnComments.Text = "Comments";
-            this.btnComments.UseVisualStyleBackColor = false;
-            // 
             // btnLogOff
             // 
             this.btnLogOff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(175)))), ((int)(((byte)(45)))));
@@ -221,7 +201,7 @@
             this.btnLogOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOff.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOff.ForeColor = System.Drawing.Color.White;
-            this.btnLogOff.Location = new System.Drawing.Point(-1, 457);
+            this.btnLogOff.Location = new System.Drawing.Point(-1, 348);
             this.btnLogOff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOff.Name = "btnLogOff";
             this.btnLogOff.Size = new System.Drawing.Size(202, 75);
@@ -1128,30 +1108,11 @@
             this.pnlBackground.Size = new System.Drawing.Size(1374, 872);
             this.pnlBackground.TabIndex = 7;
             // 
-            // pnlComments
-            // 
-            this.pnlComments.Controls.Add(this.lblCommentTitle);
-            this.pnlComments.Location = new System.Drawing.Point(252, 160);
-            this.pnlComments.Name = "pnlComments";
-            this.pnlComments.Size = new System.Drawing.Size(1077, 679);
-            this.pnlComments.TabIndex = 31;
-            // 
-            // lblCommentTitle
-            // 
-            this.lblCommentTitle.AutoSize = true;
-            this.lblCommentTitle.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCommentTitle.Location = new System.Drawing.Point(411, 34);
-            this.lblCommentTitle.Name = "lblCommentTitle";
-            this.lblCommentTitle.Size = new System.Drawing.Size(229, 54);
-            this.lblCommentTitle.TabIndex = 1;
-            this.lblCommentTitle.Text = "Comments";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1360, 872);
-            this.Controls.Add(this.pnlComments);
             this.Controls.Add(this.panelIncident);
             this.Controls.Add(this.panelDash);
             this.Controls.Add(this.panelUser);
@@ -1179,8 +1140,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.UpDownStatus)).EndInit();
             this.pnlCreateIncident.ResumeLayout(false);
             this.pnlCreateIncident.PerformLayout();
-            this.pnlComments.ResumeLayout(false);
-            this.pnlComments.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1264,9 +1223,6 @@
         private System.Windows.Forms.NumericUpDown UpDownStatus;
         private System.Windows.Forms.Label lblUpID;
         private System.Windows.Forms.Label lblNoComment;
-        private System.Windows.Forms.Button btnComments;
-        private System.Windows.Forms.Panel pnlComments;
-        private System.Windows.Forms.Label lblCommentTitle;
     }
 }
 

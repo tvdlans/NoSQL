@@ -66,10 +66,10 @@
             this.panelMenu.Controls.Add(this.btnLogOff);
             this.panelMenu.Controls.Add(this.btnUser);
             this.panelMenu.Controls.Add(this.btnDash);
-            this.panelMenu.Location = new System.Drawing.Point(0, 86);
+            this.panelMenu.Location = new System.Drawing.Point(0, 108);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(180, 947);
+            this.panelMenu.Size = new System.Drawing.Size(202, 1184);
             this.panelMenu.TabIndex = 6;
             // 
             // btnLogOff
@@ -79,10 +79,10 @@
             this.btnLogOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOff.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOff.ForeColor = System.Drawing.Color.White;
-            this.btnLogOff.Location = new System.Drawing.Point(0, 201);
+            this.btnLogOff.Location = new System.Drawing.Point(0, 251);
             this.btnLogOff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOff.Name = "btnLogOff";
-            this.btnLogOff.Size = new System.Drawing.Size(180, 60);
+            this.btnLogOff.Size = new System.Drawing.Size(202, 75);
             this.btnLogOff.TabIndex = 4;
             this.btnLogOff.Text = "Log Off";
             this.btnLogOff.UseVisualStyleBackColor = false;
@@ -94,10 +94,10 @@
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUser.ForeColor = System.Drawing.Color.White;
-            this.btnUser.Location = new System.Drawing.Point(0, 112);
+            this.btnUser.Location = new System.Drawing.Point(0, 140);
             this.btnUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(180, 60);
+            this.btnUser.Size = new System.Drawing.Size(202, 75);
             this.btnUser.TabIndex = 2;
             this.btnUser.Text = "Support";
             this.btnUser.UseVisualStyleBackColor = false;
@@ -110,10 +110,10 @@
             this.btnDash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDash.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDash.ForeColor = System.Drawing.Color.White;
-            this.btnDash.Location = new System.Drawing.Point(0, 23);
+            this.btnDash.Location = new System.Drawing.Point(0, 29);
             this.btnDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDash.Name = "btnDash";
-            this.btnDash.Size = new System.Drawing.Size(180, 60);
+            this.btnDash.Size = new System.Drawing.Size(202, 75);
             this.btnDash.TabIndex = 0;
             this.btnDash.Text = "Dashboard";
             this.btnDash.UseVisualStyleBackColor = false;
@@ -128,7 +128,7 @@
             this.panelBorder.Location = new System.Drawing.Point(0, 0);
             this.panelBorder.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panelBorder.Name = "panelBorder";
-            this.panelBorder.Size = new System.Drawing.Size(1926, 86);
+            this.panelBorder.Size = new System.Drawing.Size(2167, 108);
             this.panelBorder.TabIndex = 5;
             // 
             // lblTitle
@@ -136,9 +136,9 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Lato Light", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(130, 30);
+            this.lblTitle.Location = new System.Drawing.Point(146, 38);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(374, 54);
+            this.lblTitle.Size = new System.Drawing.Size(445, 64);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "The Garden Group";
             // 
@@ -147,10 +147,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 86);
+            this.pictureBox1.Size = new System.Drawing.Size(130, 108);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -158,9 +158,9 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.ForeColor = System.Drawing.Color.White;
-            this.lblUser.Location = new System.Drawing.Point(1844, 60);
+            this.lblUser.Location = new System.Drawing.Point(2074, 75);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(46, 17);
+            this.lblUser.Size = new System.Drawing.Size(51, 20);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "label3";
             // 
@@ -178,16 +178,15 @@
             this.Deadline,
             this.Status,
             this.Resolved});
-            this.DashDgInc.Location = new System.Drawing.Point(154, 199);
-            this.DashDgInc.Margin = new System.Windows.Forms.Padding(10);
-            this.DashDgInc.MinimumSize = new System.Drawing.Size(0, 50);
+            this.DashDgInc.Location = new System.Drawing.Point(173, 249);
+            this.DashDgInc.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
+            this.DashDgInc.MinimumSize = new System.Drawing.Size(0, 62);
             this.DashDgInc.Name = "DashDgInc";
             this.DashDgInc.ReadOnly = true;
             this.DashDgInc.RowHeadersWidth = 80;
             this.DashDgInc.RowTemplate.Height = 24;
-            this.DashDgInc.Size = new System.Drawing.Size(1515, 495);
+            this.DashDgInc.Size = new System.Drawing.Size(1704, 619);
             this.DashDgInc.TabIndex = 9;
-            //this.DashDgInc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DashDgInc_CellContentClick);
             // 
             // ID
             // 
@@ -249,8 +248,9 @@
             // 
             this.Background.BackColor = System.Drawing.Color.White;
             this.Background.Location = new System.Drawing.Point(0, 0);
+            this.Background.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(1920, 1080);
+            this.Background.Size = new System.Drawing.Size(2160, 1350);
             this.Background.TabIndex = 8;
             // 
             // PanelDashboard
@@ -259,18 +259,20 @@
             this.PanelDashboard.Controls.Add(this.pnlDashPopup);
             this.PanelDashboard.Controls.Add(this.DashLblTitle);
             this.PanelDashboard.Controls.Add(this.DashDgInc);
-            this.PanelDashboard.Location = new System.Drawing.Point(182, 88);
+            this.PanelDashboard.Location = new System.Drawing.Point(205, 110);
+            this.PanelDashboard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PanelDashboard.Name = "PanelDashboard";
-            this.PanelDashboard.Size = new System.Drawing.Size(1744, 945);
+            this.PanelDashboard.Size = new System.Drawing.Size(1962, 1181);
             this.PanelDashboard.TabIndex = 0;
             // 
             // pnlDashPopup
             // 
             this.pnlDashPopup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDashPopup.Controls.Add(this.pnlDashTitle);
-            this.pnlDashPopup.Location = new System.Drawing.Point(351, 129);
+            this.pnlDashPopup.Location = new System.Drawing.Point(395, 161);
+            this.pnlDashPopup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlDashPopup.Name = "pnlDashPopup";
-            this.pnlDashPopup.Size = new System.Drawing.Size(713, 527);
+            this.pnlDashPopup.Size = new System.Drawing.Size(802, 658);
             this.pnlDashPopup.TabIndex = 10;
             this.pnlDashPopup.Visible = false;
             // 
@@ -279,8 +281,9 @@
             this.pnlDashTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
             this.pnlDashTitle.Controls.Add(this.LblDashPopUpInformation);
             this.pnlDashTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnlDashTitle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlDashTitle.Name = "pnlDashTitle";
-            this.pnlDashTitle.Size = new System.Drawing.Size(713, 102);
+            this.pnlDashTitle.Size = new System.Drawing.Size(802, 128);
             this.pnlDashTitle.TabIndex = 0;
             // 
             // LblDashPopUpInformation
@@ -288,9 +291,9 @@
             this.LblDashPopUpInformation.AutoSize = true;
             this.LblDashPopUpInformation.Font = new System.Drawing.Font("Lato Light", 24F);
             this.LblDashPopUpInformation.ForeColor = System.Drawing.Color.White;
-            this.LblDashPopUpInformation.Location = new System.Drawing.Point(3, 30);
+            this.LblDashPopUpInformation.Location = new System.Drawing.Point(3, 38);
             this.LblDashPopUpInformation.Name = "LblDashPopUpInformation";
-            this.LblDashPopUpInformation.Size = new System.Drawing.Size(366, 49);
+            this.LblDashPopUpInformation.Size = new System.Drawing.Size(433, 59);
             this.LblDashPopUpInformation.TabIndex = 0;
             this.LblDashPopUpInformation.Text = "IncidentInformation";
             this.LblDashPopUpInformation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,22 +302,23 @@
             // 
             this.DashLblTitle.AutoSize = true;
             this.DashLblTitle.Font = new System.Drawing.Font("Lato Light", 30F);
-            this.DashLblTitle.Location = new System.Drawing.Point(743, 47);
+            this.DashLblTitle.Location = new System.Drawing.Point(836, 59);
             this.DashLblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DashLblTitle.Name = "DashLblTitle";
-            this.DashLblTitle.Size = new System.Drawing.Size(263, 61);
+            this.DashLblTitle.Size = new System.Drawing.Size(316, 73);
             this.DashLblTitle.TabIndex = 8;
             this.DashLblTitle.Text = "Dashboard";
             // 
             // Employee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1033);
+            this.ClientSize = new System.Drawing.Size(1924, 1050);
             this.Controls.Add(this.PanelDashboard);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBorder);
             this.Controls.Add(this.Background);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Employee";
             this.Text = "Employee";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

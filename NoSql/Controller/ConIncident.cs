@@ -51,7 +51,6 @@ namespace Controller
             //get the incidents from the database
             var incidentList = db.LoadRecords<BsonDocument>("Incidents");
             
-            
             List<ModIncident> incidents = new List<ModIncident>();
             //List<BsonDocument> resultList = new List<BsonDocument>();
             foreach (var item in incidentList)
