@@ -51,6 +51,7 @@ namespace Controller
                     Date = item.GetElement("Date").Value.AsDateTime,
                     Deadline = item.GetElement("Deadline").Value.AsDateTime,
                     TypeOfIncident = item.GetElement("TypeOfIncident").Value.ToString(),
+                    Id = item.GetElement("_id").Value.AsObjectId
                 };
                 incidents.Add(incident);
             }

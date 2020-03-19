@@ -51,6 +51,7 @@
             this.pnlDashTitle = new System.Windows.Forms.Panel();
             this.LblDashPopUpInformation = new System.Windows.Forms.Label();
             this.DashLblTitle = new System.Windows.Forms.Label();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panelMenu.SuspendLayout();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,6 +59,7 @@
             this.PanelDashboard.SuspendLayout();
             this.pnlDashPopup.SuspendLayout();
             this.pnlDashTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -187,7 +189,7 @@
             this.DashDgInc.RowTemplate.Height = 24;
             this.DashDgInc.Size = new System.Drawing.Size(1515, 495);
             this.DashDgInc.TabIndex = 9;
-            //this.DashDgInc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DashDgInc_CellContentClick);
+            this.DashDgInc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DashDgInc_CellContentClick);
             // 
             // ID
             // 
@@ -286,11 +288,11 @@
             // LblDashPopUpInformation
             // 
             this.LblDashPopUpInformation.AutoSize = true;
-            this.LblDashPopUpInformation.Font = new System.Drawing.Font("Lato Light", 24F);
+            this.LblDashPopUpInformation.Font = new System.Drawing.Font("Lato Light", 18F);
             this.LblDashPopUpInformation.ForeColor = System.Drawing.Color.White;
             this.LblDashPopUpInformation.Location = new System.Drawing.Point(3, 30);
             this.LblDashPopUpInformation.Name = "LblDashPopUpInformation";
-            this.LblDashPopUpInformation.Size = new System.Drawing.Size(366, 49);
+            this.LblDashPopUpInformation.Size = new System.Drawing.Size(273, 37);
             this.LblDashPopUpInformation.TabIndex = 0;
             this.LblDashPopUpInformation.Text = "IncidentInformation";
             this.LblDashPopUpInformation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -305,6 +307,11 @@
             this.DashLblTitle.Size = new System.Drawing.Size(263, 61);
             this.DashLblTitle.TabIndex = 8;
             this.DashLblTitle.Text = "Dashboard";
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // Employee
             // 
@@ -329,6 +336,7 @@
             this.pnlDashPopup.ResumeLayout(false);
             this.pnlDashTitle.ResumeLayout(false);
             this.pnlDashTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -357,5 +365,6 @@
         private System.Windows.Forms.Panel pnlDashPopup;
         private System.Windows.Forms.Panel pnlDashTitle;
         private System.Windows.Forms.Label LblDashPopUpInformation;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }

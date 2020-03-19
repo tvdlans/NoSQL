@@ -51,11 +51,9 @@ namespace View
             DashDgInc.Font = new Font("Lato Light", 12, FontStyle.Regular);
             DashDgInc.RowTemplate.Height = 30;
 
-            int counter = 0;
             foreach (ModIncident item in incidents)
             {
-                counter++;
-                DashDgInc.Rows.Add(counter, item.Subject, item.TypeOfIncident, item.Date.ToString("yyyy/MM/dd"), item.Deadline.ToString("yyyy/MM/dd"), item.Status + "%", item.Resolved);
+                DashDgInc.Rows.Add(item.Id.ToString(), item.Subject, item.TypeOfIncident, item.Date.ToString("yyyy/MM/dd"), item.Deadline.ToString("yyyy/MM/dd"), item.Status + "%", item.Resolved);
             }
 
             foreach (DataGridViewRow row in DashDgInc.Rows)
@@ -71,27 +69,20 @@ namespace View
             }
         }
 
-        //private void DashDgInc_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    // Ignore clicks that are not in our 
-        //    if (e.ColumnIndex == DashDgInc.Columns["ID"].Index && e.RowIndex >= 0)
-        //    {
-        //        pnlDashPopup.Visible = true;
+        private void DashDgInc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            // Ignore clicks that are not in the thing
+            if (e.ColumnIndex == DashDgInc.Columns["ID"].Index && e.RowIndex >= 0)
+            {
+                pnlDashPopup.Visible = true;
 
-        //        string information = "";
+                DAL.LoadRecordById
 
-        //        foreach (DataGridViewRow row in DashDgInc.Rows)
-        //        {
-        //            Console.WriteLine(row.Cells[1].Value.ToString());
-        //            if (row.Cells[1].Value.ToString().Equals(e.ColumnIndex))
-        //            {
-        //                information = row.Cells[2].Value.ToString();
-        //                break;
-        //            }
-        //        }
+                string information = DashDgInc.Rows[e.RowIndex].Cells[1].Value + ""; ;
 
-        //        LblDashPopUpInformation.Text = "Informatie over: " + information;
-        //    }
-        //}
+                LblDashPopUpInformation.Text = "Informatie over: " + information;
+            }
+        }
     }
 }
