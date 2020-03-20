@@ -65,11 +65,20 @@ namespace DAL
                 var filter = Builders<T>.Filter.Eq("Email", email);
 
                 return collection.Find(filter).First();
+
             }
             catch (Exception)
             {
                 return default(T);
             }
+        }
+
+        public List<T> LoadRecordByIncidentId<T>(string table, ObjectId incidentID)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq("IncidentID", incidentID);
+
+            return collection.Find(filter).ToList();
         }
 
         public void UpdatePassword<BsonDocument>(string table, string email, string newPassword)

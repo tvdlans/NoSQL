@@ -146,7 +146,9 @@ namespace View
         {
             ChartUnresInc.Series["s1"].Points.Clear();
             int[] incidentDataFinished = conDashboard.CalculateUsersFinishedIncidents();
-            double solvedIncidentPercentage = (double)incidentDataFinished[1] / (double)incidentDataFinished[0];
+            double solvedIncidentPercentage = 0;
+            if (incidentDataFinished[0] != 0)
+            solvedIncidentPercentage = (double)incidentDataFinished[1] / (double)incidentDataFinished[0];
             ChartUnresInc.Series["s1"].Points.AddXY("", solvedIncidentPercentage);
             ChartUnresInc.Series["s1"].Points.AddXY("", 1 - solvedIncidentPercentage);
             ChartUnresInc.Series["s1"].Points[0].Color = ColorTranslator.FromHtml("#b7f842");

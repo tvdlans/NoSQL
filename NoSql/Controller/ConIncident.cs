@@ -57,14 +57,26 @@ namespace Controller
             {
                 ObjectId id = item.GetElement("EmployeeID").Value.AsObjectId;
                 var user = db.LoadRecordById<BsonDocument>("Users", id);
+
+                string name;
+                try
+                {
+                     name = user.GetElement("FirstName").Value.ToString();
+                }
+                catch
+                {
+                    name = "Unknown";
+                }
+
                 ModIncident incident = new ModIncident()
                 {
-                    Name = user.GetElement("FirstName").Value.ToString(),
+                    Name = name,
                     Subject = item.GetElement("Subject").Value.ToString(),
                     Status = item.GetElement("Status").Value.AsInt32,
                     Resolved = item.GetElement("Resolved").Value.AsBoolean,
                     Date = item.GetElement("Date").Value.AsDateTime,
                     Deadline = item.GetElement("Deadline").Value.AsDateTime,
+                    EmployeeID = item.GetElement("EmployeeID").Value.AsObjectId,
                     TypeOfIncident = item.GetElement("TypeOfIncident").Value.ToString(),
                     Description = item.GetElement("Description").Value.ToString(),
                     Id = item.GetElement("_id").Value.AsObjectId

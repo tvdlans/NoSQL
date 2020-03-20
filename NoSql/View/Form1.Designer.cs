@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title16 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelBorder = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -145,7 +145,7 @@
             this.panelBorder.Location = new System.Drawing.Point(1, 1);
             this.panelBorder.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panelBorder.Name = "panelBorder";
-            this.panelBorder.Size = new System.Drawing.Size(1360, 101);
+            this.panelBorder.Size = new System.Drawing.Size(1209, 81);
             this.panelBorder.TabIndex = 3;
             // 
             // lblTitle
@@ -153,9 +153,9 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Lato Light", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(214, 12);
+            this.lblTitle.Location = new System.Drawing.Point(190, 10);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(445, 64);
+            this.lblTitle.Size = new System.Drawing.Size(374, 54);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "The Garden Group";
             // 
@@ -164,10 +164,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 98);
+            this.pictureBox1.Size = new System.Drawing.Size(137, 78);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -175,9 +175,9 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.ForeColor = System.Drawing.Color.White;
-            this.lblUser.Location = new System.Drawing.Point(1276, 65);
+            this.lblUser.Location = new System.Drawing.Point(1134, 52);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(51, 20);
+            this.lblUser.Size = new System.Drawing.Size(46, 17);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "label3";
             // 
@@ -188,10 +188,10 @@
             this.panelMenu.Controls.Add(this.btnUser);
             this.panelMenu.Controls.Add(this.btnDash);
             this.panelMenu.Controls.Add(this.btnIncident);
-            this.panelMenu.Location = new System.Drawing.Point(2, 105);
+            this.panelMenu.Location = new System.Drawing.Point(2, 84);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(202, 768);
+            this.panelMenu.Size = new System.Drawing.Size(180, 614);
             this.panelMenu.TabIndex = 4;
             // 
             // btnLogOff
@@ -201,10 +201,10 @@
             this.btnLogOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOff.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOff.ForeColor = System.Drawing.Color.White;
-            this.btnLogOff.Location = new System.Drawing.Point(-1, 348);
+            this.btnLogOff.Location = new System.Drawing.Point(-1, 278);
             this.btnLogOff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOff.Name = "btnLogOff";
-            this.btnLogOff.Size = new System.Drawing.Size(202, 75);
+            this.btnLogOff.Size = new System.Drawing.Size(180, 60);
             this.btnLogOff.TabIndex = 4;
             this.btnLogOff.Text = "Log Off";
             this.btnLogOff.UseVisualStyleBackColor = false;
@@ -217,10 +217,10 @@
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUser.ForeColor = System.Drawing.Color.White;
-            this.btnUser.Location = new System.Drawing.Point(0, 246);
+            this.btnUser.Location = new System.Drawing.Point(0, 197);
             this.btnUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(202, 75);
+            this.btnUser.Size = new System.Drawing.Size(180, 60);
             this.btnUser.TabIndex = 2;
             this.btnUser.Text = "User Mangement";
             this.btnUser.UseVisualStyleBackColor = false;
@@ -234,10 +234,10 @@
             this.btnDash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDash.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDash.ForeColor = System.Drawing.Color.White;
-            this.btnDash.Location = new System.Drawing.Point(0, 29);
+            this.btnDash.Location = new System.Drawing.Point(0, 23);
             this.btnDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDash.Name = "btnDash";
-            this.btnDash.Size = new System.Drawing.Size(202, 75);
+            this.btnDash.Size = new System.Drawing.Size(180, 60);
             this.btnDash.TabIndex = 0;
             this.btnDash.Text = "Dashboard";
             this.btnDash.UseVisualStyleBackColor = false;
@@ -250,10 +250,10 @@
             this.btnIncident.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncident.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIncident.ForeColor = System.Drawing.Color.White;
-            this.btnIncident.Location = new System.Drawing.Point(0, 138);
+            this.btnIncident.Location = new System.Drawing.Point(0, 110);
             this.btnIncident.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIncident.Name = "btnIncident";
-            this.btnIncident.Size = new System.Drawing.Size(202, 75);
+            this.btnIncident.Size = new System.Drawing.Size(180, 60);
             this.btnIncident.TabIndex = 1;
             this.btnIncident.Text = "Incident Mangement";
             this.btnIncident.UseVisualStyleBackColor = false;
@@ -272,19 +272,19 @@
             this.panelDash.Controls.Add(this.ChartUnresIncExp);
             this.panelDash.Controls.Add(this.ChartUnresInc);
             this.panelDash.Controls.Add(this.lblDashboardTitle);
-            this.panelDash.Location = new System.Drawing.Point(254, 162);
-            this.panelDash.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelDash.Location = new System.Drawing.Point(226, 130);
+            this.panelDash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelDash.Name = "panelDash";
-            this.panelDash.Size = new System.Drawing.Size(1076, 678);
+            this.panelDash.Size = new System.Drawing.Size(956, 542);
             this.panelDash.TabIndex = 1;
             // 
             // lblIncSolvedByYou
             // 
             this.lblIncSolvedByYou.AutoSize = true;
-            this.lblIncSolvedByYou.Font = new System.Drawing.Font("Lato Light", 15F);
-            this.lblIncSolvedByYou.Location = new System.Drawing.Point(328, 422);
+            this.lblIncSolvedByYou.Font = new System.Drawing.Font("Lato Light", 12F);
+            this.lblIncSolvedByYou.Location = new System.Drawing.Point(419, 450);
             this.lblIncSolvedByYou.Name = "lblIncSolvedByYou";
-            this.lblIncSolvedByYou.Size = new System.Drawing.Size(63, 37);
+            this.lblIncSolvedByYou.Size = new System.Drawing.Size(44, 25);
             this.lblIncSolvedByYou.TabIndex = 10;
             this.lblIncSolvedByYou.Text = "null";
             this.lblIncSolvedByYou.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -293,9 +293,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lato Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(655, 102);
+            this.label1.Location = new System.Drawing.Point(688, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 37);
+            this.label1.Size = new System.Drawing.Size(255, 31);
             this.label1.TabIndex = 9;
             this.label1.Text = "Most Common Words";
             // 
@@ -303,9 +303,9 @@
             // 
             this.lblWordList.AutoSize = true;
             this.lblWordList.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWordList.Location = new System.Drawing.Point(788, 142);
+            this.lblWordList.Location = new System.Drawing.Point(806, 125);
             this.lblWordList.Name = "lblWordList";
-            this.lblWordList.Size = new System.Drawing.Size(135, 30);
+            this.lblWordList.Size = new System.Drawing.Size(114, 25);
             this.lblWordList.TabIndex = 8;
             this.lblWordList.Text = "lblWordList";
             this.lblWordList.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -314,77 +314,77 @@
             // 
             this.ChartIncSolvedByYou.BackColor = System.Drawing.Color.Transparent;
             this.ChartIncSolvedByYou.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.ChartIncSolvedByYou.ChartAreas.Add(chartArea1);
+            chartArea13.Name = "ChartArea1";
+            this.ChartIncSolvedByYou.ChartAreas.Add(chartArea13);
             this.ChartIncSolvedByYou.Cursor = System.Windows.Forms.Cursors.Default;
-            legend1.Name = "Legend1";
-            this.ChartIncSolvedByYou.Legends.Add(legend1);
-            this.ChartIncSolvedByYou.Location = new System.Drawing.Point(240, 306);
-            this.ChartIncSolvedByYou.Margin = new System.Windows.Forms.Padding(4);
+            legend13.Name = "Legend1";
+            this.ChartIncSolvedByYou.Legends.Add(legend13);
+            this.ChartIncSolvedByYou.Location = new System.Drawing.Point(319, 323);
+            this.ChartIncSolvedByYou.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChartIncSolvedByYou.Name = "ChartIncSolvedByYou";
-            series1.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series1.BorderColor = System.Drawing.Color.Transparent;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Color = System.Drawing.Color.Transparent;
-            series1.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
-            series1.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.LabelBackColor = System.Drawing.Color.Transparent;
-            series1.LabelBorderColor = System.Drawing.Color.Transparent;
-            series1.Legend = "Legend1";
-            series1.MarkerBorderColor = System.Drawing.Color.Transparent;
-            series1.Name = "s1";
-            this.ChartIncSolvedByYou.Series.Add(series1);
-            this.ChartIncSolvedByYou.Size = new System.Drawing.Size(238, 195);
+            series13.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series13.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series13.BorderColor = System.Drawing.Color.Transparent;
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series13.Color = System.Drawing.Color.Transparent;
+            series13.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
+            series13.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series13.LabelBackColor = System.Drawing.Color.Transparent;
+            series13.LabelBorderColor = System.Drawing.Color.Transparent;
+            series13.Legend = "Legend1";
+            series13.MarkerBorderColor = System.Drawing.Color.Transparent;
+            series13.Name = "s1";
+            this.ChartIncSolvedByYou.Series.Add(series13);
+            this.ChartIncSolvedByYou.Size = new System.Drawing.Size(248, 216);
             this.ChartIncSolvedByYou.TabIndex = 7;
             this.ChartIncSolvedByYou.Text = "ChartIncSolvedByYou";
-            title1.Font = new System.Drawing.Font("Lato Light", 15F);
-            title1.Name = "Title1";
-            title1.Text = "Total Incidents Solved By You";
-            this.ChartIncSolvedByYou.Titles.Add(title1);
+            title13.Font = new System.Drawing.Font("Lato Light", 15F);
+            title13.Name = "Title1";
+            title13.Text = "Total Incidents Solved By You";
+            this.ChartIncSolvedByYou.Titles.Add(title13);
             // 
             // ChartTypeOfInc
             // 
             this.ChartTypeOfInc.BackColor = System.Drawing.Color.Transparent;
             this.ChartTypeOfInc.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.ChartTypeOfInc.ChartAreas.Add(chartArea2);
+            chartArea14.Name = "ChartArea1";
+            this.ChartTypeOfInc.ChartAreas.Add(chartArea14);
             this.ChartTypeOfInc.Cursor = System.Windows.Forms.Cursors.Default;
-            legend2.Name = "Legend1";
-            this.ChartTypeOfInc.Legends.Add(legend2);
-            this.ChartTypeOfInc.Location = new System.Drawing.Point(240, 108);
-            this.ChartTypeOfInc.Margin = new System.Windows.Forms.Padding(4);
+            legend14.Name = "Legend1";
+            this.ChartTypeOfInc.Legends.Add(legend14);
+            this.ChartTypeOfInc.Location = new System.Drawing.Point(300, 86);
+            this.ChartTypeOfInc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChartTypeOfInc.Name = "ChartTypeOfInc";
-            series2.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series2.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series2.BorderColor = System.Drawing.Color.Transparent;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Color = System.Drawing.Color.Transparent;
-            series2.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
-            series2.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series2.LabelBackColor = System.Drawing.Color.Transparent;
-            series2.LabelBorderColor = System.Drawing.Color.Transparent;
-            series2.Legend = "Legend1";
-            series2.MarkerBorderColor = System.Drawing.Color.Transparent;
-            series2.Name = "s1";
-            this.ChartTypeOfInc.Series.Add(series2);
-            this.ChartTypeOfInc.Size = new System.Drawing.Size(238, 195);
+            series14.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series14.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series14.BorderColor = System.Drawing.Color.Transparent;
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series14.Color = System.Drawing.Color.Transparent;
+            series14.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
+            series14.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series14.LabelBackColor = System.Drawing.Color.Transparent;
+            series14.LabelBorderColor = System.Drawing.Color.Transparent;
+            series14.Legend = "Legend1";
+            series14.MarkerBorderColor = System.Drawing.Color.Transparent;
+            series14.Name = "s1";
+            this.ChartTypeOfInc.Series.Add(series14);
+            this.ChartTypeOfInc.Size = new System.Drawing.Size(306, 239);
             this.ChartTypeOfInc.TabIndex = 6;
             this.ChartTypeOfInc.Text = "chart1";
-            title2.Font = new System.Drawing.Font("Lato Light", 15F);
-            title2.Name = "Title1";
-            title2.Text = "Type Of Incidents";
-            this.ChartTypeOfInc.Titles.Add(title2);
+            title14.Font = new System.Drawing.Font("Lato Light", 15F);
+            title14.Name = "Title1";
+            title14.Text = "Type Of Incidents";
+            this.ChartTypeOfInc.Titles.Add(title14);
             // 
             // lblUnresIncExp
             // 
             this.lblUnresIncExp.AutoSize = true;
-            this.lblUnresIncExp.Font = new System.Drawing.Font("Lato Light", 15F);
-            this.lblUnresIncExp.Location = new System.Drawing.Point(104, 422);
+            this.lblUnresIncExp.Font = new System.Drawing.Font("Lato Light", 12F);
+            this.lblUnresIncExp.Location = new System.Drawing.Point(113, 450);
             this.lblUnresIncExp.Name = "lblUnresIncExp";
-            this.lblUnresIncExp.Size = new System.Drawing.Size(63, 37);
+            this.lblUnresIncExp.Size = new System.Drawing.Size(44, 25);
             this.lblUnresIncExp.TabIndex = 4;
             this.lblUnresIncExp.Text = "null";
             this.lblUnresIncExp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -393,11 +393,11 @@
             // 
             this.lblUnresInc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblUnresInc.AutoSize = true;
-            this.lblUnresInc.Font = new System.Drawing.Font("Lato Light", 15F);
-            this.lblUnresInc.Location = new System.Drawing.Point(171, 371);
+            this.lblUnresInc.Font = new System.Drawing.Font("Lato Light", 12F);
+            this.lblUnresInc.Location = new System.Drawing.Point(113, 215);
             this.lblUnresInc.Margin = new System.Windows.Forms.Padding(0);
             this.lblUnresInc.Name = "lblUnresInc";
-            this.lblUnresInc.Size = new System.Drawing.Size(63, 37);
+            this.lblUnresInc.Size = new System.Drawing.Size(44, 25);
             this.lblUnresInc.TabIndex = 3;
             this.lblUnresInc.Text = "null";
             this.lblUnresInc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -406,87 +406,87 @@
             // 
             this.ChartUnresIncExp.BackColor = System.Drawing.Color.Transparent;
             this.ChartUnresIncExp.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            this.ChartUnresIncExp.ChartAreas.Add(chartArea3);
+            chartArea15.Name = "ChartArea1";
+            this.ChartUnresIncExp.ChartAreas.Add(chartArea15);
             this.ChartUnresIncExp.Cursor = System.Windows.Forms.Cursors.Default;
-            legend3.Name = "Legend1";
-            this.ChartUnresIncExp.Legends.Add(legend3);
-            this.ChartUnresIncExp.Location = new System.Drawing.Point(15, 306);
-            this.ChartUnresIncExp.Margin = new System.Windows.Forms.Padding(4);
+            legend15.Name = "Legend1";
+            this.ChartUnresIncExp.Legends.Add(legend15);
+            this.ChartUnresIncExp.Location = new System.Drawing.Point(13, 323);
+            this.ChartUnresIncExp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChartUnresIncExp.Name = "ChartUnresIncExp";
-            series3.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series3.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series3.BorderColor = System.Drawing.Color.Transparent;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series3.Color = System.Drawing.Color.Transparent;
-            series3.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
-            series3.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series3.LabelBackColor = System.Drawing.Color.Transparent;
-            series3.LabelBorderColor = System.Drawing.Color.Transparent;
-            series3.Legend = "Legend1";
-            series3.MarkerBorderColor = System.Drawing.Color.Transparent;
-            series3.Name = "s1";
-            this.ChartUnresIncExp.Series.Add(series3);
-            this.ChartUnresIncExp.Size = new System.Drawing.Size(238, 195);
+            series15.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series15.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series15.BorderColor = System.Drawing.Color.Transparent;
+            series15.ChartArea = "ChartArea1";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series15.Color = System.Drawing.Color.Transparent;
+            series15.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
+            series15.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series15.LabelBackColor = System.Drawing.Color.Transparent;
+            series15.LabelBorderColor = System.Drawing.Color.Transparent;
+            series15.Legend = "Legend1";
+            series15.MarkerBorderColor = System.Drawing.Color.Transparent;
+            series15.Name = "s1";
+            this.ChartUnresIncExp.Series.Add(series15);
+            this.ChartUnresIncExp.Size = new System.Drawing.Size(248, 216);
             this.ChartUnresIncExp.TabIndex = 5;
             this.ChartUnresIncExp.Text = "chart1";
-            title3.Font = new System.Drawing.Font("Lato Light", 15F);
-            title3.Name = "Title1";
-            title3.Text = "Incidents Past Deadline";
-            this.ChartUnresIncExp.Titles.Add(title3);
+            title15.Font = new System.Drawing.Font("Lato Light", 15F);
+            title15.Name = "Title1";
+            title15.Text = "Incidents Past Deadline";
+            this.ChartUnresIncExp.Titles.Add(title15);
             // 
             // ChartUnresInc
             // 
             this.ChartUnresInc.BackColor = System.Drawing.Color.Transparent;
             this.ChartUnresInc.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea4.Name = "ChartArea1";
-            this.ChartUnresInc.ChartAreas.Add(chartArea4);
+            chartArea16.Name = "ChartArea1";
+            this.ChartUnresInc.ChartAreas.Add(chartArea16);
             this.ChartUnresInc.Cursor = System.Windows.Forms.Cursors.Default;
-            legend4.Name = "Legend1";
-            this.ChartUnresInc.Legends.Add(legend4);
-            this.ChartUnresInc.Location = new System.Drawing.Point(15, 108);
-            this.ChartUnresInc.Margin = new System.Windows.Forms.Padding(4);
+            legend16.Name = "Legend1";
+            this.ChartUnresInc.Legends.Add(legend16);
+            this.ChartUnresInc.Location = new System.Drawing.Point(13, 86);
+            this.ChartUnresInc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChartUnresInc.Name = "ChartUnresInc";
-            series4.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series4.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series4.BorderColor = System.Drawing.Color.Transparent;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Color = System.Drawing.Color.Transparent;
-            series4.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
-            series4.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series4.LabelBackColor = System.Drawing.Color.Transparent;
-            series4.LabelBorderColor = System.Drawing.Color.Transparent;
-            series4.Legend = "Legend1";
-            series4.MarkerBorderColor = System.Drawing.Color.Transparent;
-            series4.Name = "s1";
-            this.ChartUnresInc.Series.Add(series4);
-            this.ChartUnresInc.Size = new System.Drawing.Size(238, 195);
+            series16.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series16.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series16.BorderColor = System.Drawing.Color.Transparent;
+            series16.ChartArea = "ChartArea1";
+            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series16.Color = System.Drawing.Color.Transparent;
+            series16.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
+            series16.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series16.LabelBackColor = System.Drawing.Color.Transparent;
+            series16.LabelBorderColor = System.Drawing.Color.Transparent;
+            series16.Legend = "Legend1";
+            series16.MarkerBorderColor = System.Drawing.Color.Transparent;
+            series16.Name = "s1";
+            this.ChartUnresInc.Series.Add(series16);
+            this.ChartUnresInc.Size = new System.Drawing.Size(248, 216);
             this.ChartUnresInc.TabIndex = 1;
             this.ChartUnresInc.Text = "chart1";
-            title4.Font = new System.Drawing.Font("Lato Light", 15F);
-            title4.Name = "Title1";
-            title4.Text = "Unresolved Incidents";
-            this.ChartUnresInc.Titles.Add(title4);
+            title16.Font = new System.Drawing.Font("Lato Light", 15F);
+            title16.Name = "Title1";
+            title16.Text = "Unresolved Incidents";
+            this.ChartUnresInc.Titles.Add(title16);
             // 
             // lblDashboardTitle
             // 
             this.lblDashboardTitle.AutoSize = true;
             this.lblDashboardTitle.Font = new System.Drawing.Font("Lato Light", 30F);
-            this.lblDashboardTitle.Location = new System.Drawing.Point(342, 0);
+            this.lblDashboardTitle.Location = new System.Drawing.Point(304, 0);
             this.lblDashboardTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDashboardTitle.Name = "lblDashboardTitle";
-            this.lblDashboardTitle.Size = new System.Drawing.Size(316, 73);
+            this.lblDashboardTitle.Size = new System.Drawing.Size(263, 61);
             this.lblDashboardTitle.TabIndex = 0;
             this.lblDashboardTitle.Text = "Dashboard";
             // 
             // panelUser
             // 
-            this.panelUser.Location = new System.Drawing.Point(261, 169);
-            this.panelUser.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panelUser.Location = new System.Drawing.Point(232, 135);
+            this.panelUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelUser.Name = "panelUser";
-            this.panelUser.Size = new System.Drawing.Size(1054, 658);
+            this.panelUser.Size = new System.Drawing.Size(937, 526);
             this.panelUser.TabIndex = 5;
             // 
             // panelIncident
@@ -498,10 +498,10 @@
             this.panelIncident.Controls.Add(this.txtFilter);
             this.panelIncident.Controls.Add(this.lblUnderText);
             this.panelIncident.Controls.Add(this.lblTitleIndicent);
-            this.panelIncident.Location = new System.Drawing.Point(254, 162);
-            this.panelIncident.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panelIncident.Location = new System.Drawing.Point(226, 130);
+            this.panelIncident.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelIncident.Name = "panelIncident";
-            this.panelIncident.Size = new System.Drawing.Size(1076, 678);
+            this.panelIncident.Size = new System.Drawing.Size(956, 542);
             this.panelIncident.TabIndex = 6;
             // 
             // pnlUpgrade
@@ -530,7 +530,7 @@
             this.pnlUpgrade.Location = new System.Drawing.Point(0, 0);
             this.pnlUpgrade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUpgrade.Name = "pnlUpgrade";
-            this.pnlUpgrade.Size = new System.Drawing.Size(1076, 678);
+            this.pnlUpgrade.Size = new System.Drawing.Size(956, 542);
             this.pnlUpgrade.TabIndex = 18;
             // 
             // lblNoComment
@@ -538,26 +538,27 @@
             this.lblNoComment.AutoSize = true;
             this.lblNoComment.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoComment.ForeColor = System.Drawing.Color.Red;
-            this.lblNoComment.Location = new System.Drawing.Point(469, 80);
+            this.lblNoComment.Location = new System.Drawing.Point(417, 64);
             this.lblNoComment.Name = "lblNoComment";
-            this.lblNoComment.Size = new System.Drawing.Size(0, 20);
+            this.lblNoComment.Size = new System.Drawing.Size(0, 17);
             this.lblNoComment.TabIndex = 30;
             // 
             // lblUpID
             // 
             this.lblUpID.AutoSize = true;
             this.lblUpID.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpID.Location = new System.Drawing.Point(586, 331);
+            this.lblUpID.Location = new System.Drawing.Point(521, 265);
             this.lblUpID.Name = "lblUpID";
-            this.lblUpID.Size = new System.Drawing.Size(0, 20);
+            this.lblUpID.Size = new System.Drawing.Size(0, 17);
             this.lblUpID.TabIndex = 29;
             this.lblUpID.Visible = false;
             // 
             // UpDownStatus
             // 
-            this.UpDownStatus.Location = new System.Drawing.Point(473, 385);
+            this.UpDownStatus.Location = new System.Drawing.Point(420, 308);
+            this.UpDownStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UpDownStatus.Name = "UpDownStatus";
-            this.UpDownStatus.Size = new System.Drawing.Size(120, 26);
+            this.UpDownStatus.Size = new System.Drawing.Size(107, 22);
             this.UpDownStatus.TabIndex = 28;
             // 
             // btnUpgradeCancel
@@ -566,10 +567,10 @@
             this.btnUpgradeCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpgradeCancel.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpgradeCancel.ForeColor = System.Drawing.Color.White;
-            this.btnUpgradeCancel.Location = new System.Drawing.Point(337, 591);
+            this.btnUpgradeCancel.Location = new System.Drawing.Point(300, 473);
             this.btnUpgradeCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpgradeCancel.Name = "btnUpgradeCancel";
-            this.btnUpgradeCancel.Size = new System.Drawing.Size(183, 72);
+            this.btnUpgradeCancel.Size = new System.Drawing.Size(163, 58);
             this.btnUpgradeCancel.TabIndex = 27;
             this.btnUpgradeCancel.Text = "Cancel";
             this.btnUpgradeCancel.UseVisualStyleBackColor = false;
@@ -579,9 +580,9 @@
             // 
             this.lblUpgradeComment.AutoSize = true;
             this.lblUpgradeComment.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpgradeComment.Location = new System.Drawing.Point(268, 430);
+            this.lblUpgradeComment.Location = new System.Drawing.Point(238, 344);
             this.lblUpgradeComment.Name = "lblUpgradeComment";
-            this.lblUpgradeComment.Size = new System.Drawing.Size(78, 20);
+            this.lblUpgradeComment.Size = new System.Drawing.Size(68, 17);
             this.lblUpgradeComment.TabIndex = 25;
             this.lblUpgradeComment.Text = "Comment";
             // 
@@ -589,9 +590,9 @@
             // 
             this.lblUpgradeStatus.AutoSize = true;
             this.lblUpgradeStatus.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpgradeStatus.Location = new System.Drawing.Point(268, 385);
+            this.lblUpgradeStatus.Location = new System.Drawing.Point(238, 308);
             this.lblUpgradeStatus.Name = "lblUpgradeStatus";
-            this.lblUpgradeStatus.Size = new System.Drawing.Size(53, 20);
+            this.lblUpgradeStatus.Size = new System.Drawing.Size(46, 17);
             this.lblUpgradeStatus.TabIndex = 24;
             this.lblUpgradeStatus.Text = "Status";
             // 
@@ -599,9 +600,9 @@
             // 
             this.lblUpDeadline.AutoSize = true;
             this.lblUpDeadline.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpDeadline.Location = new System.Drawing.Point(469, 291);
+            this.lblUpDeadline.Location = new System.Drawing.Point(417, 233);
             this.lblUpDeadline.Name = "lblUpDeadline";
-            this.lblUpDeadline.Size = new System.Drawing.Size(51, 20);
+            this.lblUpDeadline.Size = new System.Drawing.Size(44, 17);
             this.lblUpDeadline.TabIndex = 23;
             this.lblUpDeadline.Text = "label2";
             // 
@@ -609,9 +610,9 @@
             // 
             this.lblUpDescription.AutoSize = true;
             this.lblUpDescription.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpDescription.Location = new System.Drawing.Point(469, 341);
+            this.lblUpDescription.Location = new System.Drawing.Point(417, 273);
             this.lblUpDescription.Name = "lblUpDescription";
-            this.lblUpDescription.Size = new System.Drawing.Size(51, 20);
+            this.lblUpDescription.Size = new System.Drawing.Size(44, 17);
             this.lblUpDescription.TabIndex = 22;
             this.lblUpDescription.Text = "label2";
             // 
@@ -619,9 +620,9 @@
             // 
             this.lblUpUser.AutoSize = true;
             this.lblUpUser.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpUser.Location = new System.Drawing.Point(469, 244);
+            this.lblUpUser.Location = new System.Drawing.Point(417, 195);
             this.lblUpUser.Name = "lblUpUser";
-            this.lblUpUser.Size = new System.Drawing.Size(51, 20);
+            this.lblUpUser.Size = new System.Drawing.Size(44, 17);
             this.lblUpUser.TabIndex = 20;
             this.lblUpUser.Text = "label2";
             // 
@@ -629,9 +630,9 @@
             // 
             this.lblUpType.AutoSize = true;
             this.lblUpType.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpType.Location = new System.Drawing.Point(469, 198);
+            this.lblUpType.Location = new System.Drawing.Point(417, 158);
             this.lblUpType.Name = "lblUpType";
-            this.lblUpType.Size = new System.Drawing.Size(51, 20);
+            this.lblUpType.Size = new System.Drawing.Size(44, 17);
             this.lblUpType.TabIndex = 19;
             this.lblUpType.Text = "label2";
             // 
@@ -639,9 +640,9 @@
             // 
             this.lblUpSubject.AutoSize = true;
             this.lblUpSubject.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpSubject.Location = new System.Drawing.Point(469, 158);
+            this.lblUpSubject.Location = new System.Drawing.Point(417, 126);
             this.lblUpSubject.Name = "lblUpSubject";
-            this.lblUpSubject.Size = new System.Drawing.Size(51, 20);
+            this.lblUpSubject.Size = new System.Drawing.Size(44, 17);
             this.lblUpSubject.TabIndex = 18;
             this.lblUpSubject.Text = "label2";
             // 
@@ -649,9 +650,9 @@
             // 
             this.lblUpDate.AutoSize = true;
             this.lblUpDate.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpDate.Location = new System.Drawing.Point(469, 108);
+            this.lblUpDate.Location = new System.Drawing.Point(417, 86);
             this.lblUpDate.Name = "lblUpDate";
-            this.lblUpDate.Size = new System.Drawing.Size(51, 20);
+            this.lblUpDate.Size = new System.Drawing.Size(44, 17);
             this.lblUpDate.TabIndex = 17;
             this.lblUpDate.Text = "label2";
             // 
@@ -661,10 +662,10 @@
             this.btnUpgrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpgrade.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpgrade.ForeColor = System.Drawing.Color.White;
-            this.btnUpgrade.Location = new System.Drawing.Point(544, 591);
+            this.btnUpgrade.Location = new System.Drawing.Point(484, 473);
             this.btnUpgrade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpgrade.Name = "btnUpgrade";
-            this.btnUpgrade.Size = new System.Drawing.Size(183, 72);
+            this.btnUpgrade.Size = new System.Drawing.Size(163, 58);
             this.btnUpgrade.TabIndex = 15;
             this.btnUpgrade.Text = "Upgrade Status and add Comment";
             this.btnUpgrade.UseVisualStyleBackColor = false;
@@ -674,9 +675,9 @@
             // 
             this.lblUpgradeDescription.AutoSize = true;
             this.lblUpgradeDescription.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpgradeDescription.Location = new System.Drawing.Point(268, 338);
+            this.lblUpgradeDescription.Location = new System.Drawing.Point(238, 270);
             this.lblUpgradeDescription.Name = "lblUpgradeDescription";
-            this.lblUpgradeDescription.Size = new System.Drawing.Size(90, 20);
+            this.lblUpgradeDescription.Size = new System.Drawing.Size(78, 17);
             this.lblUpgradeDescription.TabIndex = 7;
             this.lblUpgradeDescription.Text = "Description";
             // 
@@ -684,9 +685,9 @@
             // 
             this.lblUpgradeDeadline.AutoSize = true;
             this.lblUpgradeDeadline.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpgradeDeadline.Location = new System.Drawing.Point(268, 291);
+            this.lblUpgradeDeadline.Location = new System.Drawing.Point(238, 233);
             this.lblUpgradeDeadline.Name = "lblUpgradeDeadline";
-            this.lblUpgradeDeadline.Size = new System.Drawing.Size(71, 20);
+            this.lblUpgradeDeadline.Size = new System.Drawing.Size(62, 17);
             this.lblUpgradeDeadline.TabIndex = 6;
             this.lblUpgradeDeadline.Text = "Deadline";
             // 
@@ -694,9 +695,9 @@
             // 
             this.lblUpgradeUser.AutoSize = true;
             this.lblUpgradeUser.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpgradeUser.Location = new System.Drawing.Point(268, 245);
+            this.lblUpgradeUser.Location = new System.Drawing.Point(238, 196);
             this.lblUpgradeUser.Name = "lblUpgradeUser";
-            this.lblUpgradeUser.Size = new System.Drawing.Size(131, 20);
+            this.lblUpgradeUser.Size = new System.Drawing.Size(116, 17);
             this.lblUpgradeUser.TabIndex = 4;
             this.lblUpgradeUser.Text = "Reported By User";
             // 
@@ -704,9 +705,9 @@
             // 
             this.lblUpgradeType.AutoSize = true;
             this.lblUpgradeType.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpgradeType.Location = new System.Drawing.Point(268, 198);
+            this.lblUpgradeType.Location = new System.Drawing.Point(238, 158);
             this.lblUpgradeType.Name = "lblUpgradeType";
-            this.lblUpgradeType.Size = new System.Drawing.Size(118, 20);
+            this.lblUpgradeType.Size = new System.Drawing.Size(103, 17);
             this.lblUpgradeType.TabIndex = 3;
             this.lblUpgradeType.Text = "Type of incident";
             // 
@@ -714,9 +715,9 @@
             // 
             this.lblUpgradeSubject.AutoSize = true;
             this.lblUpgradeSubject.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpgradeSubject.Location = new System.Drawing.Point(268, 158);
+            this.lblUpgradeSubject.Location = new System.Drawing.Point(238, 126);
             this.lblUpgradeSubject.Name = "lblUpgradeSubject";
-            this.lblUpgradeSubject.Size = new System.Drawing.Size(136, 20);
+            this.lblUpgradeSubject.Size = new System.Drawing.Size(119, 17);
             this.lblUpgradeSubject.TabIndex = 2;
             this.lblUpgradeSubject.Text = "Subject of incident";
             // 
@@ -724,9 +725,9 @@
             // 
             this.lblUpgradeDate.AutoSize = true;
             this.lblUpgradeDate.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpgradeDate.Location = new System.Drawing.Point(268, 108);
+            this.lblUpgradeDate.Location = new System.Drawing.Point(238, 86);
             this.lblUpgradeDate.Name = "lblUpgradeDate";
-            this.lblUpgradeDate.Size = new System.Drawing.Size(144, 20);
+            this.lblUpgradeDate.Size = new System.Drawing.Size(126, 17);
             this.lblUpgradeDate.TabIndex = 1;
             this.lblUpgradeDate.Text = "Date/time reported";
             // 
@@ -734,20 +735,20 @@
             // 
             this.lblUpgradeTitle.AutoSize = true;
             this.lblUpgradeTitle.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpgradeTitle.Location = new System.Drawing.Point(464, 26);
+            this.lblUpgradeTitle.Location = new System.Drawing.Point(412, 21);
             this.lblUpgradeTitle.Name = "lblUpgradeTitle";
-            this.lblUpgradeTitle.Size = new System.Drawing.Size(138, 54);
+            this.lblUpgradeTitle.Size = new System.Drawing.Size(117, 45);
             this.lblUpgradeTitle.TabIndex = 0;
             this.lblUpgradeTitle.Text = "Ticket";
             // 
             // txtUpComment
             // 
             this.txtUpComment.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUpComment.Location = new System.Drawing.Point(463, 430);
+            this.txtUpComment.Location = new System.Drawing.Point(412, 344);
             this.txtUpComment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUpComment.Multiline = true;
             this.txtUpComment.Name = "txtUpComment";
-            this.txtUpComment.Size = new System.Drawing.Size(264, 97);
+            this.txtUpComment.Size = new System.Drawing.Size(235, 78);
             this.txtUpComment.TabIndex = 18;
             // 
             // pnlCreateIncident
@@ -773,7 +774,7 @@
             this.pnlCreateIncident.Location = new System.Drawing.Point(0, 0);
             this.pnlCreateIncident.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlCreateIncident.Name = "pnlCreateIncident";
-            this.pnlCreateIncident.Size = new System.Drawing.Size(1076, 678);
+            this.pnlCreateIncident.Size = new System.Drawing.Size(956, 542);
             this.pnlCreateIncident.TabIndex = 4;
             // 
             // lblFalse
@@ -781,9 +782,9 @@
             this.lblFalse.AutoSize = true;
             this.lblFalse.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFalse.ForeColor = System.Drawing.Color.Red;
-            this.lblFalse.Location = new System.Drawing.Point(424, 80);
+            this.lblFalse.Location = new System.Drawing.Point(377, 64);
             this.lblFalse.Name = "lblFalse";
-            this.lblFalse.Size = new System.Drawing.Size(0, 20);
+            this.lblFalse.Size = new System.Drawing.Size(0, 17);
             this.lblFalse.TabIndex = 17;
             // 
             // btnCancel
@@ -792,10 +793,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(428, 591);
+            this.btnCancel.Location = new System.Drawing.Point(380, 473);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(126, 60);
+            this.btnCancel.Size = new System.Drawing.Size(112, 48);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -807,10 +808,10 @@
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(567, 591);
+            this.btnConfirm.Location = new System.Drawing.Point(504, 473);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(126, 60);
+            this.btnConfirm.Size = new System.Drawing.Size(112, 48);
             this.btnConfirm.TabIndex = 15;
             this.btnConfirm.Text = "Add Incident";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -819,11 +820,11 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(428, 389);
+            this.txtDescription.Location = new System.Drawing.Point(380, 311);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(265, 166);
+            this.txtDescription.Size = new System.Drawing.Size(236, 134);
             this.txtDescription.TabIndex = 14;
             // 
             // cmbDeadline
@@ -836,10 +837,10 @@
             "14 days",
             "28 days",
             "6 months"});
-            this.cmbDeadline.Location = new System.Drawing.Point(428, 342);
+            this.cmbDeadline.Location = new System.Drawing.Point(380, 274);
             this.cmbDeadline.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDeadline.Name = "cmbDeadline";
-            this.cmbDeadline.Size = new System.Drawing.Size(265, 28);
+            this.cmbDeadline.Size = new System.Drawing.Size(236, 24);
             this.cmbDeadline.TabIndex = 13;
             // 
             // cmbPriority
@@ -851,10 +852,10 @@
             "Normal",
             "Low",
             "High"});
-            this.cmbPriority.Location = new System.Drawing.Point(428, 294);
+            this.cmbPriority.Location = new System.Drawing.Point(380, 235);
             this.cmbPriority.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbPriority.Name = "cmbPriority";
-            this.cmbPriority.Size = new System.Drawing.Size(265, 28);
+            this.cmbPriority.Size = new System.Drawing.Size(236, 24);
             this.cmbPriority.TabIndex = 12;
             // 
             // cmbUser
@@ -862,10 +863,10 @@
             this.cmbUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUser.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUser.FormattingEnabled = true;
-            this.cmbUser.Location = new System.Drawing.Point(428, 245);
+            this.cmbUser.Location = new System.Drawing.Point(380, 196);
             this.cmbUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbUser.Name = "cmbUser";
-            this.cmbUser.Size = new System.Drawing.Size(265, 28);
+            this.cmbUser.Size = new System.Drawing.Size(236, 24);
             this.cmbUser.TabIndex = 11;
             // 
             // cmbType
@@ -877,19 +878,19 @@
             "Hardware",
             "Software",
             "Service"});
-            this.cmbType.Location = new System.Drawing.Point(428, 198);
+            this.cmbType.Location = new System.Drawing.Point(380, 158);
             this.cmbType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(265, 28);
+            this.cmbType.Size = new System.Drawing.Size(236, 24);
             this.cmbType.TabIndex = 10;
             // 
             // txtSubject
             // 
             this.txtSubject.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubject.Location = new System.Drawing.Point(428, 158);
+            this.txtSubject.Location = new System.Drawing.Point(380, 126);
             this.txtSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(265, 27);
+            this.txtSubject.Size = new System.Drawing.Size(236, 23);
             this.txtSubject.TabIndex = 9;
             // 
             // cmbDateTime
@@ -901,19 +902,19 @@
             "Morning",
             "Afternoon",
             "Evening"});
-            this.cmbDateTime.Location = new System.Drawing.Point(428, 108);
+            this.cmbDateTime.Location = new System.Drawing.Point(380, 86);
             this.cmbDateTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDateTime.Name = "cmbDateTime";
-            this.cmbDateTime.Size = new System.Drawing.Size(265, 28);
+            this.cmbDateTime.Size = new System.Drawing.Size(236, 24);
             this.cmbDateTime.TabIndex = 8;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(268, 389);
+            this.lblDescription.Location = new System.Drawing.Point(238, 311);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(90, 20);
+            this.lblDescription.Size = new System.Drawing.Size(78, 17);
             this.lblDescription.TabIndex = 7;
             this.lblDescription.Text = "Description";
             // 
@@ -921,9 +922,9 @@
             // 
             this.lblDeadline.AutoSize = true;
             this.lblDeadline.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeadline.Location = new System.Drawing.Point(268, 342);
+            this.lblDeadline.Location = new System.Drawing.Point(238, 274);
             this.lblDeadline.Name = "lblDeadline";
-            this.lblDeadline.Size = new System.Drawing.Size(71, 20);
+            this.lblDeadline.Size = new System.Drawing.Size(62, 17);
             this.lblDeadline.TabIndex = 6;
             this.lblDeadline.Text = "Deadline";
             // 
@@ -931,9 +932,9 @@
             // 
             this.lblPriority.AutoSize = true;
             this.lblPriority.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPriority.Location = new System.Drawing.Point(268, 294);
+            this.lblPriority.Location = new System.Drawing.Point(238, 235);
             this.lblPriority.Name = "lblPriority";
-            this.lblPriority.Size = new System.Drawing.Size(62, 20);
+            this.lblPriority.Size = new System.Drawing.Size(54, 17);
             this.lblPriority.TabIndex = 5;
             this.lblPriority.Text = "Priority";
             // 
@@ -941,9 +942,9 @@
             // 
             this.lblReported.AutoSize = true;
             this.lblReported.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReported.Location = new System.Drawing.Point(268, 245);
+            this.lblReported.Location = new System.Drawing.Point(238, 196);
             this.lblReported.Name = "lblReported";
-            this.lblReported.Size = new System.Drawing.Size(131, 20);
+            this.lblReported.Size = new System.Drawing.Size(116, 17);
             this.lblReported.TabIndex = 4;
             this.lblReported.Text = "Reported By User";
             // 
@@ -951,9 +952,9 @@
             // 
             this.lblTypeIncident.AutoSize = true;
             this.lblTypeIncident.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTypeIncident.Location = new System.Drawing.Point(268, 198);
+            this.lblTypeIncident.Location = new System.Drawing.Point(238, 158);
             this.lblTypeIncident.Name = "lblTypeIncident";
-            this.lblTypeIncident.Size = new System.Drawing.Size(118, 20);
+            this.lblTypeIncident.Size = new System.Drawing.Size(103, 17);
             this.lblTypeIncident.TabIndex = 3;
             this.lblTypeIncident.Text = "Type of incident";
             // 
@@ -961,9 +962,9 @@
             // 
             this.lblSubject.AutoSize = true;
             this.lblSubject.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(268, 158);
+            this.lblSubject.Location = new System.Drawing.Point(238, 126);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(136, 20);
+            this.lblSubject.Size = new System.Drawing.Size(119, 17);
             this.lblSubject.TabIndex = 2;
             this.lblSubject.Text = "Subject of incident";
             // 
@@ -971,9 +972,9 @@
             // 
             this.lblDateTime.AutoSize = true;
             this.lblDateTime.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateTime.Location = new System.Drawing.Point(268, 108);
+            this.lblDateTime.Location = new System.Drawing.Point(238, 86);
             this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(144, 20);
+            this.lblDateTime.Size = new System.Drawing.Size(126, 17);
             this.lblDateTime.TabIndex = 1;
             this.lblDateTime.Text = "Date/time reported";
             // 
@@ -981,9 +982,9 @@
             // 
             this.lblIncidentTitle.AutoSize = true;
             this.lblIncidentTitle.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIncidentTitle.Location = new System.Drawing.Point(434, 26);
+            this.lblIncidentTitle.Location = new System.Drawing.Point(386, 21);
             this.lblIncidentTitle.Name = "lblIncidentTitle";
-            this.lblIncidentTitle.Size = new System.Drawing.Size(260, 54);
+            this.lblIncidentTitle.Size = new System.Drawing.Size(220, 45);
             this.lblIncidentTitle.TabIndex = 0;
             this.lblIncidentTitle.Text = "Add Incident";
             // 
@@ -1000,10 +1001,9 @@
             this.clmDescription});
             this.listIncidents.GridLines = true;
             this.listIncidents.HideSelection = false;
-            this.listIncidents.Location = new System.Drawing.Point(70, 233);
-            this.listIncidents.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listIncidents.Location = new System.Drawing.Point(62, 186);
             this.listIncidents.Name = "listIncidents";
-            this.listIncidents.Size = new System.Drawing.Size(937, 370);
+            this.listIncidents.Size = new System.Drawing.Size(833, 297);
             this.listIncidents.TabIndex = 4;
             this.listIncidents.UseCompatibleStateImageBehavior = false;
             this.listIncidents.View = System.Windows.Forms.View.Details;
@@ -1061,10 +1061,10 @@
             this.btnCreateIncident.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateIncident.Font = new System.Drawing.Font("Lato Light", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateIncident.ForeColor = System.Drawing.Color.White;
-            this.btnCreateIncident.Location = new System.Drawing.Point(858, 161);
+            this.btnCreateIncident.Location = new System.Drawing.Point(763, 129);
             this.btnCreateIncident.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreateIncident.Name = "btnCreateIncident";
-            this.btnCreateIncident.Size = new System.Drawing.Size(200, 60);
+            this.btnCreateIncident.Size = new System.Drawing.Size(178, 48);
             this.btnCreateIncident.TabIndex = 2;
             this.btnCreateIncident.Text = "Create Incident";
             this.btnCreateIncident.UseVisualStyleBackColor = false;
@@ -1072,10 +1072,10 @@
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(70, 161);
+            this.txtFilter.Location = new System.Drawing.Point(62, 129);
             this.txtFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(211, 26);
+            this.txtFilter.Size = new System.Drawing.Size(188, 22);
             this.txtFilter.TabIndex = 1;
             this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
@@ -1083,9 +1083,9 @@
             // 
             this.lblUnderText.AutoSize = true;
             this.lblUnderText.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnderText.Location = new System.Drawing.Point(564, 102);
+            this.lblUnderText.Location = new System.Drawing.Point(501, 82);
             this.lblUnderText.Name = "lblUnderText";
-            this.lblUnderText.Size = new System.Drawing.Size(86, 30);
+            this.lblUnderText.Size = new System.Drawing.Size(73, 25);
             this.lblUnderText.TabIndex = 0;
             this.lblUnderText.Text = "Tickets";
             // 
@@ -1093,9 +1093,9 @@
             // 
             this.lblTitleIndicent.AutoSize = true;
             this.lblTitleIndicent.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleIndicent.Location = new System.Drawing.Point(395, 32);
+            this.lblTitleIndicent.Location = new System.Drawing.Point(351, 26);
             this.lblTitleIndicent.Name = "lblTitleIndicent";
-            this.lblTitleIndicent.Size = new System.Drawing.Size(410, 54);
+            this.lblTitleIndicent.Size = new System.Drawing.Size(348, 45);
             this.lblTitleIndicent.TabIndex = 0;
             this.lblTitleIndicent.Text = "Incident Mangement";
             // 
@@ -1105,16 +1105,16 @@
             this.pnlBackground.Location = new System.Drawing.Point(1, 1);
             this.pnlBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBackground.Name = "pnlBackground";
-            this.pnlBackground.Size = new System.Drawing.Size(1374, 872);
+            this.pnlBackground.Size = new System.Drawing.Size(1221, 698);
             this.pnlBackground.TabIndex = 7;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1360, 872);
-            this.Controls.Add(this.panelIncident);
+            this.ClientSize = new System.Drawing.Size(1209, 698);
             this.Controls.Add(this.panelDash);
+            this.Controls.Add(this.panelIncident);
             this.Controls.Add(this.panelUser);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBorder);
