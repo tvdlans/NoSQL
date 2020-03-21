@@ -16,6 +16,7 @@ namespace View
     public partial class Form1 : Form
     {
         List<ModIncident> incidentsList = new List<ModIncident>();
+        List<ModUser> userItems = new List<ModUser>();
         public Form1()
         {
             InitializeComponent();
@@ -72,7 +73,24 @@ namespace View
         {
             panelUser.BringToFront();
             CloseAllPanelsExcept(panelUser);
+            pnlCreateUser.Hide();
+            GetAllUsers();
+        }
 
+        private void GetAllUsers()
+        {
+            listUsers.Items.Clear();
+            ConUser ConUserObject = new ConUser();
+            List<ModUser> users = ConUserObject.GetAllUsers();
+            int id = 1;
+            foreach (ModUser user in users)
+            {
+                ListViewItem lvItem = new ListViewItem(new [] { id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString() });
+                ModUser modUser = new ModUser { Id = id, Email = user.Email, FirstName = user.FirstName, LastName = user.LastName, NrOfTickets = user.NrOfTickets };
+                userItems.Add(modUser);
+                listUsers.Items.Add(lvItem);
+                id++;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -201,10 +219,10 @@ namespace View
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
-            searchData(txtFilter.Text);
+            searchIncidentData(txtFilter.Text);
         }
         
-        private void searchData(string text)
+        private void searchIncidentData(string text)
         {
             //clear the listview
             listIncidents.Items.Clear();
@@ -234,6 +252,65 @@ namespace View
             ChartIncSolvedByYou.Series["s1"].IsVisibleInLegend = false;
             lblIncSolvedByYou.Text = incidentsByYou[1] + "/" + incidentsByYou[0];
 
+        }
+
+        private void buttonAddUser_Click(object sender, EventArgs e)
+        {
+            pnlCreateUser.Show();
+        }
+
+        private void buttonCancelCreateUser_Click(object sender, EventArgs e)
+        {
+            pnlCreateUser.Hide();
+        }
+
+        private void buttonCreateUser_Click(object sender, EventArgs e)
+        {
+            ConUser userObject = new ConUser();
+            //check if all the fields are filled
+            bool check = userObject.checkFields(textBoxUserFirstName.Text, textBoxUserLastName.Text, comboBoxTypeOfUser.Text, textBoxUserEmail.Text, textBoxUserPhoneNumber.Text, comboBoxUserLocation.Text);
+            if (check == false)
+            {
+                lblCreateUserError.Text = "Please fill in all the information";
+            }
+            else
+            {
+                //insert incident into database
+                string createUserFeedback = userObject.InsertUser(textBoxUserFirstName.Text, textBoxUserLastName.Text, comboBoxTypeOfUser.Text, textBoxUserEmail.Text, textBoxUserPhoneNumber.Text, comboBoxUserLocation.Text, checkBoxUserSendPassword.Checked);
+                if (createUserFeedback == "Account created succesfully!")
+                {
+                    lblCreateUserError.Text = "";
+                    pnlCreateUser.Hide();
+                    lblCreateUserSucces.Text = createUserFeedback;
+                }
+                else
+                {
+                    lblCreateUserError.Text = createUserFeedback;
+                }
+                
+
+            }
+        }
+
+        private void txtUserFilter_TextChanged(object sender, EventArgs e)
+        {
+            SearchUserData(txtUserFilter.Text);
+        }
+
+        private void SearchUserData(string text)
+        {
+            //clear the listview
+            listUsers.Items.Clear();
+            foreach (ModUser user in userItems)
+            {
+                //check if the list containts the searched text
+                if (user.Id.ToString().ToLower().Contains(text.ToLower()) || user.FirstName.ToLower().Contains(text.ToLower()) || user.LastName.ToLower().Contains(text.ToLower()) || user.Email.ToString().ToLower().Contains(text.ToLower()) || user.NrOfTickets.ToString().ToLower().Contains(text.ToLower()))
+                {
+                    //make new listview for items that contain the search
+                    ListViewItem list = new ListViewItem(new[] { user.Id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString() });
+                    listUsers.Items.Add(list);
+                }
+            }
         }
     }
 }
