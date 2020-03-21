@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
@@ -66,7 +67,7 @@ namespace Controller
                             {"FirstName",fn},
                             {"LastName",ln},
                             {"Email",email},
-                            {"Password","Welcome123"},
+                            {"Password",HashPassword("Welcome123")},
                             {"Role",role},
                             {"PhoneNumber",phonenr},
                             {"Location",loc},
@@ -135,6 +136,19 @@ namespace Controller
             catch
             {
                 return false;
+            }
+        }
+
+        private static string HashPassword(string password, string algorithm = "sha256")
+        {
+            return Hash(Encoding.UTF8.GetBytes(password), algorithm);
+        }
+
+        private static string Hash(byte[] input, string algorithm = "sha256")
+        {
+            using (var hashAlgorithm = HashAlgorithm.Create(algorithm))
+            {
+                return Convert.ToBase64String(hashAlgorithm.ComputeHash(input));
             }
         }
     }
