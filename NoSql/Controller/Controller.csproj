@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConEmployeeDashboard.cs" />
     <Compile Include="ConIncident.cs" />
+    <Compile Include="ConSendMail.cs" />
     <Compile Include="ConSession.cs" />
     <Compile Include="ConDashboard.cs" />
     <Compile Include="ConUser.cs" />

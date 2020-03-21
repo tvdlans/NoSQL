@@ -28,20 +28,29 @@ namespace Controller
                 var user = db.LoadRecordByEmail<BsonDocument>("Users", email);
                 if (user == null)
                 {
-                    Console.WriteLine("huh");
                     return false;
                 }
                 else if (user.GetElement("Password").Value.ToString() == password)
                 {
                     ConSession session = new ConSession();
-                    session.AddSession(user.GetElement("FirstName").Value.ToString(), user.GetElement("Email").Value.ToString());
+                    session.AddSession(user.GetElement("FirstName").Value.ToString(), user.GetElement("Email").Value.ToString(),ObjectId.Parse(user.GetElement("_id").Value.ToString()));
                     return true;
                 }
                 else return false;
             }
         }
 
-
+        public BsonDocument CheckUserExists(string inputEmail)
+        {
+            Conn db = Conn.GetInstance("TGGDB");
+            var user = db.LoadRecordByEmail<BsonDocument>("Users", inputEmail);
+            return user;
+        }
  
+        public void ConUpdatePassword(string email, string newPassword)
+        {
+            Conn db = Conn.GetInstance("TGGDB");
+            db.UpdatePassword<BsonDocument>("Users", email, newPassword);
+        }
     }
 }
