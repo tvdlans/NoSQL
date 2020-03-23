@@ -254,7 +254,7 @@
             this.btnSendMail.TabIndex = 0;
             this.btnSendMail.Text = "Send Mail";
             this.btnSendMail.UseVisualStyleBackColor = false;
-            this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);
+            //this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);
             // 
             // pnlCode
             // 
@@ -297,7 +297,7 @@
             this.btnSubmit.TabIndex = 0;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            //this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // pnlNewPswd
             // 
@@ -376,7 +376,7 @@
             this.btnSubmitNewPswd.TabIndex = 0;
             this.btnSubmitNewPswd.Text = "Submit";
             this.btnSubmitNewPswd.UseVisualStyleBackColor = false;
-            this.btnSubmitNewPswd.Click += new System.EventHandler(this.btnSubmitNewPswd_Click);
+            //this.btnSubmitNewPswd.Click += new System.EventHandler(this.btnSubmitNewPswd_Click);
             // 
             // label2
             // 
