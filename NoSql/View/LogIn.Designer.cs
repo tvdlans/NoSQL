@@ -57,8 +57,10 @@
             this.lblInfoEnterNewPswd = new System.Windows.Forms.Label();
             this.txtNewPswd = new System.Windows.Forms.TextBox();
             this.btnSubmitNewPswd = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelMenu.SuspendLayout();
             this.pnlforgotpswd.SuspendLayout();
             this.pnlCode.SuspendLayout();
             this.pnlNewPswd.SuspendLayout();
@@ -179,6 +181,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
+            this.panelMenu.Controls.Add(this.label2);
             this.panelMenu.Location = new System.Drawing.Point(1, 66);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
@@ -375,6 +378,15 @@
             this.btnSubmitNewPswd.UseVisualStyleBackColor = false;
             this.btnSubmitNewPswd.Click += new System.EventHandler(this.btnSubmitNewPswd_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(55, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "label2";
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,6 +412,8 @@
             this.panelBorder.ResumeLayout(false);
             this.panelBorder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelMenu.ResumeLayout(false);
+            this.panelMenu.PerformLayout();
             this.pnlforgotpswd.ResumeLayout(false);
             this.pnlforgotpswd.PerformLayout();
             this.pnlCode.ResumeLayout(false);
@@ -441,5 +455,6 @@
         private System.Windows.Forms.Label lblInfoEnterNewPswd;
         private System.Windows.Forms.TextBox txtNewPswd;
         private System.Windows.Forms.Button btnSubmitNewPswd;
+        private System.Windows.Forms.Label label2;
     }
 }

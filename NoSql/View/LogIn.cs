@@ -48,6 +48,9 @@ namespace View
                 }
 
                 this.Hide();
+
+                //Employee employee = new Employee();
+                //employee.Show();
                 Form1 form1 = new Form1();
                 form1.Show();
             }
