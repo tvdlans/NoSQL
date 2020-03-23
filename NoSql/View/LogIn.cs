@@ -42,6 +42,11 @@ namespace View
                     Properties.Settings.Default.Save();
                 }
 
+                if (true)
+                {
+
+                }
+
                 this.Hide();
                 Form1 form1 = new Form1();
                 form1.Show();
