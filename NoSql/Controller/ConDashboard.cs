@@ -12,9 +12,29 @@ namespace Controller
     {
         //make connection to the database
         Conn db = Conn.GetInstance("TGGDB");
-        ConSession conSession = new ConSession();
 
-        //specific method to calculate the USERS finished incidents
+        public int[] CalculateFinishedIncidents(List<BsonDocument> incidentList)
+        {
+            int[] incidentInformation = new int[2];
+
+            //if the given list is empty, this means that no list is given create a list and add everyone to it
+            if (incidentList.Count == 0)
+                incidentList = db.LoadRecords<BsonDocument>("Incidents");
+
+            //count each element where the resolved value is true
+            int resolvedCounter = 0;
+            foreach (BsonDocument incident in incidentList)
+            {
+                if (incident.GetElement("Resolved").Value == false)
+                {
+                    resolvedCounter++;
+                }
+            }
+            //return the amount of resolved incidents and the total amount of incidents
+            incidentInformation[0] = incidentList.Count;
+            incidentInformation[1] = resolvedCounter;
+            return incidentInformation;
+        }
         public int[] CalculateUsersFinishedIncidents()
         {
             //get all incidents and make a temporary incident list
@@ -22,41 +42,38 @@ namespace Controller
             List<BsonDocument> tempincidents = new List<BsonDocument>();
 
             //check for each incident if the service tag is the same as the person logged in
-            incidents = incidents.FindAll(e => e.GetElement("ServiceID").Value.AsObjectId == conSession.GetId());
+            foreach (BsonDocument incident in incidents)
+            {
+                if (incident.GetElement("ServiceID").Value.ToString() == "5e6119c31c9d44000073cbfd")
+                {
+                    tempincidents.Add(incident);
+                }
+            }
 
-            return CalculateFinishedIncidents(incidents);
-        }
-
-        //general method for calculating all the finished incidents from the parameter list
-        //this is done so it could be used in the future if you need to calculate all finished incidents
-        public int[] CalculateFinishedIncidents(List<BsonDocument> incidentList)
-        {
-            int[] incidentInformation = new int[2];
-
-            //count each element where the resolved value is true
-            int finishedIncidents = incidentList.FindAll(e => e.GetElement("Status").Value != 100).Count;
-            
-            //return the amount of resolved incidents and the total amount of incidents
-            incidentInformation[0] = incidentList.Count;
-            incidentInformation[1] = finishedIncidents;
-            return incidentInformation;
+            return CalculateFinishedIncidents(tempincidents);
         }
 
         public int[] CalculateIncidentsPastDeadline()
         {
             int[] incidentInformation = new int[2];
 
-            //get all incidents and make a incident list
+            //get all incidents and make a temporary incident list
             List<BsonDocument> incidents = db.LoadRecords<BsonDocument>("Incidents");
-            //filter these incidents based on status and serviceID
-            incidents = incidents.FindAll(e => e.GetElement("Status").Value != 100);
-            incidents = incidents.FindAll(e => e.GetElement("ServiceID").Value.AsObjectId == conSession.GetId());
-            //make a new list and find all incidents past deadline
-            int incidentsPastDeadline = incidents.FindAll(e => e.GetElement("Date").Value.AsDateTime <= DateTime.Now).Count;
+            incidents = incidents.FindAll(e => e.GetElement("Resolved").Value.ToString() == "false");
+            incidents = incidents.FindAll(e => e.GetElement("ServiceID").Value.ToString() == "5e6119c31c9d44000073cbfd");
 
+            int expiredIncidents = 0;
+            foreach (BsonDocument incident in incidents)
+            {
+                DateTime datetime = DateTime.Parse(incident.GetElement("Date").Value.ToString());
+                if (datetime <= DateTime.Now)
+                {
+                    expiredIncidents++;
+                }
+            }
             //return the amount of resolved incidents and the total amount of incidents
             incidentInformation[0] = incidents.Count;
-            incidentInformation[1] = incidentsPastDeadline;
+            incidentInformation[1] = expiredIncidents;
             return incidentInformation;
         }
 
@@ -69,7 +86,6 @@ namespace Controller
 
             List<BsonDocument> incidents = db.LoadRecords<BsonDocument>("Incidents");
 
-            //test for each element if it is a software, hardware or service incident
             foreach (BsonDocument incident in incidents)
             {
                 switch (incident.GetElement("TypeOfIncident").Value.ToString())
@@ -96,27 +112,23 @@ namespace Controller
 
         public Dictionary<string, int> CalculateMostOccWords()
         {
-            //get a list of all incidents
             List<BsonDocument> incidents = db.LoadRecords<BsonDocument>("Incidents");
 
-            //make a dictionary
             Dictionary<string, int> wordList = new Dictionary<string, int>();
-            
-            //create one big senctence of every incident 
+
             string subjects = "";
             foreach (BsonDocument incident in incidents)
             {
                 subjects += " " + incident.GetElement("Subject").Value.ToString().ToLower();
             }
-            //cleaning up
-            subjects = subjects.Replace(",", ""); 
+
+            subjects = subjects.Replace(",", ""); //cleaning up
             subjects = subjects.Replace("!", "");
             subjects = subjects.Replace(".", "");
             subjects = subjects.Replace("?", "");
-            //Create an array of words
-            string[] arr = subjects.Split(' '); 
+            string[] arr = subjects.Split(' '); //Create an array of words
 
-            foreach (string word in arr)
+            foreach (string word in arr) //let's loop over the words
             {
                 //if it meets our criteria of at least 3 letters
                 if (word.Length >= 3)
@@ -138,14 +150,14 @@ namespace Controller
 
             //get all incidents and find only the ones which are resolved
             List<BsonDocument> incidents = db.LoadRecords<BsonDocument>("Incidents");
-            incidents = incidents.FindAll(e => e.GetElement("Status").Value == 100);
+            incidents = incidents.FindAll(e => e.GetElement("Resolved").Value.ToString() == "true");
 
             int yourIncindentCounter = 0;
 
             //count how many of the incidents are sovled by you
             foreach (BsonDocument incident in incidents)
             {
-                if (incident.GetElement("ServiceID").Value.AsObjectId == conSession.GetId())
+                if (incident.GetElement("ServiceID").Value.ToString() == "5e6119c31c9d44000073cbfd")
                 {
                     yourIncindentCounter++;
                 }
