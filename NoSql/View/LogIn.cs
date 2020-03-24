@@ -58,6 +58,8 @@ namespace View
         private void LogIn_Load(object sender, EventArgs e)
         {
             pnlforgotpswd.Hide();
+            pnlCode.Hide();
+            pnlNewPswd.Hide();
             Login login = new Login();
             login.connect();
             if (Properties.Settings.Default.Name != string.Empty)
