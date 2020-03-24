@@ -89,6 +89,7 @@
             this.buttonAddUser = new System.Windows.Forms.Button();
             this.lblUnderTitleUsers = new System.Windows.Forms.Label();
             this.lblTitleUsers = new System.Windows.Forms.Label();
+            this.txtUserFilter = new System.Windows.Forms.TextBox();
             this.listUsers = new System.Windows.Forms.ListView();
             this.colID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -96,6 +97,8 @@
             this.colLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colNrOfTickets = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelIncident = new System.Windows.Forms.Panel();
+            this.panelResolvedTickets = new System.Windows.Forms.Panel();
+            this.buttonOpenIncidents = new System.Windows.Forms.Button();
             this.pnlCreateIncident = new System.Windows.Forms.Panel();
             this.lblFalse = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -124,11 +127,19 @@
             this.clmStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCreateIncident = new System.Windows.Forms.Button();
+            this.buttonResolvedTickets = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.lblUnderText = new System.Windows.Forms.Label();
             this.lblTitleIndicent = new System.Windows.Forms.Label();
             this.pnlBackground = new System.Windows.Forms.Panel();
-            this.txtUserFilter = new System.Windows.Forms.TextBox();
+            this.listResolvedIncidents = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -140,6 +151,7 @@
             this.panelUser.SuspendLayout();
             this.pnlCreateUser.SuspendLayout();
             this.panelIncident.SuspendLayout();
+            this.panelResolvedTickets.SuspendLayout();
             this.pnlCreateIncident.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -740,6 +752,15 @@
             this.lblTitleUsers.TabIndex = 1;
             this.lblTitleUsers.Text = "User Mangement";
             // 
+            // txtUserFilter
+            // 
+            this.txtUserFilter.Location = new System.Drawing.Point(55, 103);
+            this.txtUserFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUserFilter.Name = "txtUserFilter";
+            this.txtUserFilter.Size = new System.Drawing.Size(168, 22);
+            this.txtUserFilter.TabIndex = 22;
+            this.txtUserFilter.TextChanged += new System.EventHandler(this.txtUserFilter_TextChanged);
+            // 
             // listUsers
             // 
             this.listUsers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -784,9 +805,11 @@
             // 
             // panelIncident
             // 
+            this.panelIncident.Controls.Add(this.panelResolvedTickets);
             this.panelIncident.Controls.Add(this.pnlCreateIncident);
             this.panelIncident.Controls.Add(this.listIncidents);
             this.panelIncident.Controls.Add(this.btnCreateIncident);
+            this.panelIncident.Controls.Add(this.buttonResolvedTickets);
             this.panelIncident.Controls.Add(this.txtFilter);
             this.panelIncident.Controls.Add(this.lblUnderText);
             this.panelIncident.Controls.Add(this.lblTitleIndicent);
@@ -795,6 +818,30 @@
             this.panelIncident.Name = "panelIncident";
             this.panelIncident.Size = new System.Drawing.Size(956, 542);
             this.panelIncident.TabIndex = 6;
+            // 
+            // panelResolvedTickets
+            // 
+            this.panelResolvedTickets.Controls.Add(this.listResolvedIncidents);
+            this.panelResolvedTickets.Controls.Add(this.buttonOpenIncidents);
+            this.panelResolvedTickets.Location = new System.Drawing.Point(0, 0);
+            this.panelResolvedTickets.Name = "panelResolvedTickets";
+            this.panelResolvedTickets.Size = new System.Drawing.Size(937, 526);
+            this.panelResolvedTickets.TabIndex = 21;
+            // 
+            // buttonOpenIncidents
+            // 
+            this.buttonOpenIncidents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
+            this.buttonOpenIncidents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOpenIncidents.Font = new System.Drawing.Font("Lato Light", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOpenIncidents.ForeColor = System.Drawing.Color.White;
+            this.buttonOpenIncidents.Location = new System.Drawing.Point(750, 103);
+            this.buttonOpenIncidents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonOpenIncidents.Name = "buttonOpenIncidents";
+            this.buttonOpenIncidents.Size = new System.Drawing.Size(158, 38);
+            this.buttonOpenIncidents.TabIndex = 3;
+            this.buttonOpenIncidents.Text = "Open incidents";
+            this.buttonOpenIncidents.UseVisualStyleBackColor = false;
+            this.buttonOpenIncidents.Click += new System.EventHandler(this.buttonOpenIncidents_Click);
             // 
             // pnlCreateIncident
             // 
@@ -1108,6 +1155,21 @@
             this.btnCreateIncident.UseVisualStyleBackColor = false;
             this.btnCreateIncident.Click += new System.EventHandler(this.btnCreateIncident_Click);
             // 
+            // buttonResolvedTickets
+            // 
+            this.buttonResolvedTickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
+            this.buttonResolvedTickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonResolvedTickets.Font = new System.Drawing.Font("Lato Light", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonResolvedTickets.ForeColor = System.Drawing.Color.White;
+            this.buttonResolvedTickets.Location = new System.Drawing.Point(500, 103);
+            this.buttonResolvedTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonResolvedTickets.Name = "buttonResolvedTickets";
+            this.buttonResolvedTickets.Size = new System.Drawing.Size(225, 38);
+            this.buttonResolvedTickets.TabIndex = 5;
+            this.buttonResolvedTickets.Text = "View Resolved Tickets";
+            this.buttonResolvedTickets.UseVisualStyleBackColor = false;
+            this.buttonResolvedTickets.Click += new System.EventHandler(this.buttonResolvedTickets_Click);
+            // 
             // txtFilter
             // 
             this.txtFilter.Location = new System.Drawing.Point(55, 103);
@@ -1146,22 +1208,73 @@
             this.pnlBackground.Size = new System.Drawing.Size(1059, 555);
             this.pnlBackground.TabIndex = 7;
             // 
-            // txtUserFilter
+            // listResolvedIncidents
             // 
-            this.txtUserFilter.Location = new System.Drawing.Point(55, 103);
-            this.txtUserFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUserFilter.Name = "txtUserFilter";
-            this.txtUserFilter.Size = new System.Drawing.Size(168, 22);
-            this.txtUserFilter.TabIndex = 22;
-            this.txtUserFilter.TextChanged += new System.EventHandler(this.txtUserFilter_TextChanged);
+            this.listResolvedIncidents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.listResolvedIncidents.GridLines = true;
+            this.listResolvedIncidents.HideSelection = false;
+            this.listResolvedIncidents.Location = new System.Drawing.Point(55, 151);
+            this.listResolvedIncidents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listResolvedIncidents.Name = "listResolvedIncidents";
+            this.listResolvedIncidents.Size = new System.Drawing.Size(854, 278);
+            this.listResolvedIncidents.TabIndex = 5;
+            this.listResolvedIncidents.UseCompatibleStateImageBehavior = false;
+            this.listResolvedIncidents.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Subject";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 200;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "User";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Date";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "EndDate";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Status";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 100;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Type of incident";
+            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader7.Width = 150;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 556);
-            this.Controls.Add(this.panelUser);
             this.Controls.Add(this.panelIncident);
+            this.Controls.Add(this.panelUser);
             this.Controls.Add(this.panelDash);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBorder);
@@ -1186,6 +1299,7 @@
             this.pnlCreateUser.PerformLayout();
             this.panelIncident.ResumeLayout(false);
             this.panelIncident.PerformLayout();
+            this.panelResolvedTickets.ResumeLayout(false);
             this.pnlCreateIncident.ResumeLayout(false);
             this.pnlCreateIncident.PerformLayout();
             this.ResumeLayout(false);
@@ -1278,6 +1392,17 @@
         private System.Windows.Forms.Label lblCreateUserError;
         private System.Windows.Forms.Label lblCreateUserSucces;
         private System.Windows.Forms.TextBox txtUserFilter;
+        private System.Windows.Forms.Button buttonResolvedTickets;
+        private System.Windows.Forms.Panel panelResolvedTickets;
+        private System.Windows.Forms.Button buttonOpenIncidents;
+        private System.Windows.Forms.ListView listResolvedIncidents;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }
 

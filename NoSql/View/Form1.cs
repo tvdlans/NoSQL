@@ -27,6 +27,9 @@ namespace View
             panelDash.Hide();
             panelIncident.Hide();
             panelUser.Hide();
+            pnlCreateIncident.Hide();
+            pnlCreateUser.Hide();
+            panelResolvedTickets.Hide();
             panel.Show();
         }
 
@@ -46,6 +49,7 @@ namespace View
             panelIncident.BringToFront();
             CloseAllPanelsExcept(panelIncident);
             pnlCreateIncident.Hide();
+            panelResolvedTickets.Hide();
             getAllIncidents();
         }
 
@@ -59,8 +63,8 @@ namespace View
             int id = 1;
             foreach (ModIncident item in incidents)
             {
-                ModIncident mod = new ModIncident { ID = id,Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline= item.Deadline, Status= item.Status, TypeOfIncident= item.TypeOfIncident };
-                ListViewItem list = new ListViewItem(new [] { id.ToString(), item.Subject, item.Name,item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(),item.TypeOfIncident });
+                ModIncident mod = new ModIncident { ID = id, Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline = item.Deadline, Status = item.Status, TypeOfIncident = item.TypeOfIncident };
+                ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident });
                 //Fill the Masterlist
                 incidentsList.Add(mod);
                 //Fill the listview
@@ -85,7 +89,7 @@ namespace View
             int id = 1;
             foreach (ModUser user in users)
             {
-                ListViewItem lvItem = new ListViewItem(new [] { id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString() });
+                ListViewItem lvItem = new ListViewItem(new[] { id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString() });
                 ModUser modUser = new ModUser { Id = id, Email = user.Email, FirstName = user.FirstName, LastName = user.LastName, NrOfTickets = user.NrOfTickets };
                 userItems.Add(modUser);
                 listUsers.Items.Add(lvItem);
@@ -221,7 +225,7 @@ namespace View
         {
             searchIncidentData(txtFilter.Text);
         }
-        
+
         private void searchIncidentData(string text)
         {
             //clear the listview
@@ -287,7 +291,7 @@ namespace View
                 {
                     lblCreateUserError.Text = createUserFeedback;
                 }
-                
+
 
             }
         }
@@ -311,6 +315,35 @@ namespace View
                     listUsers.Items.Add(list);
                 }
             }
+        }
+
+        private void buttonResolvedTickets_Click(object sender, EventArgs e)
+        {
+            panelResolvedTickets.Show();
+            GetAllResolvedIncidents();
+        }
+
+        private void GetAllResolvedIncidents()
+        {
+            listResolvedIncidents.Items.Clear();
+            ConIncident incident = new ConIncident();
+            //Get all the incidents
+            List<ModIncident> incidents = incident.getIncidents();
+            int id = 1;
+            foreach (ModIncident item in incidents)
+            {
+                if (item.Resolved == true)
+                {
+                    ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident });
+                    //Fill the listview
+                    listResolvedIncidents.Items.Add(list);
+                }                
+            }
+        }
+
+        private void buttonOpenIncidents_Click(object sender, EventArgs e)
+        {
+            CloseAllPanelsExcept(panelIncident);
         }
     }
 }
