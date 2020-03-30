@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
+using Model;
+using MongoDB.Bson;
 
 namespace View
 {
@@ -25,38 +27,49 @@ namespace View
             Login login = new Login(); 
             email = txtEmail.Text;
             string password = txtPassword.Text;
-            Boolean passwordIsTrue =  login.CheckUser(email, password);
+            BsonDocument user =  login.CheckUser(email, password);
 
-            if (passwordIsTrue)
+            if (user != null)
             {
-                if (chkremember.Checked == true)
+                if (user.GetElement("Password").Value.ToString() == password)
                 {
-                    Properties.Settings.Default.Name = txtEmail.Text;
-                    Properties.Settings.Default.Password = txtPassword.Text;
-                    Properties.Settings.Default.Save();
+                    if (chkremember.Checked == true)
+                    {
+                        Properties.Settings.Default.Name = txtEmail.Text;
+                        Properties.Settings.Default.Password = txtPassword.Text;
+                        Properties.Settings.Default.Save();
+                    }
+                    if (chkremember.Checked == false)
+                    {
+                        Properties.Settings.Default.Name = "";
+                        Properties.Settings.Default.Password = "";
+                        Properties.Settings.Default.Save();
+                    }
+
+                    ConSession session = new ConSession();
+                    session.AddSession(user.GetElement("FirstName").Value.ToString(), user.GetElement("Email").Value.ToString(), ObjectId.Parse(user.GetElement("_id").Value.ToString()));
+
+                    this.Hide();
+
+                    if (int.Parse(user.GetElement("Role").Value.ToString()) == 0)
+                    {
+                        Employee employee = new Employee();
+                        employee.Show();
+                    }
+                    else
+                    {
+                        Form1 form1 = new Form1();
+                        form1.Show();
+                    }
                 }
-                if (chkremember.Checked == false)
+                else
                 {
-                    Properties.Settings.Default.Name = "";
-                    Properties.Settings.Default.Password = "";
-                    Properties.Settings.Default.Save();
+                    MessageBox.Show("Email and Password combination is not valid");
                 }
-
-                if (true)
-                {
-
-                }
-
-                this.Hide();
-
-                //Employee employee = new Employee();
-                //employee.Show();
-                Form1 form1 = new Form1();
-                form1.Show();
             }
             else
             {
-                MessageBox.Show("Email and Password combination is not valid");
+                MessageBox.Show("This user doesn't exist");
             }
         }
            
