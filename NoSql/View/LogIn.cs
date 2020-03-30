@@ -24,19 +24,21 @@ namespace View
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Login login = new Login(); 
+            Login login = new Login();
+            ConUser conUser = new ConUser();
             email = txtEmail.Text;
             string password = txtPassword.Text;
+            string hashedpswd = conUser.HashPassword(password);
             BsonDocument user =  login.CheckUser(email, password);
 
             if (user != null)
             {
-                if (user.GetElement("Password").Value.ToString() == password)
+                if (user.GetElement("Password").Value.ToString() == hashedpswd)
                 {
                     if (chkremember.Checked == true)
                     {
                         Properties.Settings.Default.Name = txtEmail.Text;
-                        Properties.Settings.Default.Password = txtPassword.Text;
+                        Properties.Settings.Default.Password = password;
                         Properties.Settings.Default.Save();
                     }
                     if (chkremember.Checked == false)
@@ -157,7 +159,9 @@ namespace View
             else
             {
                 Login login = new Login();
-                login.ConUpdatePassword(email, password);
+                ConUser conUser = new ConUser();
+                string hashedpswd = conUser.HashPassword(password);
+                login.ConUpdatePassword(email, hashedpswd);
                 pnlforgotpswd.Hide();
                 pnlCode.Hide();
                 pnlNewPswd.Hide();
