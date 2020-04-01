@@ -42,12 +42,12 @@ namespace DAL
             return collection.Find(filter).First();
         }
 
-        public T LoadRecordByEmail<T>(string table, string email)
-        { 
+        public T LoadRecordById<T>(string table, ObjectId id)
+        {
             try
             {
                 var collection = db.GetCollection<T>(table);
-                var filter = Builders<T>.Filter.Eq("Email", email);
+                var filter = Builders<T>.Filter.Eq("_id", id);
 
                 return collection.Find(filter).First();
             }
@@ -57,6 +57,47 @@ namespace DAL
             }
         }
 
+        public T LoadRecordByEmail<T>(string table, string email)
+        { 
+            try
+            {
+                var collection = db.GetCollection<T>(table);
+                var filter = Builders<T>.Filter.Eq("Email", email);
+
+                return collection.Find(filter).First();
+
+            }
+            catch (Exception)
+            {
+                return default(T);
+            }
+        }
+
+        public List<T> LoadRecordByIncidentId<T>(string table, ObjectId incidentID)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq("IncidentID", incidentID);
+
+            return collection.Find(filter).ToList();
+        }
+
+        public void UpdatePassword<BsonDocument>(string table, string email, string newPassword)
+        {
+            var collection = db.GetCollection<BsonDocument>(table);
+            var filter = Builders<BsonDocument>.Filter.Eq("Email", email);
+            var update = Builders<BsonDocument>.Update.Set("Password", newPassword);
+
+            collection.UpdateOne(filter, update);
+        }
+
+        public void UpgradeStatusIncidents(int status,string id)
+        {
+            var collection = db.GetCollection<BsonDocument>("Incidents");
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(id));
+            var update = Builders<BsonDocument>.Update.Set("Status", status);
+
+            collection.UpdateOne(filter, update);
+        }
         public void InsertRecord<T>(string table, T record)
         {
             var collection = db.GetCollection<T>(table);

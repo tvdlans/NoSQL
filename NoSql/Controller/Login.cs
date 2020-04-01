@@ -11,37 +11,33 @@ namespace Controller
 {
     public class Login
     {
+        public static Conn db;
         public void connect()
         {
-            Conn db = Conn.GetInstance("TGGDB");
+            db = Conn.GetInstance("TGGDB");
         }
 
-        public Boolean CheckUser(string email, string password)
-        {
-            Conn db = Conn.GetInstance("TGGDB");
+        public BsonDocument CheckUser(string email, string password)
+        {          
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
-                return false;
+                return default(BsonDocument);
             }
             else
             {
-                var user = db.LoadRecordByEmail<BsonDocument>("Users", email);
-                if (user == null)
-                {
-                    Console.WriteLine("huh");
-                    return false;
-                }
-                else if (user.GetElement("Password").Value.ToString() == password)
-                {
-                    ConSession session = new ConSession();
-                    session.AddSession(user.GetElement("FirstName").Value.ToString(), user.GetElement("Email").Value.ToString());
-                    return true;
-                }
-                else return false;
+                return db.LoadRecordByEmail<BsonDocument>("Users", email);
             }
         }
 
-
+        public BsonDocument CheckUserExists(string inputEmail)
+        {
+            var user = db.LoadRecordByEmail<BsonDocument>("Users", inputEmail);
+            return user;
+        }
  
+        public void ConUpdatePassword(string email, string newPassword)
+        {
+            db.UpdatePassword<BsonDocument>("Users", email, newPassword);
+        }
     }
 }
