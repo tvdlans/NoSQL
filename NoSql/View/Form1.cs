@@ -326,5 +326,21 @@ namespace View
         {
             SearchUserData(txtUserFilter.Text);
         }
+
+        private void SearchUserData(string text)
+        {
+            //clear the listview
+            listUsers.Items.Clear();
+            foreach (ModUser user in userItems)
+            {
+                //check if the list containts the searched text
+                if (user.Id.ToString().ToLower().Contains(text.ToLower()) || user.FirstName.ToLower().Contains(text.ToLower()) || user.LastName.ToLower().Contains(text.ToLower()) || user.Email.ToString().ToLower().Contains(text.ToLower()) || user.NrOfTickets.ToString().ToLower().Contains(text.ToLower()))
+                {
+                    //make new listview for items that contain the search
+                    ListViewItem list = new ListViewItem(new[] { user.Id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString() });
+                    listUsers.Items.Add(list);
+                }
+            }
+        }
     }
 }
