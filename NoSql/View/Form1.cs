@@ -28,7 +28,9 @@ namespace View
             panelDash.Hide();
             panelIncident.Hide();
             panelUser.Hide();
-            
+            pnlCreateIncident.Hide();
+            pnlCreateUser.Hide();
+            panelResolvedTickets.Hide();
             panel.Show();
         }
 
