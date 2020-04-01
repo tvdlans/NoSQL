@@ -175,7 +175,7 @@ namespace View
             {
                 //insert incident into database
                 Incident.insertIncident(cmbDateTime.Text, txtSubject.Text, cmbType.Text, cmbUser.Text, cmbPriority.Text, cmbDeadline.Text, txtDescription.Text);
-                pnlCreateIncident.Hide();
+                btnIncident.PerformClick();
             }
         }
 
@@ -384,7 +384,7 @@ namespace View
                 if (createUserFeedback == "Account created succesfully!")
                 {
                     lblCreateUserError.Text = "";
-                    pnlCreateUser.Hide();
+                    btnUser.PerformClick();
                     lblCreateUserSucces.Text = createUserFeedback;
                 }
                 else
