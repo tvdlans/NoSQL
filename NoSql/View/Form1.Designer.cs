@@ -648,6 +648,7 @@
             this.buttonOpenIncidents.TabIndex = 3;
             this.buttonOpenIncidents.Text = "Open incidents";
             this.buttonOpenIncidents.UseVisualStyleBackColor = false;
+            this.buttonOpenIncidents.Click += new System.EventHandler(this.buttonOpenIncidents_Click);
             // 
             // pnlUpgrade
             // 

@@ -348,5 +348,11 @@ namespace View
             panelResolvedTickets.Show();
             getAllIncidents(true);
         }
+
+        private void buttonOpenIncidents_Click(object sender, EventArgs e)
+        {
+            CloseAllPanelsExcept(panelIncident);
+            getAllIncidents(false);
+        }
     }
 }
