@@ -48,26 +48,41 @@ namespace View
             CloseAllPanelsExcept(panelIncident);
             pnlCreateIncident.Hide();
             pnlUpgrade.Hide();
-            getAllIncidents();
+            getAllIncidents(false);
         }
 
-        private void getAllIncidents()
+        private void getAllIncidents(bool onlyResolved)
         {
             //First clear the listview
             listIncidents.Items.Clear();
+            listResolvedIncidents.Items.Clear();
             ConIncident incident = new ConIncident();
             //Get all the incidents
             List<ModIncident> incidents = incident.getIncidents();
             int id = 1;
+
             foreach (ModIncident item in incidents)
             {
-                ModIncident mod = new ModIncident { ID = id,Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline= item.Deadline, Status= item.Status, TypeOfIncident= item.TypeOfIncident, Description = item.Description };
-                ListViewItem list = new ListViewItem(new [] { id.ToString(), item.Subject, item.Name,item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(),item.TypeOfIncident,item.Description,item.Id.ToString() });
-                //Fill the Masterlist
-                incidentsList.Add(mod);
-                //Fill the listview
-                listIncidents.Items.Add(list);
-                id++;
+                if (onlyResolved == false)
+                {
+                    ModIncident mod = new ModIncident { ID = id, Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline = item.Deadline, Status = item.Status, TypeOfIncident = item.TypeOfIncident };
+                    ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident });
+                    //Fill the Masterlist
+                    incidentsList.Add(mod);
+                    //Fill the listview
+                    listIncidents.Items.Add(list);
+                    id++;
+                }
+                else if (onlyResolved == true)
+                {
+                    if (item.Status == 100)
+                    {
+                        ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident });
+                        //Fill the listview
+                        listResolvedIncidents.Items.Add(list);
+                        id++;
+                    }
+                }
             }
         }
 
@@ -282,7 +297,7 @@ namespace View
                 //add comment into database
                 Incident.SetComment("Comments",txtUpComment.Text, lblUpID.Text);
                 pnlUpgrade.Hide();
-                getAllIncidents();
+                getAllIncidents(false);
               }
         }
     }
