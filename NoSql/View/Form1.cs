@@ -227,7 +227,6 @@ namespace View
 
         private void listIncidents_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-
             if (e.IsSelected)
             {
                 pnlUpgrade.Show();
