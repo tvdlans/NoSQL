@@ -97,6 +97,22 @@ namespace View
             GetAllUsers();
         }
 
+        private void GetAllUsers()
+        {
+            listUsers.Items.Clear();
+            ConUser ConUserObject = new ConUser();
+            List<ModUser> users = ConUserObject.GetAllUsers();
+            int id = 1;
+            foreach (ModUser user in users)
+            {
+                ListViewItem lvItem = new ListViewItem(new[] { id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString() });
+                ModUser modUser = new ModUser { Id = id, Email = user.Email, FirstName = user.FirstName, LastName = user.LastName, NrOfTickets = user.NrOfTickets };
+                userItems.Add(modUser);
+                listUsers.Items.Add(lvItem);
+                id++;
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             panelDash.BringToFront();
