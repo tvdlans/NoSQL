@@ -342,5 +342,11 @@ namespace View
                 }
             }
         }
+
+        private void buttonResolvedTickets_Click(object sender, EventArgs e)
+        {
+            panelResolvedTickets.Show();
+            getAllIncidents(true);
+        }
     }
 }

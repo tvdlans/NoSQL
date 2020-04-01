@@ -1229,6 +1229,7 @@
             this.buttonResolvedTickets.TabIndex = 19;
             this.buttonResolvedTickets.Text = "View Resolved Tickets";
             this.buttonResolvedTickets.UseVisualStyleBackColor = false;
+            this.buttonResolvedTickets.Click += new System.EventHandler(this.buttonResolvedTickets_Click);
             // 
             // txtFilter
             // 
