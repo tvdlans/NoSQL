@@ -280,6 +280,7 @@ namespace View
                 selected = false;
             }
         }
+
         private void IncidentsSolvedByYou(ConDashboard conDashboard)
         {
             int[] incidentsByYou = conDashboard.CalculateYourIncidents();
@@ -319,6 +320,11 @@ namespace View
                 pnlUpgrade.Hide();
                 getAllIncidents(false);
               }
+        }
+
+        private void txtUserFilter_TextChanged(object sender, EventArgs e)
+        {
+            SearchUserData(txtUserFilter.Text);
         }
     }
 }
