@@ -364,5 +364,33 @@ namespace View
         {
             pnlCreateUser.Hide();
         }
+
+        private void buttonCreateUser_Click(object sender, EventArgs e)
+        {
+            ConUser userObject = new ConUser();
+            //check if all the fields are filled
+            bool check = userObject.checkFields(textBoxUserFirstName.Text, textBoxUserLastName.Text, comboBoxTypeOfUser.Text, textBoxUserEmail.Text, textBoxUserPhoneNumber.Text, comboBoxUserLocation.Text);
+            if (check == false)
+            {
+                lblCreateUserError.Text = "Please fill in all the information";
+            }
+            else
+            {
+                //insert incident into database
+                string createUserFeedback = userObject.InsertUser(textBoxUserFirstName.Text, textBoxUserLastName.Text, comboBoxTypeOfUser.Text, textBoxUserEmail.Text, textBoxUserPhoneNumber.Text, comboBoxUserLocation.Text, checkBoxUserSendPassword.Checked);
+                if (createUserFeedback == "Account created succesfully!")
+                {
+                    lblCreateUserError.Text = "";
+                    pnlCreateUser.Hide();
+                    lblCreateUserSucces.Text = createUserFeedback;
+                }
+                else
+                {
+                    lblCreateUserError.Text = createUserFeedback;
+                }
+
+
+            }
+        }
     }
 }
