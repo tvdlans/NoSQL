@@ -354,5 +354,10 @@ namespace View
             CloseAllPanelsExcept(panelIncident);
             getAllIncidents(false);
         }
+
+        private void buttonAddUser_Click(object sender, EventArgs e)
+        {
+            pnlCreateUser.Show();
+        }
     }
 }

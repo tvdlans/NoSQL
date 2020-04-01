@@ -1508,6 +1508,7 @@
             this.buttonAddUser.TabIndex = 4;
             this.buttonAddUser.Text = "CreateUser";
             this.buttonAddUser.UseVisualStyleBackColor = false;
+            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
             // 
             // lblUnderTitleUsers
             // 
