@@ -50,28 +50,46 @@ namespace View
             CloseAllPanelsExcept(panelIncident);
             pnlCreateIncident.Hide();
             panelResolvedTickets.Hide();
-            getAllIncidents();
+            getAllIncidents(false);
         }
 
-        private void getAllIncidents()
+        private void getAllIncidents(bool onlyResolved)
         {
             //First clear the listview
             listIncidents.Items.Clear();
+            listResolvedIncidents.Items.Clear();
             ConIncident incident = new ConIncident();
             //Get all the incidents
             List<ModIncident> incidents = incident.getIncidents();
             int id = 1;
+
             foreach (ModIncident item in incidents)
             {
-                ModIncident mod = new ModIncident { ID = id, Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline = item.Deadline, Status = item.Status, TypeOfIncident = item.TypeOfIncident };
-                ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident });
-                //Fill the Masterlist
-                incidentsList.Add(mod);
-                //Fill the listview
-                listIncidents.Items.Add(list);
-                id++;
+                if (onlyResolved == false)
+                {
+                    ModIncident mod = new ModIncident { ID = id, Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline = item.Deadline, Status = item.Status, TypeOfIncident = item.TypeOfIncident };
+                    ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident });
+                    //Fill the Masterlist
+                    incidentsList.Add(mod);
+                    //Fill the listview
+                    listIncidents.Items.Add(list);
+                    id++;
+                }
+                else if (onlyResolved == true)
+                {
+                    if (item.Status == 100)
+                    {
+                        ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident });
+                        //Fill the listview
+                        listResolvedIncidents.Items.Add(list);
+                        id++;
+                    }
+                }
             }
         }
+
+    
+
 
         private void btnUser_Click(object sender, EventArgs e)
         {
@@ -320,30 +338,13 @@ namespace View
         private void buttonResolvedTickets_Click(object sender, EventArgs e)
         {
             panelResolvedTickets.Show();
-            GetAllResolvedIncidents();
-        }
-
-        private void GetAllResolvedIncidents()
-        {
-            listResolvedIncidents.Items.Clear();
-            ConIncident incident = new ConIncident();
-            //Get all the incidents
-            List<ModIncident> incidents = incident.getIncidents();
-            int id = 1;
-            foreach (ModIncident item in incidents)
-            {
-                if (item.Resolved == true)
-                {
-                    ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident });
-                    //Fill the listview
-                    listResolvedIncidents.Items.Add(list);
-                }                
-            }
+            getAllIncidents(true);
         }
 
         private void buttonOpenIncidents_Click(object sender, EventArgs e)
         {
             CloseAllPanelsExcept(panelIncident);
+            getAllIncidents(false);
         }
     }
 }

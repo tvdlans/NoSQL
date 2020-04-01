@@ -139,12 +139,12 @@ namespace Controller
             }
         }
 
-        private static string HashPassword(string password, string algorithm = "sha256")
+        private string HashPassword(string password, string algorithm = "sha256")
         {
             return Hash(Encoding.UTF8.GetBytes(password), algorithm);
         }
 
-        private static string Hash(byte[] input, string algorithm = "sha256")
+        private string Hash(byte[] input, string algorithm = "sha256")
         {
             using (var hashAlgorithm = HashAlgorithm.Create(algorithm))
             {
