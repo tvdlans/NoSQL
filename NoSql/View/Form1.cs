@@ -359,5 +359,10 @@ namespace View
         {
             pnlCreateUser.Show();
         }
+
+        private void buttonCancelCreateUser_Click(object sender, EventArgs e)
+        {
+            pnlCreateUser.Hide();
+        }
     }
 }

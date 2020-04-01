@@ -1350,6 +1350,7 @@
             this.buttonCancelCreateUser.TabIndex = 19;
             this.buttonCancelCreateUser.Text = "Cancel";
             this.buttonCancelCreateUser.UseVisualStyleBackColor = true;
+            this.buttonCancelCreateUser.Click += new System.EventHandler(this.buttonCancelCreateUser_Click);
             // 
             // checkBoxUserSendPassword
             // 
