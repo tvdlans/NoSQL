@@ -62,12 +62,18 @@ namespace Controller
                     double phonenr;
                     if (Double.TryParse(phonenumber, out phonenr) && phonenumber.Length > 5 && phonenumber.Length < 14)
                     {
+                        string password = CreatePassword(12);
+                        if (check == true)
+                        {
+                            ConSendMail sendMailObject = new ConSendMail();
+                            sendMailObject.SendNewPasswordMail(email, fn + " " + ln, password);
+                        }
                         var document = new BsonDocument
                         {
                             {"FirstName",fn},
                             {"LastName",ln},
                             {"Email",email},
-                            {"Password",HashPassword("Welcome123")},
+                            {"Password",HashPassword(password)},
                             {"Role",role},
                             {"PhoneNumber",phonenr},
                             {"Location",loc},
@@ -150,6 +156,18 @@ namespace Controller
             {
                 return Convert.ToBase64String(hashAlgorithm.ComputeHash(input));
             }
+        }
+
+        public string CreatePassword(int length)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            return res.ToString();
         }
     }
 }

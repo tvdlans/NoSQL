@@ -57,6 +57,7 @@ namespace View
         private void getAllIncidents(bool onlyResolved)
         {
             //First clear the listview
+            incidentsList.Clear();
             listIncidents.Items.Clear();
             listResolvedIncidents.Items.Clear();
             ConIncident incident = new ConIncident();
@@ -68,8 +69,8 @@ namespace View
             {
                 if (onlyResolved == false)
                 {
-                    ModIncident mod = new ModIncident { ID = id, Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline = item.Deadline, Status = item.Status, TypeOfIncident = item.TypeOfIncident };
-                    ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident });
+                    ModIncident mod = new ModIncident { ID = id, Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline = item.Deadline, Status = item.Status, TypeOfIncident = item.TypeOfIncident, Description = item.Description };
+                    ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident, item.Description, item.Id.ToString()});
                     //Fill the Masterlist
                     incidentsList.Add(mod);
                     //Fill the listview
@@ -99,6 +100,7 @@ namespace View
 
         private void GetAllUsers()
         {
+            userItems.Clear();
             listUsers.Items.Clear();
             ConUser ConUserObject = new ConUser();
             List<ModUser> users = ConUserObject.GetAllUsers();
@@ -330,6 +332,7 @@ namespace View
         private void SearchUserData(string text)
         {
             //clear the listview
+
             listUsers.Items.Clear();
             foreach (ModUser user in userItems)
             {
