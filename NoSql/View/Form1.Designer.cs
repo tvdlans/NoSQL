@@ -117,6 +117,7 @@
             this.clmType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCreateIncident = new System.Windows.Forms.Button();
+            this.buttonResolvedTickets = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.lblUnderText = new System.Windows.Forms.Label();
             this.lblTitleIndicent = new System.Windows.Forms.Label();
@@ -152,7 +153,18 @@
             this.colFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colNrOfTickets = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonResolvedTickets = new System.Windows.Forms.Button();
+            this.panelResolvedTickets = new System.Windows.Forms.Panel();
+            this.labelunderDescriptionResolved = new System.Windows.Forms.Label();
+            this.labelIncidentManagementResolved = new System.Windows.Forms.Label();
+            this.listResolvedIncidents = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Subject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.User = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EndDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.typeOfIncident = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonOpenIncidents = new System.Windows.Forms.Button();
             this.panelBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -167,6 +179,7 @@
             this.pnlCreateIncident.SuspendLayout();
             this.panelUser.SuspendLayout();
             this.pnlCreateUser.SuspendLayout();
+            this.panelResolvedTickets.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -306,7 +319,7 @@
             this.panelDash.Controls.Add(this.ChartUnresInc);
             this.panelDash.Controls.Add(this.lblDashboardTitle);
             this.panelDash.Location = new System.Drawing.Point(227, 130);
-            this.panelDash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDash.Margin = new System.Windows.Forms.Padding(4);
             this.panelDash.Name = "panelDash";
             this.panelDash.Size = new System.Drawing.Size(956, 542);
             this.panelDash.TabIndex = 1;
@@ -516,6 +529,7 @@
             // 
             // panelIncident
             // 
+            this.panelIncident.Controls.Add(this.panelResolvedTickets);
             this.panelIncident.Controls.Add(this.pnlUpgrade);
             this.panelIncident.Controls.Add(this.pnlCreateIncident);
             this.panelIncident.Controls.Add(this.listIncidents);
@@ -1097,6 +1111,20 @@
             this.btnCreateIncident.UseVisualStyleBackColor = false;
             this.btnCreateIncident.Click += new System.EventHandler(this.btnCreateIncident_Click);
             // 
+            // buttonResolvedTickets
+            // 
+            this.buttonResolvedTickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
+            this.buttonResolvedTickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonResolvedTickets.Font = new System.Drawing.Font("Lato Light", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonResolvedTickets.ForeColor = System.Drawing.Color.White;
+            this.buttonResolvedTickets.Location = new System.Drawing.Point(366, 252);
+            this.buttonResolvedTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonResolvedTickets.Name = "buttonResolvedTickets";
+            this.buttonResolvedTickets.Size = new System.Drawing.Size(225, 38);
+            this.buttonResolvedTickets.TabIndex = 19;
+            this.buttonResolvedTickets.Text = "View Resolved Tickets";
+            this.buttonResolvedTickets.UseVisualStyleBackColor = false;
+            // 
             // txtFilter
             // 
             this.txtFilter.Location = new System.Drawing.Point(61, 129);
@@ -1445,19 +1473,110 @@
             this.colNrOfTickets.Text = "# tickets";
             this.colNrOfTickets.Width = 100;
             // 
-            // buttonResolvedTickets
+            // panelResolvedTickets
             // 
-            this.buttonResolvedTickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
-            this.buttonResolvedTickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonResolvedTickets.Font = new System.Drawing.Font("Lato Light", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonResolvedTickets.ForeColor = System.Drawing.Color.White;
-            this.buttonResolvedTickets.Location = new System.Drawing.Point(366, 252);
-            this.buttonResolvedTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonResolvedTickets.Name = "buttonResolvedTickets";
-            this.buttonResolvedTickets.Size = new System.Drawing.Size(225, 38);
-            this.buttonResolvedTickets.TabIndex = 19;
-            this.buttonResolvedTickets.Text = "View Resolved Tickets";
-            this.buttonResolvedTickets.UseVisualStyleBackColor = false;
+            this.panelResolvedTickets.Controls.Add(this.labelunderDescriptionResolved);
+            this.panelResolvedTickets.Controls.Add(this.labelIncidentManagementResolved);
+            this.panelResolvedTickets.Controls.Add(this.listResolvedIncidents);
+            this.panelResolvedTickets.Controls.Add(this.buttonOpenIncidents);
+            this.panelResolvedTickets.Location = new System.Drawing.Point(10, 8);
+            this.panelResolvedTickets.Name = "panelResolvedTickets";
+            this.panelResolvedTickets.Size = new System.Drawing.Size(937, 526);
+            this.panelResolvedTickets.TabIndex = 22;
+            // 
+            // labelunderDescriptionResolved
+            // 
+            this.labelunderDescriptionResolved.AutoSize = true;
+            this.labelunderDescriptionResolved.Font = new System.Drawing.Font("Lato Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelunderDescriptionResolved.Location = new System.Drawing.Point(400, 66);
+            this.labelunderDescriptionResolved.Name = "labelunderDescriptionResolved";
+            this.labelunderDescriptionResolved.Size = new System.Drawing.Size(156, 25);
+            this.labelunderDescriptionResolved.TabIndex = 7;
+            this.labelunderDescriptionResolved.Text = "Resolved Tickets";
+            // 
+            // labelIncidentManagementResolved
+            // 
+            this.labelIncidentManagementResolved.AutoSize = true;
+            this.labelIncidentManagementResolved.Font = new System.Drawing.Font("Lato Light", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIncidentManagementResolved.Location = new System.Drawing.Point(312, 21);
+            this.labelIncidentManagementResolved.Name = "labelIncidentManagementResolved";
+            this.labelIncidentManagementResolved.Size = new System.Drawing.Size(348, 45);
+            this.labelIncidentManagementResolved.TabIndex = 6;
+            this.labelIncidentManagementResolved.Text = "Incident Mangement";
+            // 
+            // listResolvedIncidents
+            // 
+            this.listResolvedIncidents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Subject,
+            this.User,
+            this.Date,
+            this.EndDate,
+            this.Status,
+            this.typeOfIncident});
+            this.listResolvedIncidents.GridLines = true;
+            this.listResolvedIncidents.HideSelection = false;
+            this.listResolvedIncidents.Location = new System.Drawing.Point(55, 151);
+            this.listResolvedIncidents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listResolvedIncidents.Name = "listResolvedIncidents";
+            this.listResolvedIncidents.Size = new System.Drawing.Size(854, 278);
+            this.listResolvedIncidents.TabIndex = 5;
+            this.listResolvedIncidents.UseCompatibleStateImageBehavior = false;
+            this.listResolvedIncidents.View = System.Windows.Forms.View.Details;
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
+            // Subject
+            // 
+            this.Subject.Text = "Subject";
+            this.Subject.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Subject.Width = 200;
+            // 
+            // User
+            // 
+            this.User.Text = "User";
+            this.User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.User.Width = 100;
+            // 
+            // Date
+            // 
+            this.Date.Text = "Date";
+            this.Date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Date.Width = 100;
+            // 
+            // EndDate
+            // 
+            this.EndDate.Text = "EndDate";
+            this.EndDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.EndDate.Width = 100;
+            // 
+            // Status
+            // 
+            this.Status.Text = "Status";
+            this.Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Status.Width = 100;
+            // 
+            // typeOfIncident
+            // 
+            this.typeOfIncident.Text = "Type of incident";
+            this.typeOfIncident.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.typeOfIncident.Width = 150;
+            // 
+            // buttonOpenIncidents
+            // 
+            this.buttonOpenIncidents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(191)))), ((int)(((byte)(49)))));
+            this.buttonOpenIncidents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOpenIncidents.Font = new System.Drawing.Font("Lato Light", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOpenIncidents.ForeColor = System.Drawing.Color.White;
+            this.buttonOpenIncidents.Location = new System.Drawing.Point(750, 103);
+            this.buttonOpenIncidents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonOpenIncidents.Name = "buttonOpenIncidents";
+            this.buttonOpenIncidents.Size = new System.Drawing.Size(158, 38);
+            this.buttonOpenIncidents.TabIndex = 3;
+            this.buttonOpenIncidents.Text = "Open incidents";
+            this.buttonOpenIncidents.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -1495,6 +1614,8 @@
             this.panelUser.PerformLayout();
             this.pnlCreateUser.ResumeLayout(false);
             this.pnlCreateUser.PerformLayout();
+            this.panelResolvedTickets.ResumeLayout(false);
+            this.panelResolvedTickets.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1609,6 +1730,18 @@
         private System.Windows.Forms.Label lblUserFirstname;
         private System.Windows.Forms.Label labelAddUser;
         private System.Windows.Forms.Button buttonResolvedTickets;
+        private System.Windows.Forms.Panel panelResolvedTickets;
+        private System.Windows.Forms.Label labelunderDescriptionResolved;
+        private System.Windows.Forms.Label labelIncidentManagementResolved;
+        private System.Windows.Forms.ListView listResolvedIncidents;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Subject;
+        private System.Windows.Forms.ColumnHeader User;
+        private System.Windows.Forms.ColumnHeader Date;
+        private System.Windows.Forms.ColumnHeader EndDate;
+        private System.Windows.Forms.ColumnHeader Status;
+        private System.Windows.Forms.ColumnHeader typeOfIncident;
+        private System.Windows.Forms.Button buttonOpenIncidents;
     }
 }
 
