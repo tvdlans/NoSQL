@@ -8,7 +8,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Controller
 {
-    public class User
+    public class ModUser
     {
         [BsonId]
         public ObjectId Id { get; set; }

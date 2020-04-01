@@ -16,6 +16,7 @@ namespace View
     public partial class Form1 : Form
     {
         private List<ModIncident> incidentsList = new List<ModIncident>();
+        List<ModUser> userItems = new List<ModUser>();
         private static bool selected;
 
         public Form1()
