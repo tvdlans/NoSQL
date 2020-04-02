@@ -238,7 +238,7 @@ namespace View
                 lblUpType.Text = listIncidents.SelectedItems[0].SubItems[6].Text;
                 lblUpDescription.Text = listIncidents.SelectedItems[0].SubItems[7].Text;
                 UpDownStatus.Value = decimal.Parse(listIncidents.SelectedItems[0].SubItems[5].Text);
-                lblUpID.Text = listIncidents.SelectedItems[0].SubItems[8].Text;
+                lblUpID.Text = listIncidents.SelectedItems[0].SubItems[0].Text;
                 selected = true;
             }
             else
