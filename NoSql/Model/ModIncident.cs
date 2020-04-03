@@ -24,7 +24,6 @@ namespace Model
         public string Priority { get; set; }
         public DateTime Deadline { get; set; }
         public int Status { get; set; }
-        public bool Resolved { get; set; }
         public string Name { get; set; }
         public int ID { get; set; }
     }

@@ -23,7 +23,6 @@ namespace Controller
             {
                 Subject = incident.GetElement("Subject").Value.ToString(),
                 Status = incident.GetElement("Status").Value.AsInt32,
-                Resolved = incident.GetElement("Resolved").Value.AsBoolean,
                 Date = incident.GetElement("Date").Value.AsDateTime,
                 Deadline = incident.GetElement("Deadline").Value.AsDateTime,
                 TypeOfIncident = incident.GetElement("TypeOfIncident").Value.ToString(),

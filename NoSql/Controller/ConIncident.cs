@@ -73,7 +73,6 @@ namespace Controller
                     Name = name,
                     Subject = item.GetElement("Subject").Value.ToString(),
                     Status = item.GetElement("Status").Value.AsInt32,
-                    Resolved = item.GetElement("Resolved").Value.AsBoolean,
                     Date = item.GetElement("Date").Value.AsDateTime,
                     Deadline = item.GetElement("Deadline").Value.AsDateTime,
                     EmployeeID = item.GetElement("EmployeeID").Value.AsObjectId,
