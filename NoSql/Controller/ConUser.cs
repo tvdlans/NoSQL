@@ -17,11 +17,13 @@ namespace Controller
 
         public List<ModUser> GetAllUsers()
         {
+            //receives a list with all users from the database
             var userList = db.LoadRecords<BsonDocument>("Users");
 
-            List<ModUser> incidents = new List<ModUser>();
+            List<ModUser> users = new List<ModUser>();
             foreach (var item in userList)
             {
+                //creating a new user and adding all data from the database
                 ModUser user = new ModUser()
                 {
                     FirstName = item.GetElement("FirstName").Value.ToString(),
@@ -33,11 +35,12 @@ namespace Controller
                     Location = item.GetElement("Location").Value.AsInt32,
                     NrOfTickets = item.GetElement("NumberOfTickets").Value.AsInt32
                 };
-                incidents.Add(user);
+                users.Add(user);
             }
-            return incidents;
+            return users;
         }
 
+        //the method that checks if all fields are empty
         public bool checkFields(string fn, string ln, string type, string email, string phonenumber, string location)
         {
             if (string.IsNullOrWhiteSpace(fn) || string.IsNullOrWhiteSpace(ln) || string.IsNullOrWhiteSpace(type) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(phonenumber) || string.IsNullOrWhiteSpace(location))
@@ -50,24 +53,31 @@ namespace Controller
             }
         }
 
+        //the method that inserts a user to the database
         public string InsertUser(string fn, string ln, string type, string email, string phonenumber, string location, bool check)
         {
             int role = GetRole(type);
             int loc = GetLoc(location);
 
+            //checking if theres a valid email
             if (IsValidEmail(email))
             {
+                //checking if the email does not already exists in the database
                 if (db.LoadRecordByEmail<BsonDocument>("Users", email) == null)
                 {
+                    //checking if the phonenumber is valid
                     double phonenr;
                     if (Double.TryParse(phonenumber, out phonenr) && phonenumber.Length > 5 && phonenumber.Length < 14)
                     {
+                        //generating a Random password
                         string password = CreatePassword(12);
+                        //if the email checkbox is checked, an email is send with the generatedpassword
                         if (check == true)
                         {
                             ConSendMail sendMailObject = new ConSendMail();
                             sendMailObject.SendNewPasswordMail(email, fn + " " + ln, password);
-                        }
+                        }        
+                        //creating a new user for the database and inserting it
                         var document = new BsonDocument
                         {
                             {"FirstName",fn},
@@ -80,10 +90,6 @@ namespace Controller
                             {"NumberOfTickets",0}
                         };
                         db.InsertRecord<BsonDocument>("Users", document);
-                        if (check == true)
-                        {
-
-                        }
                         return "Account created succesfully!";
                     }
                     else
@@ -102,6 +108,7 @@ namespace Controller
             }
         }
 
+        //checking the location and returning the right number that corresponds with the location
         private int GetLoc(string location)
         {
             switch (location)
@@ -119,6 +126,7 @@ namespace Controller
             }
         }
 
+        //checking the role and returning the right number that corresponds with the role
         private int GetRole(string type)
         {
             switch (type)
@@ -132,6 +140,7 @@ namespace Controller
             }
         }
 
+        //the method that checks if the email is valid
         bool IsValidEmail(string email)
         {
             try
@@ -145,6 +154,7 @@ namespace Controller
             }
         }
 
+        //the method that hashes the password
         public string HashPassword(string password, string algorithm = "sha256")
         {
             return Hash(Encoding.UTF8.GetBytes(password), algorithm);

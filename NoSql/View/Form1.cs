@@ -24,6 +24,7 @@ namespace View
             InitializeComponent();
         }
 
+        // method that closes all panels except the one in argument
         public void CloseAllPanelsExcept(Panel panel)
         {
             panelDash.Hide();
@@ -90,6 +91,7 @@ namespace View
             }
         }
 
+        //the method that gets called when the user button is clicked, which shows the user management menu
         private void btnUser_Click(object sender, EventArgs e)
         {
             panelUser.BringToFront();
@@ -98,15 +100,18 @@ namespace View
             GetAllUsers();
         }
 
+        //a method that receives all users and puts them in the listview
         private void GetAllUsers()
         {
             userItems.Clear();
             listUsers.Items.Clear();
             ConUser ConUserObject = new ConUser();
+            //calling the method that retrieves all users from the database
             List<ModUser> users = ConUserObject.GetAllUsers();
             int id = 1;
             foreach (ModUser user in users)
             {
+                //adding every user to the listview
                 ListViewItem lvItem = new ListViewItem(new[] { id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString() });
                 ModUser modUser = new ModUser { Id = id, Email = user.Email, FirstName = user.FirstName, LastName = user.LastName, NrOfTickets = user.NrOfTickets };
                 userItems.Add(modUser);
@@ -332,11 +337,10 @@ namespace View
         private void SearchUserData(string text)
         {
             //clear the listview
-
             listUsers.Items.Clear();
             foreach (ModUser user in userItems)
             {
-                //check if the list containts the searched text
+                //check if the list contains the searched text
                 if (user.Id.ToString().ToLower().Contains(text.ToLower()) || user.FirstName.ToLower().Contains(text.ToLower()) || user.LastName.ToLower().Contains(text.ToLower()) || user.Email.ToString().ToLower().Contains(text.ToLower()) || user.NrOfTickets.ToString().ToLower().Contains(text.ToLower()))
                 {
                     //make new listview for items that contain the search
@@ -346,28 +350,33 @@ namespace View
             }
         }
 
+        //the button that opens the panel with all resolved incidents
         private void buttonResolvedTickets_Click(object sender, EventArgs e)
         {
             panelResolvedTickets.Show();
             getAllIncidents(true);
         }
 
+        //the panel that closes the resolved incidents panel and opens the all incidents panels
         private void buttonOpenIncidents_Click(object sender, EventArgs e)
         {
             CloseAllPanelsExcept(panelIncident);
             getAllIncidents(false);
         }
 
+        //the button that opens the panel with which the user can add another user
         private void buttonAddUser_Click(object sender, EventArgs e)
         {
             pnlCreateUser.Show();
         }
 
+        //the button that cancels the the create user process
         private void buttonCancelCreateUser_Click(object sender, EventArgs e)
         {
             pnlCreateUser.Hide();
         }
 
+        //the button that checks if all fields of the create user panel are filled and then calls the method that adds a user to the database
         private void buttonCreateUser_Click(object sender, EventArgs e)
         {
             ConUser userObject = new ConUser();
@@ -379,7 +388,7 @@ namespace View
             }
             else
             {
-                //insert incident into database
+                //insert user into database
                 string createUserFeedback = userObject.InsertUser(textBoxUserFirstName.Text, textBoxUserLastName.Text, comboBoxTypeOfUser.Text, textBoxUserEmail.Text, textBoxUserPhoneNumber.Text, comboBoxUserLocation.Text, checkBoxUserSendPassword.Checked);
                 if (createUserFeedback == "Account created succesfully!")
                 {
