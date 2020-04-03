@@ -111,12 +111,25 @@ namespace View
             int id = 1;
             foreach (ModUser user in users)
             {
+
                 //adding every user to the listview
-                ListViewItem lvItem = new ListViewItem(new[] { id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString() });
-                ModUser modUser = new ModUser { Id = id, Email = user.Email, FirstName = user.FirstName, LastName = user.LastName, NrOfTickets = user.NrOfTickets };
+                ListViewItem lvItem = new ListViewItem(new[] { id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString(), CheckRole(user)});
+                ModUser modUser = new ModUser { Id = id, Email = user.Email, FirstName = user.FirstName, LastName = user.LastName, NrOfTickets = user.NrOfTickets, Role = user.Role};
                 userItems.Add(modUser);
                 listUsers.Items.Add(lvItem);
                 id++;
+            }
+        }
+
+        private string CheckRole(ModUser user)
+        {
+            if (user.Role == 0)
+            {
+                return "Employee";
+            }
+            else
+            {
+                return "Service desk employee";
             }
         }
 
@@ -343,8 +356,9 @@ namespace View
                 //check if the list contains the searched text
                 if (user.Id.ToString().ToLower().Contains(text.ToLower()) || user.FirstName.ToLower().Contains(text.ToLower()) || user.LastName.ToLower().Contains(text.ToLower()) || user.Email.ToString().ToLower().Contains(text.ToLower()) || user.NrOfTickets.ToString().ToLower().Contains(text.ToLower()))
                 {
+                    string role = CheckRole(user);
                     //make new listview for items that contain the search
-                    ListViewItem list = new ListViewItem(new[] { user.Id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString() });
+                    ListViewItem list = new ListViewItem(new[] { user.Id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString(), role});
                     listUsers.Items.Add(list);
                 }
             }
