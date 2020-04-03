@@ -120,7 +120,7 @@ namespace View
                 code = random.Next(1000, 10000);
 
                 string name = user.GetElement("FirstName").Value.ToString();
-                bool sent = conSendMail.SendMail(email, name, code);
+                bool sent = conSendMail.SendPasswordResetMail(email, name, code);
                 if (sent)
                 {
                     MessageBox.Show("an email has been sent");
