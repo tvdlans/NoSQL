@@ -9,7 +9,7 @@ namespace Controller
 {
     public class ConSendMail
     {
-        public Boolean SendMail(string email, string name, int code)
+        public Boolean SendPasswordResetMail(string email, string name, int code)
         {
             try
             {
@@ -17,15 +17,51 @@ namespace Controller
                 mail.IsBodyHtml = true;
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
+
                 mail.From = new MailAddress("nosqlgroep1@gmail.com");
                 mail.To.Add(email);
                 mail.Subject = "Password reset";
+
+                //this is the body of the mail
                 mail.Body = "Dear "+name+", <br />" +
                             "You have requested to change your password <br />" +
                             "your code is <b>" + code.ToString() + "<b>. <br />" +
                             "Fill in this this code in the applictation to reset your password <br />" +
                             "<br />" +
                             "With kind regards the Garden Groep";
+
+                //send the mail
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("nosqlgroep1@gmail.com", "Welkom1234");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public Boolean SendNewPasswordMail(string email, string name, string password)
+        {
+            try
+            { 
+                MailMessage mail = new MailMessage();
+                mail.IsBodyHtml = true;
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("nosqlgroep1@gmail.com");
+                mail.To.Add(email);
+                mail.Subject = "New Password The Garden Group";
+                mail.Body = "Dear " + name + ", <br />" +
+                            "A new account has been created for you on The Garden Group's Service Desk Application <br />" +
+                            "your username is <b>" + email + "<b>. <br />" +
+                            "your password is <b>" + password + "<br />" +
+                            "You can log in with this information once you have started the application <br />" +
+                            "<br />" +
+                            "With kind regards the Garden Group";
 
                 SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("nosqlgroep1@gmail.com", "Welkom1234");
@@ -39,6 +75,6 @@ namespace Controller
                 Console.WriteLine(ex);
                 return false;
             }
-        }
+}
     }
 }
