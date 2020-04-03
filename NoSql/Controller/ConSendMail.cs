@@ -17,9 +17,12 @@ namespace Controller
                 mail.IsBodyHtml = true;
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
+
                 mail.From = new MailAddress("nosqlgroep1@gmail.com");
                 mail.To.Add(email);
                 mail.Subject = "Password reset";
+
+                //this is the body of the mail
                 mail.Body = "Dear "+name+", <br />" +
                             "You have requested to change your password <br />" +
                             "your code is <b>" + code.ToString() + "<b>. <br />" +
@@ -27,6 +30,7 @@ namespace Controller
                             "<br />" +
                             "With kind regards the Garden Groep";
 
+                //send the mail
                 SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("nosqlgroep1@gmail.com", "Welkom1234");
                 SmtpServer.EnableSsl = true;
@@ -36,7 +40,6 @@ namespace Controller
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
                 return false;
             }
         }

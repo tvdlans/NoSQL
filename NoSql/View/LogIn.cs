@@ -35,6 +35,7 @@ namespace View
             {
                 if (user.GetElement("Password").Value.ToString() == hashedpswd)
                 {
+                    // makes the remember me function work
                     if (chkremember.Checked == true)
                     {
                         Properties.Settings.Default.Name = txtEmail.Text;
@@ -48,11 +49,13 @@ namespace View
                         Properties.Settings.Default.Save();
                     }
 
+                    // add a "session" of the user that is logged in, that way you can access his or her information in the main program
                     ConSession session = new ConSession();
                     session.AddSession(user.GetElement("FirstName").Value.ToString(), user.GetElement("Email").Value.ToString(), ObjectId.Parse(user.GetElement("_id").Value.ToString()));
 
                     this.Hide();
 
+                    // checks if the user is a service desk employee or a employee
                     if (int.Parse(user.GetElement("Role").Value.ToString()) == 0)
                     {
                         Employee employee = new Employee();
@@ -83,6 +86,8 @@ namespace View
 
             Login login = new Login();
             login.connect();
+
+            // fill the email and password textbox if the user checked the remember me box
             if (Properties.Settings.Default.Name != string.Empty)
             {
                 chkremember.Checked = true;
@@ -111,6 +116,7 @@ namespace View
             {
                 ConSendMail conSendMail = new ConSendMail();
                 Random random = new Random();
+                // create a random code that will be send to the user
                 code = random.Next(1000, 10000);
 
                 string name = user.GetElement("FirstName").Value.ToString();
@@ -128,6 +134,7 @@ namespace View
             }
         }
 
+        // check if the code is correct
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             int userCode = int.Parse(txtCode.Text);
@@ -148,6 +155,7 @@ namespace View
             string password = txtNewPswd.Text;
             string rptPassword = txtRepeatPswd.Text;
 
+            //check if the new password is valid
             if (string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(rptPassword))
             {
                 MessageBox.Show("Fields can't be empty");
@@ -158,6 +166,7 @@ namespace View
             }
             else
             {
+                //update password
                 Login login = new Login();
                 ConUser conUser = new ConUser();
                 string hashedpswd = conUser.HashPassword(password);
