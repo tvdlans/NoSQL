@@ -103,21 +103,5 @@ namespace DAL
             var collection = db.GetCollection<T>(table);
             collection.InsertOne(record);
         }
-
-        //public static void Conn1()
-        //{
-        //    MongoClient dbClient = new MongoClient("mongodb+srv://RegUser:Welkom1234@cluster0-rpzyt.mongodb.net/test?retryWrites=true&w=majority");
-
-        //    var database = dbClient.GetDatabase("TGGDB");
-        //    var collection = database.GetCollection<BsonDocument>("Users");
-
-        //    var document = collection.Find(new BsonDocument()).ToList();
-
-        //    foreach (BsonDocument doc in document)
-        //    {
-        //        Console.WriteLine(doc.ToString());
-        //    }
-        //    Console.ReadKey();
-        //}
     }
 }

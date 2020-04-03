@@ -256,7 +256,7 @@ namespace View
                 if (row.Description.ToString().ToLower().Contains(text.ToLower()) || row.ID.ToString().ToLower().Contains(text.ToLower()) || row.Name.ToLower().Contains(text.ToLower()) || row.Subject.ToLower().Contains(text.ToLower()) || row.Status.ToString().ToLower().Contains(text.ToLower()) || row.TypeOfIncident.ToLower().Contains(text.ToLower()) || row.Date.ToString().ToLower().Contains(text.ToLower()) || row.Deadline.ToString().ToLower().Contains(text.ToLower()))
                 {
                     //make new listview
-                    ListViewItem list = new ListViewItem(new[] { row.ID.ToString(), row.Subject, row.Name, row.Date.Date.ToString("d"), row.Deadline.Date.ToString("d"), row.Status.ToString(), row.TypeOfIncident,row.Description });
+                    ListViewItem list = new ListViewItem(new[] { row.ID.ToString(), row.Subject, row.Name, row.Date.Date.ToString("d"), row.Deadline.Date.ToString("d"), row.Status.ToString(), row.TypeOfIncident,row.Description, row.Id.ToString() });
                     listIncidents.Items.Add(list);
                 }
             }
@@ -274,7 +274,7 @@ namespace View
                 lblUpType.Text = listIncidents.SelectedItems[0].SubItems[6].Text;
                 lblUpDescription.Text = listIncidents.SelectedItems[0].SubItems[7].Text;
                 UpDownStatus.Value = decimal.Parse(listIncidents.SelectedItems[0].SubItems[5].Text);
-                lblUpID.Text = listIncidents.SelectedItems[0].SubItems[0].Text;
+                lblUpID.Text = listIncidents.SelectedItems[0].SubItems[8].Text;
                 selected = true;
             }
             else
