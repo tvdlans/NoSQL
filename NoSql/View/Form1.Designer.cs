@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title16 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelBorder = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -66,7 +66,6 @@
             this.ChartUnresInc = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblDashboardTitle = new System.Windows.Forms.Label();
             this.panelIncident = new System.Windows.Forms.Panel();
-            this.pnlCreateIncident = new System.Windows.Forms.Panel();
             this.pnlUpgrade = new System.Windows.Forms.Panel();
             this.lblNoComment = new System.Windows.Forms.Label();
             this.lblUpID = new System.Windows.Forms.Label();
@@ -76,8 +75,8 @@
             this.lblUpgradeStatus = new System.Windows.Forms.Label();
             this.lblUpDeadline = new System.Windows.Forms.Label();
             this.lblUpDescription = new System.Windows.Forms.Label();
-            this.lblUpUser = new System.Windows.Forms.Label();
             this.lblUpType = new System.Windows.Forms.Label();
+            this.lblUpUser = new System.Windows.Forms.Label();
             this.lblUpSubject = new System.Windows.Forms.Label();
             this.lblUpDate = new System.Windows.Forms.Label();
             this.btnUpgrade = new System.Windows.Forms.Button();
@@ -89,12 +88,13 @@
             this.lblUpgradeDate = new System.Windows.Forms.Label();
             this.lblUpgradeTitle = new System.Windows.Forms.Label();
             this.txtUpComment = new System.Windows.Forms.TextBox();
+            this.pnlCreateIncident = new System.Windows.Forms.Panel();
+            this.cmbPriority = new System.Windows.Forms.ComboBox();
             this.lblFalse = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.cmbDeadline = new System.Windows.Forms.ComboBox();
-            this.cmbPriority = new System.Windows.Forms.ComboBox();
             this.cmbUser = new System.Windows.Forms.ComboBox();
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.txtSubject = new System.Windows.Forms.TextBox();
@@ -162,9 +162,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ChartUnresIncExp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartUnresInc)).BeginInit();
             this.panelIncident.SuspendLayout();
-            this.pnlCreateIncident.SuspendLayout();
             this.pnlUpgrade.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownStatus)).BeginInit();
+            this.pnlCreateIncident.SuspendLayout();
             this.panelUser.SuspendLayout();
             this.pnlCreateUser.SuspendLayout();
             this.SuspendLayout();
@@ -341,69 +341,69 @@
             // 
             this.ChartIncSolvedByYou.BackColor = System.Drawing.Color.Transparent;
             this.ChartIncSolvedByYou.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea13.Name = "ChartArea1";
-            this.ChartIncSolvedByYou.ChartAreas.Add(chartArea13);
+            chartArea1.Name = "ChartArea1";
+            this.ChartIncSolvedByYou.ChartAreas.Add(chartArea1);
             this.ChartIncSolvedByYou.Cursor = System.Windows.Forms.Cursors.Default;
-            legend13.Name = "Legend1";
-            this.ChartIncSolvedByYou.Legends.Add(legend13);
+            legend1.Name = "Legend1";
+            this.ChartIncSolvedByYou.Legends.Add(legend1);
             this.ChartIncSolvedByYou.Location = new System.Drawing.Point(358, 403);
             this.ChartIncSolvedByYou.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChartIncSolvedByYou.Name = "ChartIncSolvedByYou";
-            series13.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series13.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series13.BorderColor = System.Drawing.Color.Transparent;
-            series13.ChartArea = "ChartArea1";
-            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series13.Color = System.Drawing.Color.Transparent;
-            series13.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
-            series13.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series13.LabelBackColor = System.Drawing.Color.Transparent;
-            series13.LabelBorderColor = System.Drawing.Color.Transparent;
-            series13.Legend = "Legend1";
-            series13.MarkerBorderColor = System.Drawing.Color.Transparent;
-            series13.Name = "s1";
-            this.ChartIncSolvedByYou.Series.Add(series13);
+            series1.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series1.BorderColor = System.Drawing.Color.Transparent;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Color = System.Drawing.Color.Transparent;
+            series1.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
+            series1.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.LabelBackColor = System.Drawing.Color.Transparent;
+            series1.LabelBorderColor = System.Drawing.Color.Transparent;
+            series1.Legend = "Legend1";
+            series1.MarkerBorderColor = System.Drawing.Color.Transparent;
+            series1.Name = "s1";
+            this.ChartIncSolvedByYou.Series.Add(series1);
             this.ChartIncSolvedByYou.Size = new System.Drawing.Size(279, 271);
             this.ChartIncSolvedByYou.TabIndex = 7;
             this.ChartIncSolvedByYou.Text = "ChartIncSolvedByYou";
-            title13.Font = new System.Drawing.Font("Lato Light", 15F);
-            title13.Name = "Title1";
-            title13.Text = "Total Incidents Solved By You";
-            this.ChartIncSolvedByYou.Titles.Add(title13);
+            title1.Font = new System.Drawing.Font("Lato Light", 15F);
+            title1.Name = "Title1";
+            title1.Text = "Total Incidents Solved By You";
+            this.ChartIncSolvedByYou.Titles.Add(title1);
             // 
             // ChartTypeOfInc
             // 
             this.ChartTypeOfInc.BackColor = System.Drawing.Color.Transparent;
             this.ChartTypeOfInc.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea14.Name = "ChartArea1";
-            this.ChartTypeOfInc.ChartAreas.Add(chartArea14);
+            chartArea2.Name = "ChartArea1";
+            this.ChartTypeOfInc.ChartAreas.Add(chartArea2);
             this.ChartTypeOfInc.Cursor = System.Windows.Forms.Cursors.Default;
-            legend14.Name = "Legend1";
-            this.ChartTypeOfInc.Legends.Add(legend14);
+            legend2.Name = "Legend1";
+            this.ChartTypeOfInc.Legends.Add(legend2);
             this.ChartTypeOfInc.Location = new System.Drawing.Point(338, 108);
             this.ChartTypeOfInc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChartTypeOfInc.Name = "ChartTypeOfInc";
-            series14.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series14.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series14.BorderColor = System.Drawing.Color.Transparent;
-            series14.ChartArea = "ChartArea1";
-            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series14.Color = System.Drawing.Color.Transparent;
-            series14.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
-            series14.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series14.LabelBackColor = System.Drawing.Color.Transparent;
-            series14.LabelBorderColor = System.Drawing.Color.Transparent;
-            series14.Legend = "Legend1";
-            series14.MarkerBorderColor = System.Drawing.Color.Transparent;
-            series14.Name = "s1";
-            this.ChartTypeOfInc.Series.Add(series14);
+            series2.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series2.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series2.BorderColor = System.Drawing.Color.Transparent;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Color = System.Drawing.Color.Transparent;
+            series2.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
+            series2.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.LabelBackColor = System.Drawing.Color.Transparent;
+            series2.LabelBorderColor = System.Drawing.Color.Transparent;
+            series2.Legend = "Legend1";
+            series2.MarkerBorderColor = System.Drawing.Color.Transparent;
+            series2.Name = "s1";
+            this.ChartTypeOfInc.Series.Add(series2);
             this.ChartTypeOfInc.Size = new System.Drawing.Size(345, 298);
             this.ChartTypeOfInc.TabIndex = 6;
             this.ChartTypeOfInc.Text = "chart1";
-            title14.Font = new System.Drawing.Font("Lato Light", 15F);
-            title14.Name = "Title1";
-            title14.Text = "Type Of Incidents";
-            this.ChartTypeOfInc.Titles.Add(title14);
+            title2.Font = new System.Drawing.Font("Lato Light", 15F);
+            title2.Name = "Title1";
+            title2.Text = "Type Of Incidents";
+            this.ChartTypeOfInc.Titles.Add(title2);
             // 
             // lblUnresIncExp
             // 
@@ -433,69 +433,69 @@
             // 
             this.ChartUnresIncExp.BackColor = System.Drawing.Color.Transparent;
             this.ChartUnresIncExp.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea15.Name = "ChartArea1";
-            this.ChartUnresIncExp.ChartAreas.Add(chartArea15);
+            chartArea3.Name = "ChartArea1";
+            this.ChartUnresIncExp.ChartAreas.Add(chartArea3);
             this.ChartUnresIncExp.Cursor = System.Windows.Forms.Cursors.Default;
-            legend15.Name = "Legend1";
-            this.ChartUnresIncExp.Legends.Add(legend15);
+            legend3.Name = "Legend1";
+            this.ChartUnresIncExp.Legends.Add(legend3);
             this.ChartUnresIncExp.Location = new System.Drawing.Point(15, 403);
             this.ChartUnresIncExp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChartUnresIncExp.Name = "ChartUnresIncExp";
-            series15.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series15.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series15.BorderColor = System.Drawing.Color.Transparent;
-            series15.ChartArea = "ChartArea1";
-            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series15.Color = System.Drawing.Color.Transparent;
-            series15.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
-            series15.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series15.LabelBackColor = System.Drawing.Color.Transparent;
-            series15.LabelBorderColor = System.Drawing.Color.Transparent;
-            series15.Legend = "Legend1";
-            series15.MarkerBorderColor = System.Drawing.Color.Transparent;
-            series15.Name = "s1";
-            this.ChartUnresIncExp.Series.Add(series15);
+            series3.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series3.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series3.BorderColor = System.Drawing.Color.Transparent;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series3.Color = System.Drawing.Color.Transparent;
+            series3.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
+            series3.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.LabelBackColor = System.Drawing.Color.Transparent;
+            series3.LabelBorderColor = System.Drawing.Color.Transparent;
+            series3.Legend = "Legend1";
+            series3.MarkerBorderColor = System.Drawing.Color.Transparent;
+            series3.Name = "s1";
+            this.ChartUnresIncExp.Series.Add(series3);
             this.ChartUnresIncExp.Size = new System.Drawing.Size(279, 271);
             this.ChartUnresIncExp.TabIndex = 5;
             this.ChartUnresIncExp.Text = "chart1";
-            title15.Font = new System.Drawing.Font("Lato Light", 15F);
-            title15.Name = "Title1";
-            title15.Text = "Incidents Past Deadline";
-            this.ChartUnresIncExp.Titles.Add(title15);
+            title3.Font = new System.Drawing.Font("Lato Light", 15F);
+            title3.Name = "Title1";
+            title3.Text = "Incidents Past Deadline";
+            this.ChartUnresIncExp.Titles.Add(title3);
             // 
             // ChartUnresInc
             // 
             this.ChartUnresInc.BackColor = System.Drawing.Color.Transparent;
             this.ChartUnresInc.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea16.Name = "ChartArea1";
-            this.ChartUnresInc.ChartAreas.Add(chartArea16);
+            chartArea4.Name = "ChartArea1";
+            this.ChartUnresInc.ChartAreas.Add(chartArea4);
             this.ChartUnresInc.Cursor = System.Windows.Forms.Cursors.Default;
-            legend16.Name = "Legend1";
-            this.ChartUnresInc.Legends.Add(legend16);
+            legend4.Name = "Legend1";
+            this.ChartUnresInc.Legends.Add(legend4);
             this.ChartUnresInc.Location = new System.Drawing.Point(15, 108);
             this.ChartUnresInc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChartUnresInc.Name = "ChartUnresInc";
-            series16.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series16.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series16.BorderColor = System.Drawing.Color.Transparent;
-            series16.ChartArea = "ChartArea1";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series16.Color = System.Drawing.Color.Transparent;
-            series16.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
-            series16.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series16.LabelBackColor = System.Drawing.Color.Transparent;
-            series16.LabelBorderColor = System.Drawing.Color.Transparent;
-            series16.Legend = "Legend1";
-            series16.MarkerBorderColor = System.Drawing.Color.Transparent;
-            series16.Name = "s1";
-            this.ChartUnresInc.Series.Add(series16);
+            series4.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series4.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series4.BorderColor = System.Drawing.Color.Transparent;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Color = System.Drawing.Color.Transparent;
+            series4.CustomProperties = "DoughnutRadius=40, CollectedColor=Transparent, PieStartAngle=270";
+            series4.Font = new System.Drawing.Font("Lato Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series4.LabelBackColor = System.Drawing.Color.Transparent;
+            series4.LabelBorderColor = System.Drawing.Color.Transparent;
+            series4.Legend = "Legend1";
+            series4.MarkerBorderColor = System.Drawing.Color.Transparent;
+            series4.Name = "s1";
+            this.ChartUnresInc.Series.Add(series4);
             this.ChartUnresInc.Size = new System.Drawing.Size(279, 271);
             this.ChartUnresInc.TabIndex = 1;
             this.ChartUnresInc.Text = "chart1";
-            title16.Font = new System.Drawing.Font("Lato Light", 15F);
-            title16.Name = "Title1";
-            title16.Text = "Unresolved Incidents";
-            this.ChartUnresInc.Titles.Add(title16);
+            title4.Font = new System.Drawing.Font("Lato Light", 15F);
+            title4.Name = "Title1";
+            title4.Text = "Unresolved Incidents";
+            this.ChartUnresInc.Titles.Add(title4);
             // 
             // lblDashboardTitle
             // 
@@ -510,8 +510,6 @@
             // 
             // panelIncident
             // 
-            this.panelIncident.Controls.Add(this.pnlUpgrade);
-            this.panelIncident.Controls.Add(this.pnlCreateIncident);
             this.panelIncident.Controls.Add(this.lblChangeIncident);
             this.panelIncident.Controls.Add(this.listIncidents);
             this.panelIncident.Controls.Add(this.btnCreateIncident);
@@ -523,31 +521,6 @@
             this.panelIncident.Name = "panelIncident";
             this.panelIncident.Size = new System.Drawing.Size(1153, 843);
             this.panelIncident.TabIndex = 6;
-            // 
-            // pnlCreateIncident
-            // 
-            this.pnlCreateIncident.Controls.Add(this.cmbPriority);
-            this.pnlCreateIncident.Controls.Add(this.lblFalse);
-            this.pnlCreateIncident.Controls.Add(this.btnCancel);
-            this.pnlCreateIncident.Controls.Add(this.btnConfirm);
-            this.pnlCreateIncident.Controls.Add(this.txtDescription);
-            this.pnlCreateIncident.Controls.Add(this.cmbDeadline);
-            this.pnlCreateIncident.Controls.Add(this.cmbUser);
-            this.pnlCreateIncident.Controls.Add(this.cmbType);
-            this.pnlCreateIncident.Controls.Add(this.txtSubject);
-            this.pnlCreateIncident.Controls.Add(this.cmbDateTime);
-            this.pnlCreateIncident.Controls.Add(this.lblDescription);
-            this.pnlCreateIncident.Controls.Add(this.lblDeadline);
-            this.pnlCreateIncident.Controls.Add(this.lblPriority);
-            this.pnlCreateIncident.Controls.Add(this.lblReported);
-            this.pnlCreateIncident.Controls.Add(this.lblTypeIncident);
-            this.pnlCreateIncident.Controls.Add(this.lblSubject);
-            this.pnlCreateIncident.Controls.Add(this.lblDateTime);
-            this.pnlCreateIncident.Controls.Add(this.lblIncidentTitle);
-            this.pnlCreateIncident.Location = new System.Drawing.Point(0, 0);
-            this.pnlCreateIncident.Name = "pnlCreateIncident";
-            this.pnlCreateIncident.Size = new System.Drawing.Size(1153, 774);
-            this.pnlCreateIncident.TabIndex = 4;
             // 
             // pnlUpgrade
             // 
@@ -572,7 +545,7 @@
             this.pnlUpgrade.Controls.Add(this.lblUpgradeDate);
             this.pnlUpgrade.Controls.Add(this.lblUpgradeTitle);
             this.pnlUpgrade.Controls.Add(this.txtUpComment);
-            this.pnlUpgrade.Location = new System.Drawing.Point(0, 0);
+            this.pnlUpgrade.Location = new System.Drawing.Point(17, 180);
             this.pnlUpgrade.Name = "pnlUpgrade";
             this.pnlUpgrade.Size = new System.Drawing.Size(1150, 771);
             this.pnlUpgrade.TabIndex = 18;
@@ -658,16 +631,6 @@
             this.lblUpDescription.TabIndex = 22;
             this.lblUpDescription.Text = "label2";
             // 
-            // lblUpUser
-            // 
-            this.lblUpUser.AutoSize = true;
-            this.lblUpUser.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpUser.Location = new System.Drawing.Point(470, 243);
-            this.lblUpUser.Name = "lblUpUser";
-            this.lblUpUser.Size = new System.Drawing.Size(51, 20);
-            this.lblUpUser.TabIndex = 20;
-            this.lblUpUser.Text = "label2";
-            // 
             // lblUpType
             // 
             this.lblUpType.AutoSize = true;
@@ -677,6 +640,16 @@
             this.lblUpType.Size = new System.Drawing.Size(51, 20);
             this.lblUpType.TabIndex = 19;
             this.lblUpType.Text = "label2";
+            // 
+            // lblUpUser
+            // 
+            this.lblUpUser.AutoSize = true;
+            this.lblUpUser.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpUser.Location = new System.Drawing.Point(470, 243);
+            this.lblUpUser.Name = "lblUpUser";
+            this.lblUpUser.Size = new System.Drawing.Size(51, 20);
+            this.lblUpUser.TabIndex = 20;
+            this.lblUpUser.Text = "label2";
             // 
             // lblUpSubject
             // 
@@ -791,6 +764,46 @@
             this.txtUpComment.Size = new System.Drawing.Size(264, 96);
             this.txtUpComment.TabIndex = 18;
             // 
+            // pnlCreateIncident
+            // 
+            this.pnlCreateIncident.Controls.Add(this.pnlUpgrade);
+            this.pnlCreateIncident.Controls.Add(this.cmbPriority);
+            this.pnlCreateIncident.Controls.Add(this.lblFalse);
+            this.pnlCreateIncident.Controls.Add(this.btnCancel);
+            this.pnlCreateIncident.Controls.Add(this.btnConfirm);
+            this.pnlCreateIncident.Controls.Add(this.txtDescription);
+            this.pnlCreateIncident.Controls.Add(this.cmbDeadline);
+            this.pnlCreateIncident.Controls.Add(this.cmbUser);
+            this.pnlCreateIncident.Controls.Add(this.cmbType);
+            this.pnlCreateIncident.Controls.Add(this.txtSubject);
+            this.pnlCreateIncident.Controls.Add(this.cmbDateTime);
+            this.pnlCreateIncident.Controls.Add(this.lblDescription);
+            this.pnlCreateIncident.Controls.Add(this.lblDeadline);
+            this.pnlCreateIncident.Controls.Add(this.lblPriority);
+            this.pnlCreateIncident.Controls.Add(this.lblReported);
+            this.pnlCreateIncident.Controls.Add(this.lblTypeIncident);
+            this.pnlCreateIncident.Controls.Add(this.lblSubject);
+            this.pnlCreateIncident.Controls.Add(this.lblDateTime);
+            this.pnlCreateIncident.Controls.Add(this.lblIncidentTitle);
+            this.pnlCreateIncident.Location = new System.Drawing.Point(42, 304);
+            this.pnlCreateIncident.Name = "pnlCreateIncident";
+            this.pnlCreateIncident.Size = new System.Drawing.Size(1153, 774);
+            this.pnlCreateIncident.TabIndex = 4;
+            // 
+            // cmbPriority
+            // 
+            this.cmbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPriority.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPriority.FormattingEnabled = true;
+            this.cmbPriority.Items.AddRange(new object[] {
+            "Normal",
+            "Low",
+            "High"});
+            this.cmbPriority.Location = new System.Drawing.Point(428, 294);
+            this.cmbPriority.Name = "cmbPriority";
+            this.cmbPriority.Size = new System.Drawing.Size(265, 28);
+            this.cmbPriority.TabIndex = 12;
+            // 
             // lblFalse
             // 
             this.lblFalse.AutoSize = true;
@@ -852,20 +865,6 @@
             this.cmbDeadline.Name = "cmbDeadline";
             this.cmbDeadline.Size = new System.Drawing.Size(265, 28);
             this.cmbDeadline.TabIndex = 13;
-            // 
-            // cmbPriority
-            // 
-            this.cmbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPriority.Font = new System.Drawing.Font("Lato Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPriority.FormattingEnabled = true;
-            this.cmbPriority.Items.AddRange(new object[] {
-            "Normal",
-            "Low",
-            "High"});
-            this.cmbPriority.Location = new System.Drawing.Point(428, 294);
-            this.cmbPriority.Name = "cmbPriority";
-            this.cmbPriority.Size = new System.Drawing.Size(265, 28);
-            this.cmbPriority.TabIndex = 12;
             // 
             // cmbUser
             // 
@@ -1121,6 +1120,7 @@
             // 
             // panelUser
             // 
+            this.panelUser.Controls.Add(this.pnlCreateIncident);
             this.panelUser.Controls.Add(this.lblCreateUserSucces);
             this.panelUser.Controls.Add(this.pnlCreateUser);
             this.panelUser.Controls.Add(this.buttonAddUser);
@@ -1443,11 +1443,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ChartUnresInc)).EndInit();
             this.panelIncident.ResumeLayout(false);
             this.panelIncident.PerformLayout();
-            this.pnlCreateIncident.ResumeLayout(false);
-            this.pnlCreateIncident.PerformLayout();
             this.pnlUpgrade.ResumeLayout(false);
             this.pnlUpgrade.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownStatus)).EndInit();
+            this.pnlCreateIncident.ResumeLayout(false);
+            this.pnlCreateIncident.PerformLayout();
             this.panelUser.ResumeLayout(false);
             this.panelUser.PerformLayout();
             this.pnlCreateUser.ResumeLayout(false);

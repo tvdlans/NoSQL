@@ -61,7 +61,7 @@ namespace View
             int id = 1;
             foreach (ModIncident item in incidents)
             {
-                ModIncident mod = new ModIncident { ID = id,Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline= item.Deadline, Status= item.Status, TypeOfIncident= item.TypeOfIncident, Description = item.Description };
+                ModIncident mod = new ModIncident { ID = id,Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline= item.Deadline, Status= item.Status, TypeOfIncident= item.TypeOfIncident, Description = item.Description, Id = item.Id };
                 ListViewItem list = new ListViewItem(new [] { id.ToString(), item.Subject, item.Name,item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(),item.TypeOfIncident,item.Description,item.Id.ToString() });
                 //Fill the Masterlist
                 incidentsList.Add(mod);
@@ -238,7 +238,7 @@ namespace View
                 lblUpType.Text = listIncidents.SelectedItems[0].SubItems[6].Text;
                 lblUpDescription.Text = listIncidents.SelectedItems[0].SubItems[7].Text;
                 UpDownStatus.Value = decimal.Parse(listIncidents.SelectedItems[0].SubItems[5].Text);
-                lblUpID.Text = listIncidents.SelectedItems[0].SubItems[0].Text;
+                lblUpID.Text = listIncidents.SelectedItems[0].SubItems[8].Text;
                 selected = true;
             }
             else
