@@ -21,9 +21,6 @@ namespace Controller
             List<BsonDocument> incidents = db.LoadRecords<BsonDocument>("Incidents");
             List<BsonDocument> tempincidents = new List<BsonDocument>();
 
-            //check for each incident if the service tag is the same as the person logged in
-            incidents = incidents.FindAll(e => e.GetElement("ServiceID").Value.AsObjectId == conSession.GetId());
-
             return CalculateFinishedIncidents(incidents);
         }
 
@@ -50,9 +47,8 @@ namespace Controller
             List<BsonDocument> incidents = db.LoadRecords<BsonDocument>("Incidents");
             //filter these incidents based on status and serviceID
             incidents = incidents.FindAll(e => e.GetElement("Status").Value != 100);
-            incidents = incidents.FindAll(e => e.GetElement("ServiceID").Value.AsObjectId == conSession.GetId());
             //make a new list and find all incidents past deadline
-            int incidentsPastDeadline = incidents.FindAll(e => e.GetElement("Date").Value.AsDateTime <= DateTime.Now).Count;
+            int incidentsPastDeadline = incidents.FindAll(e => e.GetElement("Deadline").Value.AsDateTime <= DateTime.Now).Count;
 
             //return the amount of resolved incidents and the total amount of incidents
             incidentInformation[0] = incidents.Count;

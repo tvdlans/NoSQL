@@ -16,6 +16,7 @@ namespace View
     public partial class Form1 : Form
     {
         private List<ModIncident> incidentsList = new List<ModIncident>();
+        List<ModUser> userItems = new List<ModUser>();
         private static bool selected;
 
         public Form1()
@@ -23,12 +24,15 @@ namespace View
             InitializeComponent();
         }
 
+        // method that closes all panels except the one in argument
         public void CloseAllPanelsExcept(Panel panel)
         {
             panelDash.Hide();
             panelIncident.Hide();
             panelUser.Hide();
-            
+            pnlCreateIncident.Hide();
+            pnlCreateUser.Hide();
+            panelResolvedTickets.Hide();
             panel.Show();
         }
 
@@ -48,34 +52,85 @@ namespace View
             CloseAllPanelsExcept(panelIncident);
             pnlCreateIncident.Hide();
             pnlUpgrade.Hide();
-            getAllIncidents();
+            getAllIncidents(false);
         }
 
-        private void getAllIncidents()
+        private void getAllIncidents(bool onlyResolved)
         {
             //First clear the listview
+            incidentsList.Clear();
             listIncidents.Items.Clear();
+            listResolvedIncidents.Items.Clear();
             ConIncident incident = new ConIncident();
             //Get all the incidents
             List<ModIncident> incidents = incident.getIncidents();
             int id = 1;
+
             foreach (ModIncident item in incidents)
             {
-                ModIncident mod = new ModIncident { ID = id,Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline= item.Deadline, Status= item.Status, TypeOfIncident= item.TypeOfIncident, Description = item.Description, Id = item.Id };
-                ListViewItem list = new ListViewItem(new [] { id.ToString(), item.Subject, item.Name,item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(),item.TypeOfIncident,item.Description,item.Id.ToString() });
-                //Fill the Masterlist
-                incidentsList.Add(mod);
-                //Fill the listview
-                listIncidents.Items.Add(list);
-                id++;
+                if (onlyResolved == false)
+                {
+                    ModIncident mod = new ModIncident { ID = id, Subject = item.Subject, Name = item.Name, Date = item.Date, Deadline = item.Deadline, Status = item.Status, TypeOfIncident = item.TypeOfIncident, Description = item.Description };
+                    ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident, item.Description, item.Id.ToString()});
+                    //Fill the Masterlist
+                    incidentsList.Add(mod);
+                    //Fill the listview
+                    listIncidents.Items.Add(list);
+                    id++;
+                }
+                else if (onlyResolved == true)
+                {
+                    if (item.Status == 100)
+                    {
+                        ListViewItem list = new ListViewItem(new[] { id.ToString(), item.Subject, item.Name, item.Date.Date.ToString("d"), item.Deadline.Date.ToString("d"), item.Status.ToString(), item.TypeOfIncident });
+                        //Fill the listview
+                        listResolvedIncidents.Items.Add(list);
+                        id++;
+                    }
+                }
             }
         }
 
+        //the method that gets called when the user button is clicked, which shows the user management menu
         private void btnUser_Click(object sender, EventArgs e)
         {
             panelUser.BringToFront();
             CloseAllPanelsExcept(panelUser);
+            pnlCreateUser.Hide();
+            GetAllUsers();
+        }
 
+        //a method that receives all users and puts them in the listview
+        private void GetAllUsers()
+        {
+            userItems.Clear();
+            listUsers.Items.Clear();
+            ConUser ConUserObject = new ConUser();
+            //calling the method that retrieves all users from the database
+            List<ModUser> users = ConUserObject.GetAllUsers();
+            int id = 1;
+            foreach (ModUser user in users)
+            {
+
+                //adding every user to the listview
+                ListViewItem lvItem = new ListViewItem(new[] { id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString(), CheckRole(user)});
+                ModUser modUser = new ModUser { Id = id, Email = user.Email, FirstName = user.FirstName, LastName = user.LastName, NrOfTickets = user.NrOfTickets, Role = user.Role};
+                userItems.Add(modUser);
+                listUsers.Items.Add(lvItem);
+                id++;
+            }
+        }
+
+        private string CheckRole(ModUser user)
+        {
+            if (user.Role == 0)
+            {
+                return "Employee";
+            }
+            else
+            {
+                return "Service desk employee";
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -138,7 +193,7 @@ namespace View
             {
                 //insert incident into database
                 Incident.insertIncident(cmbDateTime.Text, txtSubject.Text, cmbType.Text, cmbUser.Text, cmbPriority.Text, cmbDeadline.Text, txtDescription.Text);
-                pnlCreateIncident.Hide();
+                btnIncident.PerformClick();
             }
         }
 
@@ -219,7 +274,7 @@ namespace View
                 if (row.Description.ToString().ToLower().Contains(text.ToLower()) || row.ID.ToString().ToLower().Contains(text.ToLower()) || row.Name.ToLower().Contains(text.ToLower()) || row.Subject.ToLower().Contains(text.ToLower()) || row.Status.ToString().ToLower().Contains(text.ToLower()) || row.TypeOfIncident.ToLower().Contains(text.ToLower()) || row.Date.ToString().ToLower().Contains(text.ToLower()) || row.Deadline.ToString().ToLower().Contains(text.ToLower()))
                 {
                     //make new listview
-                    ListViewItem list = new ListViewItem(new[] { row.ID.ToString(), row.Subject, row.Name, row.Date.Date.ToString("d"), row.Deadline.Date.ToString("d"), row.Status.ToString(), row.TypeOfIncident,row.Description });
+                    ListViewItem list = new ListViewItem(new[] { row.ID.ToString(), row.Subject, row.Name, row.Date.Date.ToString("d"), row.Deadline.Date.ToString("d"), row.Status.ToString(), row.TypeOfIncident,row.Description, row.Id.ToString() });
                     listIncidents.Items.Add(list);
                 }
             }
@@ -227,7 +282,6 @@ namespace View
 
         private void listIncidents_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-
             if (e.IsSelected)
             {
                 pnlUpgrade.Show();
@@ -246,6 +300,7 @@ namespace View
                 selected = false;
             }
         }
+
         private void IncidentsSolvedByYou(ConDashboard conDashboard)
         {
             int[] incidentsByYou = conDashboard.CalculateYourIncidents();
@@ -283,8 +338,85 @@ namespace View
                 //add comment into database
                 Incident.SetComment("Comments",txtUpComment.Text, lblUpID.Text);
                 pnlUpgrade.Hide();
-                getAllIncidents();
+                getAllIncidents(false);
               }
+        }
+
+        private void txtUserFilter_TextChanged(object sender, EventArgs e)
+        {
+            SearchUserData(txtUserFilter.Text);
+        }
+
+        private void SearchUserData(string text)
+        {
+            //clear the listview
+            listUsers.Items.Clear();
+            foreach (ModUser user in userItems)
+            {
+                //check if the list contains the searched text
+                if (user.Id.ToString().ToLower().Contains(text.ToLower()) || user.FirstName.ToLower().Contains(text.ToLower()) || user.LastName.ToLower().Contains(text.ToLower()) || user.Email.ToString().ToLower().Contains(text.ToLower()) || user.NrOfTickets.ToString().ToLower().Contains(text.ToLower()))
+                {
+                    string role = CheckRole(user);
+                    //make new listview for items that contain the search
+                    ListViewItem list = new ListViewItem(new[] { user.Id.ToString(), user.Email, user.FirstName, user.LastName, user.NrOfTickets.ToString(), role});
+                    listUsers.Items.Add(list);
+                }
+            }
+        }
+
+        //the button that opens the panel with all resolved incidents
+        private void buttonResolvedTickets_Click(object sender, EventArgs e)
+        {
+            panelResolvedTickets.Show();
+            getAllIncidents(true);
+        }
+
+        //the panel that closes the resolved incidents panel and opens the all incidents panels
+        private void buttonOpenIncidents_Click(object sender, EventArgs e)
+        {
+            CloseAllPanelsExcept(panelIncident);
+            getAllIncidents(false);
+        }
+
+        //the button that opens the panel with which the user can add another user
+        private void buttonAddUser_Click(object sender, EventArgs e)
+        {
+            pnlCreateUser.Show();
+        }
+
+        //the button that cancels the the create user process
+        private void buttonCancelCreateUser_Click(object sender, EventArgs e)
+        {
+            pnlCreateUser.Hide();
+        }
+
+        //the button that checks if all fields of the create user panel are filled and then calls the method that adds a user to the database
+        private void buttonCreateUser_Click(object sender, EventArgs e)
+        {
+            ConUser userObject = new ConUser();
+            //check if all the fields are filled
+            bool check = userObject.checkFields(textBoxUserFirstName.Text, textBoxUserLastName.Text, comboBoxTypeOfUser.Text, textBoxUserEmail.Text, textBoxUserPhoneNumber.Text, comboBoxUserLocation.Text);
+            if (check == false)
+            {
+                lblCreateUserError.Text = "Please fill in all the information";
+            }
+            else
+            {
+                //insert user into database
+                string createUserFeedback = userObject.InsertUser(textBoxUserFirstName.Text, textBoxUserLastName.Text, comboBoxTypeOfUser.Text, textBoxUserEmail.Text, textBoxUserPhoneNumber.Text, comboBoxUserLocation.Text, checkBoxUserSendPassword.Checked);
+                if (createUserFeedback == "Account created succesfully!")
+                {
+                    lblCreateUserError.Text = "";
+                    btnUser.PerformClick();
+                    lblCreateUserSucces.Text = createUserFeedback;
+                }
+                else
+                {
+                    lblCreateUserError.Text = createUserFeedback;
+                }
+
+
+            }
         }
     }
 }
